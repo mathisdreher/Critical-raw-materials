@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Spark from '../components/Spark.astro';
 import Delta from '../components/Delta.astro';
-import { ui } from '../i18n';
+import { ui, crma } from '../i18n';
 import { materials, groups, priceIndex, material, trade } from '../lib/data';
 import { href, fmtNumber, fmtDate } from '../lib/format';
 
@@ -12,6 +12,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = ui(locale);
 const h = t.home;
+const k = crma(locale).hub;
 
 const series = priceIndex.series;
 const count = (f: string) => series.filter((s) => s.frequency === f).length;
@@ -142,6 +143,25 @@ const latestTrade = trade('copper')?.latest_period ?? '';
       }
     </div>
     <p class="fig-note" style="max-width:86ch" set:html={h.projectsHtml} />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{k.title}</h2>
+      <a href={href('/crma/')}>{t.common.viewAll} →</a>
+    </div>
+    <p class="muted" style="max-width:72ch">{k.lede}</p>
+    <div class="grid cols-3">
+      {
+        k.tools.map((tool) => (
+          <a class="card tool-link" href={href(tool.path)}>
+            <span class="badge">{tool.ref}</span>
+            <h3 style="margin-top:10px">{tool.title}</h3>
+            <p class="muted" style="margin:0">{tool.text}</p>
+          </a>
+        ))
+      }
+    </div>
   </section>
 
   <section class="section">

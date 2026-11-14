@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import { crma } from '../i18n';
+import { REG_URL, acts } from '../i18n/crma.en';
+import { href } from '../lib/format';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const c = crma(locale);
+const m = c.magnets;
+const types = c.checker.magnetTypes;
+const payload = JSON.stringify({ t: m, types, acts }).replace(/</g, '\\u003c');
+---
+
+<Base locale={locale} current="crma" title={m.title} description={m.lede}>
+  <p class="small"><a href={href('/crma/')}>← {c.hub.title}</a></p>
+  <div class="page-head">
+    <span class="badge">Articles 28 and 29</span>
+    <h1 style="margin-top:10px">{m.title}</h1>
+    <p class="lede">{m.lede}</p>
+  </div>
+
+  <div class="tool-layout">
+    <form class="tool-form" id="crma-magnets" onsubmit="return false">
+      <fieldset>
+        <legend>{m.form.category}</legend>
+        <select name="category" aria-label={m.form.category}>
+          <option value="">{m.form.categoryNone}</option>
+          {m.categories.map((cat, i) => <option value={i}>{cat.label}</option>)}
+          <option value="other">{m.form.other}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>{m.form.contains}</legend>
+        <label class="choice"><input type="checkbox" name="contains" checked /> {m.form.contains}</label>
+        <p style="margin-top:12px">{m.form.weights}</p>
+        <div class="weights">
+          {
+            Object.entries(types).map(([id, label]) => (
+              <>
+                <label class="choice">
+                  <input type="checkbox" name="type" value={id} /> {label}
+                </label>
+                <input type="number" name={`w-${id}`} min="0" step="any" placeholder="kg" aria-label={`${label}, kg`} />
+              </>
+            ))
+          }
+        </div>
+        <label class="choice" style="margin-top:12px"><input type="checkbox" name="motorsOnly" /> {m.form.motorsOnly}</label>
+      </fieldset>
+      <fieldset>
+        <legend>Exemptions and other rules</legend>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="defence" /> {m.form.defence}</label>
+          <label class="choice"><input type="checkbox" name="vehicleExempt" /> {m.form.vehicleExempt}</label>
+          <label class="choice"><input type="checkbox" name="otherLaw" /> {m.form.otherLaw}</label>
+          <label class="choice"><input type="checkbox" name="passport" /> {m.form.passport}</label>
+        </div>
+      </fieldset>
+    </form>
+
+    <aside class="tool-result" aria-live="polite">
+      <h2>{m.resultTitle}</h2>
+      <div id="crma-magnets-result"><p class="muted">{m.empty}</p></div>
+      <p class="fig-note">
+        {c.disclaimer} <a href={REG_URL}>Regulation (EU) 2024/1252</a>.
+      </p>
+    </aside>
+  </div>
+  <script type="application/json" id="crma-magnets-data" set:html={payload} />
+</Base>
+
+<script>
+  import '../scripts/crma-magnets.ts';
+</script>

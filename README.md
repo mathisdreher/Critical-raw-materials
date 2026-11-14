@@ -17,6 +17,23 @@ The site is rebuilt once a day by GitHub Actions and served by GitHub Pages. The
 
 Free daily prices exist only for a few exchange-traded metals. Most critical raw materials are priced by commercial reporting agencies whose data cannot be republished, so the monitor falls back on monthly and annual open sources and labels each series with its frequency and origin.
 
+## Critical Raw Materials Act toolkit
+
+Under `/crma/` the site offers tools for companies facing the Act (Regulation (EU) 2024/1252):
+
+- **Obligations checker**: seven questions, then the articles likely to apply (8, 21, 24, 27, 28, 29, 31), what each requires and by when.
+- **Supply chain risk assessment**: a workbook following Article 24 (mapping, risk factors, vulnerability rating, mitigation) that can be pre-filled with the monitor's public data and prints a report for the board. Entries stay in the visitor's browser and can be exported as JSON.
+- **Permanent magnet requirements**: for one product, the label, data carrier and recycled content disclosure of Articles 28 and 29, with application dates.
+- **Deadlines**: a table of the dates set by the regulation and a calendar file (`/crma/deadlines.ics`) with the company-facing ones.
+
+All legal content lives in `src/i18n/crma.en.ts` and was written against the Official Journal text of 3 May 2024. Three things need upkeep:
+
+1. **Secondary acts.** The dates for magnets depend on an implementing act (Article 28) and a delegated act (Article 29). Their adoption could not be confirmed when the toolkit was written. Once known, set `entryIntoForce` in the `acts` object at the top of that file and the tools compute the real dates.
+2. **The pending amendment** (procedure 2025/0385(COD)). It is described as a proposal. When it is adopted, the texts for Articles 24, 28 and 29 must be revised.
+3. **The rating method** of the risk workbook is a transparent starting point defined on the page, not a legal standard. The regulation leaves the assessment to the company.
+
+The tools are a reading aid, not legal advice, and say so on every page.
+
 ## Project layout
 
 ```
@@ -33,6 +50,7 @@ pipeline/
 src/
   content/materials/en/     the written profiles, one Markdown file per material
   i18n/en.ts                every interface string
+  i18n/crma.en.ts           legal content of the CRMA toolkit
   views/                    page templates, language-independent
   pages/                    thin routes that call the views with a language
   components/, scripts/     charts and tables

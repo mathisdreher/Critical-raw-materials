@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import { crma } from '../i18n';
+import { REG_URL } from '../i18n/crma.en';
+import { href } from '../lib/format';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const c = crma(locale);
+const k = c.checker;
+const yesNo = (withUnsure = true) => [
+  { v: 'yes', l: k.yes },
+  { v: 'no', l: k.no },
+  ...(withUnsure ? [{ v: 'unsure', l: k.unsure }] : []),
+];
+const order = ['art24', 'art24check', 'art24supplier', 'art28label', 'art28carrier', 'art29', 'art29check', 'defence', 'art27', 'art8', 'art7', 'art21', 'art31', 'penalties'] as const;
+---
+
+<Base locale={locale} current="crma" title={k.title} description={k.lede}>
+  <p class="small"><a href={href('/crma/')}>← {c.hub.title}</a></p>
+  <div class="page-head">
+    <h1>{k.title}</h1>
+    <p class="lede">{k.lede}</p>
+  </div>
+
+  <div class="tool-layout">
+    <form class="tool-form" id="crma-checker" onsubmit="return false">
+      <fieldset>
+        <legend>{k.q.size.title}</legend>
+        <p>{k.q.size.text}</p>
+        <div class="choices inline">
+          {yesNo().map((o) => <label class="choice"><input type="radio" name="size" value={o.v} /> {o.l}</label>)}
+        </div>
+        <p class="small">{k.q.size.help}</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>{k.q.tech.title}</legend>
+        <p>{k.q.tech.text}</p>
+        <div class="choices cols">
+          {k.technologies.map((name, i) => <label class="choice"><input type="checkbox" name="tech" value={i} /> {name}</label>)}
+        </div>
+        <p class="small">{k.q.tech.help}</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>{k.q.products.title}</legend>
+        <p>{k.q.products.text}</p>
+        <div class="choices cols">
+          {k.products.map((name, i) => <label class="choice"><input type="checkbox" name="products" value={i} /> {name}</label>)}
+        </div>
+        <p class="small">{k.q.products.help}</p>
+      </fieldset>
+
+      <fieldset data-needs="products" hidden>
+        <legend>{k.q.magnets.title}</legend>
+        <p>{k.q.magnets.text}</p>
+        <div class="choices inline">
+          {yesNo().map((o) => <label class="choice"><input type="radio" name="magnets" value={o.v} /> {o.l}</label>)}
+        </div>
+        <div data-needs="magnets-yes" hidden>
+          <p>{k.q.magnets.types}</p>
+          <div class="choices cols">
+            {Object.entries(k.magnetTypes).map(([v, l]) => <label class="choice"><input type="checkbox" name="mtype" value={v} /> {l}</label>)}
+          </div>
+          <p>{k.q.magnets.weight}</p>
+          <div class="choices inline">
+            {yesNo().map((o) => <label class="choice"><input type="radio" name="weight" value={o.v} /> {o.l}</label>)}
+          </div>
+        </div>
+        <label class="choice" style="margin-top:10px"><input type="checkbox" name="defence" value="1" /> {k.q.magnets.defence}</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>{k.q.waste.title}</legend>
+        <p>{k.q.waste.text}</p>
+        <div class="choices inline">
+          {yesNo().map((o) => <label class="choice"><input type="radio" name="waste" value={o.v} /> {o.l}</label>)}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{k.q.project.title}</legend>
+        <p>{k.q.project.text}</p>
+        <div class="choices">
+          {Object.entries(k.q.project.options).map(([v, l]) => <label class="choice"><input type="radio" name="project" value={v} /> {l}</label>)}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{k.q.market.title}</legend>
+        <p>{k.q.market.text}</p>
+        <div class="choices inline">
+          {yesNo(false).map((o) => <label class="choice"><input type="radio" name="market" value={o.v} /> {o.l}</label>)}
+        </div>
+      </fieldset>
+    </form>
+
+    <aside class="tool-result" aria-live="polite">
+      <h2>{k.resultsTitle}</h2>
+      <p class="muted" data-empty>{k.empty}</p>
+      <p class="callout" data-none hidden>{k.groups.none}</p>
+      {
+        (['applies', 'check', 'indirect'] as const).map((g) => (
+          <section data-group={g} hidden>
+            <h3 class:list={['group-title', g]}>
+              {k.groups[g]} <span class="badge" data-n />
+            </h3>
+            <div data-slot />
+          </section>
+        ))
+      }
+      <div hidden data-pool>
+        {
+          order.map((id) => {
+            const o = k.o[id] as { title: string; ref: string; what: string; when: string; next?: string; link?: string; pending?: string };
+            return (
+              <article class="result-card" data-o={id}>
+                <header>
+                  <h4>{o.title}</h4>
+                  <span class="badge">{o.ref}</span>
+                </header>
+                <dl>
+                  <dt>{k.labels.what}</dt>
+                  <dd>{o.what}</dd>
+                  <dt>{k.labels.when}</dt>
+                  <dd>{o.when}</dd>
+                </dl>
+                {o.pending && <p class="small pending">{o.pending}</p>}
+                {o.link && (
+                  <a class="btn ghost" href={href(o.link)}>
+                    {o.next} →
+                  </a>
+                )}
+              </article>
+            );
+          })
+        }
+      </div>
+      <p class="fig-note">
+        {c.disclaimer} <a href={REG_URL}>Regulation (EU) 2024/1252</a>.
+      </p>
+    </aside>
+  </div>
+</Base>
+
+<script>
+  import '../scripts/crma-checker.ts';
+</script>

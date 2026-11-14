@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { site } from '../site.config';
-import { ui } from '../i18n';
+import { ui, crma } from '../i18n';
 import { href, fmtTimestamp } from '../lib/format';
 import { pipelineStatus } from '../lib/data';
 
@@ -19,6 +19,7 @@ const nav = [
   { key: 'materials', path: '/materials/', label: t.nav.materials },
   { key: 'prices', path: '/prices/', label: t.nav.prices },
   { key: 'supply-risk', path: '/supply-risk/', label: t.nav.supplyRisk },
+  { key: 'crma', path: '/crma/', label: crma(locale).nav },
   { key: 'methodology', path: '/methodology/', label: t.nav.methodology },
 ];
 ---

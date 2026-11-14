@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { crma } from '../i18n';
+import { REG_URL } from '../i18n/crma.en';
+import { riskMaterials, EU27_NAMES } from '../lib/crmaData';
+import { href } from '../lib/format';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const c = crma(locale);
+const r = c.risk;
+const payload = JSON.stringify({ t: r, materials: riskMaterials(), eu: EU27_NAMES, base: href('/materials/') }).replace(/</g, '\\u003c');
+---
+
+<Base locale={locale} current="crma" title={r.title} description={r.lede}>
+  <p class="small no-print"><a href={href('/crma/')}>← {c.hub.title}</a></p>
+  <div class="page-head">
+    <span class="badge">Article 24</span>
+    <h1 style="margin-top:10px">{r.title}</h1>
+    <p class="lede">{r.lede}</p>
+    <ol class="steps">
+      {r.steps.map((s) => <li>{s}</li>)}
+    </ol>
+  </div>
+  <crma-risk>
+    <script type="application/json" set:html={payload} />
+  </crma-risk>
+  <p class="fig-note no-print">
+    {c.disclaimer} <a href={REG_URL}>Regulation (EU) 2024/1252</a>.
+  </p>
+</Base>
+
+<script>
+  import '../scripts/crma-risk.ts';
+</script>
