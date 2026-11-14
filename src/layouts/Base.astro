@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import { site } from '../site.config';
+import { ui } from '../i18n';
+import { href, fmtTimestamp } from '../lib/format';
+import { pipelineStatus } from '../lib/data';
+
+interface Props {
+  title?: string;
+  description?: string;
+  locale?: string;
+  current?: string;
+}
+const { title, description, locale = site.defaultLocale, current = '' } = Astro.props;
+const t = ui(locale);
+const fullTitle = title ? `${title} · ${site.shortName}` : `${site.name}`;
+const desc = description ?? t.meta.description;
+const nav = [
+  { key: 'materials', path: '/materials/', label: t.nav.materials },
+  { key: 'prices', path: '/prices/', label: t.nav.prices },
+  { key: 'supply-risk', path: '/supply-risk/', label: t.nav.supplyRisk },
+  { key: 'methodology', path: '/methodology/', label: t.nav.methodology },
+];
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
+    <script is:inline>
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.nav.skip}</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={href('/')}>
+          <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+            <rect x="1" y="1" width="24" height="24" rx="6" fill="var(--ink)"></rect>
+            <path d="M7 17.5 11 11l3.5 4 4.5-7" fill="none" stroke="var(--surface)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>{site.shortName}</span>
+        </a>
+        <nav class="nav" aria-label={t.nav.main}>
+          {nav.map((n) => <a href={href(n.path)} aria-current={current === n.key ? 'page' : undefined}>{n.label}</a>)}
+          <a class="cta" href={href('/join/')} aria-current={current === 'join' ? 'page' : undefined}>{t.nav.join}</a>
+        </nav>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label={t.nav.theme} title={t.nav.theme}>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm0 12.5v-11a5.5 5.5 0 0 1 0 11Z" fill="currentColor"></path></svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <div class="wrap"><slot /></div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div>
+          <p><strong>{site.name}</strong></p>
+          <p>{t.footer.about}</p>
+        </div>
+        <div>
+          <p>{t.footer.data}</p>
+          <p>{t.footer.updated}: {fmtTimestamp(pipelineStatus.updated)}</p>
+        </div>
+        <div>
+          <p><a href={href('/methodology/')}>{t.footer.methodology}</a> · <a href={site.repo}>{t.footer.source}</a></p>
+          <p>{t.footer.disclaimer}</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      import '../scripts/ui.ts';
+    </script>
+  </body>
+</html>

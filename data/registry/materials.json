@@ -1,0 +1,1430 @@
+{
+  "materials": [
+    {
+      "slug": "aluminium-bauxite",
+      "name": "Aluminium / bauxite",
+      "short": "Al",
+      "group": "Base and bulk metals",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital",
+        "defence"
+      ],
+      "prices": [
+        {
+          "source": "yahoo",
+          "symbol": "ALI=F",
+          "label": "Aluminium futures, COMEX front month",
+          "unit": "USD/t",
+          "factor": 1.0
+        },
+        {
+          "source": "imf",
+          "code": "PALUM",
+          "label": "Aluminium, 99.5% min, LME spot, CIF UK",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "ALUMINUM",
+          "detail": "Price, ingot",
+          "label": "Aluminium ingot, US market spot"
+        },
+        {
+          "chapter": "BAUXITE AND ALUMINA",
+          "detail": "Price, average unit value of imports, f.a.s.",
+          "label": "Alumina, US import unit value"
+        },
+        {
+          "chapter": "BAUXITE AND ALUMINA",
+          "detail": "Price, average unit value of imports, free alongside ship",
+          "label": "Bauxite, US import unit value"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "BAUXITE AND ALUMINA",
+          "commodity": null,
+          "detail": "Bauxite, mine production",
+          "label": "Bauxite mine production",
+          "reserves_detail": "Bauxite reserves",
+          "comparable": true
+        },
+        {
+          "chapter": "BAUXITE AND ALUMINA",
+          "commodity": null,
+          "detail": "Alumina, refinery production",
+          "label": "Alumina refinery production",
+          "reserves_detail": null,
+          "comparable": true
+        },
+        {
+          "chapter": "ALUMINUM",
+          "commodity": null,
+          "detail": "Smelter production",
+          "label": "Primary aluminium smelter production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "760110",
+          "label": "Unwrought aluminium, not alloyed"
+        },
+        {
+          "code": "260600",
+          "label": "Bauxite (aluminium ores)"
+        },
+        {
+          "code": "281820",
+          "label": "Alumina (aluminium oxide)"
+        }
+      ]
+    },
+    {
+      "slug": "antimony",
+      "name": "Antimony",
+      "short": "Sb",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "green",
+        "defence"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "ANTIMONY",
+          "detail": "Price, metal",
+          "label": "Antimony metal"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "ANTIMONY",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "811010",
+          "label": "Unwrought antimony and powders"
+        },
+        {
+          "code": "282580",
+          "label": "Antimony oxides"
+        }
+      ]
+    },
+    {
+      "slug": "arsenic",
+      "name": "Arsenic",
+      "short": "As",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "digital"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "ARSENIC",
+          "detail": "Price, metal",
+          "label": "Arsenic metal, US warehouse"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "ARSENIC",
+          "commodity": null,
+          "detail": "Production (arsenic trioxide, gross weight)",
+          "label": "Arsenic trioxide production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "280480",
+          "label": "Arsenic"
+        }
+      ]
+    },
+    {
+      "slug": "baryte",
+      "name": "Baryte",
+      "short": "BaSO4",
+      "group": "Industrial minerals",
+      "strategic": false,
+      "themes": [
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "BARITE",
+          "detail": "Price, average unit value",
+          "label": "Ground baryte, ex-works"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "BARITE",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "251110",
+          "label": "Natural barium sulphate (barytes)"
+        }
+      ]
+    },
+    {
+      "slug": "beryllium",
+      "name": "Beryllium",
+      "short": "Be",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "digital",
+        "defence"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "BERYLLIUM",
+          "detail": "Price, annual average unit value",
+          "label": "Beryllium-copper master alloy, per kg of contained Be"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "BERYLLIUM",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (beryllium content)",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "811212",
+          "label": "Unwrought beryllium and powders"
+        }
+      ]
+    },
+    {
+      "slug": "bismuth",
+      "name": "Bismuth",
+      "short": "Bi",
+      "group": "Technology metals",
+      "strategic": true,
+      "themes": [
+        "industrial",
+        "digital"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "BISMUTH",
+          "detail": "Price, average",
+          "label": "Bismuth metal"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "BISMUTH",
+          "commodity": null,
+          "detail": "Refinery production",
+          "label": "Refinery production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "8106",
+          "label": "Bismuth and articles thereof"
+        }
+      ]
+    },
+    {
+      "slug": "boron",
+      "name": "Boron / borates",
+      "short": "B",
+      "group": "Industrial minerals",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "BORON",
+          "detail": "Price, average unit value",
+          "label": "Borates, US import unit value, CIF"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "BORON",
+          "commodity": null,
+          "detail": "Production",
+          "label": "Production, all forms (not comparable across countries)",
+          "reserves_detail": "Reserves",
+          "comparable": false
+        }
+      ],
+      "trade": [
+        {
+          "code": "252800",
+          "label": "Natural borates and concentrates"
+        },
+        {
+          "code": "281000",
+          "label": "Boron oxides and boric acids"
+        }
+      ]
+    },
+    {
+      "slug": "cobalt",
+      "name": "Cobalt",
+      "short": "Co",
+      "group": "Battery materials",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital",
+        "defence"
+      ],
+      "prices": [
+        {
+          "source": "imf",
+          "code": "PCOBA",
+          "label": "Cobalt, 99.8% min, LME spot",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "COBALT",
+          "detail": "Price, average, dollars per pound: London Metal Exchange",
+          "label": "Cobalt, LME cash"
+        },
+        {
+          "chapter": "COBALT",
+          "detail": "Price, average, dollars per pound: U.S. spot",
+          "label": "Cobalt cathode, US spot"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "COBALT",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "810520",
+          "label": "Cobalt mattes, unwrought cobalt and powders"
+        },
+        {
+          "code": "282200",
+          "label": "Cobalt oxides and hydroxides"
+        }
+      ]
+    },
+    {
+      "slug": "coking-coal",
+      "name": "Coking coal",
+      "short": "Coal",
+      "group": "Energy and gases",
+      "strategic": false,
+      "themes": [
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [],
+      "production": [],
+      "trade": [
+        {
+          "code": "27011210",
+          "label": "Coking coal"
+        }
+      ]
+    },
+    {
+      "slug": "copper",
+      "name": "Copper",
+      "short": "Cu",
+      "group": "Base and bulk metals",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital",
+        "defence"
+      ],
+      "prices": [
+        {
+          "source": "yahoo",
+          "symbol": "HG=F",
+          "label": "Copper futures, COMEX front month",
+          "unit": "USD/t",
+          "factor": 2204.62262
+        },
+        {
+          "source": "imf",
+          "code": "PCOPP",
+          "label": "Copper, grade A cathode, LME spot, CIF European ports",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "COPPER",
+          "detail": "Price, annual average, cents per pound: London Metal Exchange",
+          "label": "Copper grade A, LME cash"
+        },
+        {
+          "chapter": "COPPER",
+          "detail": "Price, annual average, cents per pound: COMEX",
+          "label": "Copper high-grade, COMEX first position"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "COPPER",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        },
+        {
+          "chapter": "COPPER",
+          "commodity": null,
+          "detail": "Refinery production",
+          "label": "Refinery production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "740311",
+          "label": "Refined copper cathodes"
+        },
+        {
+          "code": "260300",
+          "label": "Copper ores and concentrates"
+        }
+      ]
+    },
+    {
+      "slug": "feldspar",
+      "name": "Feldspar",
+      "short": "Fsp",
+      "group": "Industrial minerals",
+      "strategic": false,
+      "themes": [
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "FELDSPAR AND NEPHELINE SYENITE",
+          "detail": "Price, average unit value, dollars per metric ton: Feldspar only",
+          "label": "Feldspar, US marketable production"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "FELDSPAR AND NEPHELINE SYENITE",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "252910",
+          "label": "Feldspar"
+        }
+      ]
+    },
+    {
+      "slug": "fluorspar",
+      "name": "Fluorspar",
+      "short": "CaF2",
+      "group": "Industrial minerals",
+      "strategic": false,
+      "themes": [
+        "green",
+        "digital"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "FLUORSPAR",
+          "detail": "Price, average unit value of imports, cost, insurance, and freight, dollars per metric ton: Aci",
+          "label": "Acid grade, US import unit value, CIF"
+        },
+        {
+          "chapter": "FLUORSPAR",
+          "detail": "Price, average unit value of imports, cost, insurance, and freight, dollars per metric ton: Met",
+          "label": "Metallurgical grade, US import unit value, CIF"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "FLUORSPAR",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "252922",
+          "label": "Fluorspar, more than 97% CaF2 (acid grade)"
+        },
+        {
+          "code": "252921",
+          "label": "Fluorspar, 97% CaF2 or less"
+        }
+      ]
+    },
+    {
+      "slug": "gallium",
+      "name": "Gallium",
+      "short": "Ga",
+      "group": "Technology metals",
+      "strategic": true,
+      "themes": [
+        "digital",
+        "green",
+        "defence"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "GALLIUM",
+          "detail": "Price, average unit value of imports",
+          "label": "Gallium, US import unit value"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "GALLIUM",
+          "commodity": null,
+          "detail": "Primary production",
+          "label": "Primary (low-purity) production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "81129289",
+          "label": "Unwrought gallium and powders"
+        }
+      ]
+    },
+    {
+      "slug": "germanium",
+      "name": "Germanium",
+      "short": "Ge",
+      "group": "Technology metals",
+      "strategic": true,
+      "themes": [
+        "digital",
+        "defence",
+        "green"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "GERMANIUM",
+          "detail": "Price, annual average, dollars per kilogram: Germanium metal",
+          "label": "Germanium metal"
+        },
+        {
+          "chapter": "GERMANIUM",
+          "detail": "Price, annual average, dollars per kilogram: Germanium dioxide",
+          "label": "Germanium dioxide"
+        }
+      ],
+      "production": [],
+      "trade": [
+        {
+          "code": "81129295",
+          "label": "Unwrought germanium and powders"
+        }
+      ]
+    },
+    {
+      "slug": "hafnium",
+      "name": "Hafnium",
+      "short": "Hf",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "defence",
+        "digital"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "ZIRCONIUM AND HAFNIUM",
+          "detail": "Price: Hafnium, unwrought",
+          "label": "Hafnium, unwrought"
+        }
+      ],
+      "production": [],
+      "trade": [
+        {
+          "code": "811231",
+          "label": "Unwrought hafnium, waste, scrap and powders"
+        }
+      ]
+    },
+    {
+      "slug": "helium",
+      "name": "Helium",
+      "short": "He",
+      "group": "Energy and gases",
+      "strategic": false,
+      "themes": [
+        "digital",
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [],
+      "production": [
+        {
+          "chapter": "HELIUM AND RARE GASES",
+          "commodity": "Helium",
+          "detail": "Helium Production",
+          "label": "Helium production",
+          "reserves_detail": "Helium Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "28042910",
+          "label": "Helium"
+        }
+      ]
+    },
+    {
+      "slug": "heavy-rare-earths",
+      "name": "Heavy rare earth elements",
+      "short": "HREE",
+      "group": "Rare earths",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital",
+        "defence"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "RARE EARTHS (Heavy)",
+          "detail": "Price, average, dollars per kilogram: Dysprosium oxide",
+          "label": "Dysprosium oxide, 99.5% min"
+        },
+        {
+          "chapter": "RARE EARTHS (Heavy)",
+          "detail": "Price, average, dollars per kilogram: Terbium oxide",
+          "label": "Terbium oxide, 99.99% min"
+        }
+      ],
+      "production": [],
+      "trade": [
+        {
+          "code": "28053031",
+          "label": "Gadolinium, terbium and dysprosium metals, 95% purity or more"
+        },
+        {
+          "code": "28053039",
+          "label": "Other heavy rare-earth metals and yttrium, 95% purity or more"
+        },
+        {
+          "code": "284690",
+          "label": "Rare-earth compounds excluding cerium (light and heavy combined)"
+        }
+      ]
+    },
+    {
+      "slug": "light-rare-earths",
+      "name": "Light rare earth elements",
+      "short": "LREE",
+      "group": "Rare earths",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital",
+        "defence"
+      ],
+      "prices": [
+        {
+          "source": "imf",
+          "code": "PREODOM",
+          "label": "Rare earth carbonate, 42-45% REO, China domestic",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Neodymium-praseodymium",
+          "label": "NdPr oxide, 99% min"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Cerium oxide",
+          "label": "Cerium oxide, 99.5% min"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "RARE EARTHS",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production, all rare earths (rare-earth-oxide equivalent)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "28053029",
+          "label": "Praseodymium, neodymium and samarium metals, 95% purity or more"
+        },
+        {
+          "code": "28053021",
+          "label": "Cerium and lanthanum metals, 95% purity or more"
+        },
+        {
+          "code": "284610",
+          "label": "Cerium compounds"
+        }
+      ]
+    },
+    {
+      "slug": "lithium",
+      "name": "Lithium",
+      "short": "Li",
+      "group": "Battery materials",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital"
+      ],
+      "prices": [
+        {
+          "source": "imf",
+          "code": "PLITH",
+          "label": "Lithium metal, 99% min, battery grade",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "LITHIUM",
+          "detail": "Price, annual average",
+          "label": "Battery-grade lithium carbonate"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "LITHIUM",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (lithium content)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "283691",
+          "label": "Lithium carbonates"
+        },
+        {
+          "code": "282520",
+          "label": "Lithium oxide and hydroxide"
+        }
+      ]
+    },
+    {
+      "slug": "magnesium",
+      "name": "Magnesium",
+      "short": "Mg",
+      "group": "Base and bulk metals",
+      "strategic": true,
+      "themes": [
+        "green",
+        "defence",
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "MAGNESIUM METAL",
+          "detail": "Price, annual average: European free market",
+          "label": "Magnesium, European free market"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "MAGNESIUM METAL",
+          "commodity": null,
+          "detail": "Smelter production",
+          "label": "Primary smelter production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "810411",
+          "label": "Unwrought magnesium, 99.8% or more"
+        }
+      ]
+    },
+    {
+      "slug": "manganese",
+      "name": "Manganese",
+      "short": "Mn",
+      "group": "Battery materials",
+      "strategic": true,
+      "themes": [
+        "green",
+        "industrial"
+      ],
+      "prices": [
+        {
+          "source": "imf",
+          "code": "PMANGELE",
+          "label": "Electrolytic manganese, CIF Northwest Europe",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "MANGANESE",
+          "detail": "Price, average, manganese content",
+          "label": "Manganese ore, CIF China, per metric ton unit"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "MANGANESE",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (manganese content)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "260200",
+          "label": "Manganese ores and concentrates"
+        },
+        {
+          "code": "81110011",
+          "label": "Unwrought manganese and powders"
+        },
+        {
+          "code": "282010",
+          "label": "Manganese dioxide"
+        }
+      ]
+    },
+    {
+      "slug": "natural-graphite",
+      "name": "Natural graphite",
+      "short": "C",
+      "group": "Battery materials",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "GRAPHITE (NATURAL)",
+          "detail": "Price, average unit value of imports, dollars per metric ton at foreign ports: Flake",
+          "label": "Flake graphite, US import unit value"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "GRAPHITE (NATURAL)",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "250410",
+          "label": "Natural graphite, powder or flakes"
+        },
+        {
+          "code": "250490",
+          "label": "Natural graphite, other forms"
+        }
+      ]
+    },
+    {
+      "slug": "nickel",
+      "name": "Nickel",
+      "short": "Ni",
+      "group": "Battery materials",
+      "strategic": true,
+      "themes": [
+        "green",
+        "defence",
+        "industrial"
+      ],
+      "prices": [
+        {
+          "source": "imf",
+          "code": "PNICK",
+          "label": "Nickel, melting grade, LME spot, CIF European ports",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "NICKEL",
+          "detail": "Price, average annual, London Metal Exchange (LME), cash: Dollars per metric ton",
+          "label": "Nickel, LME cash"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "NICKEL",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "750210",
+          "label": "Unwrought nickel, not alloyed"
+        },
+        {
+          "code": "28332400",
+          "label": "Nickel sulphates"
+        }
+      ]
+    },
+    {
+      "slug": "niobium",
+      "name": "Niobium",
+      "short": "Nb",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "green",
+        "defence",
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "NIOBIUM (COLUMBIUM)",
+          "detail": "Price, average unit value, ferroniobium",
+          "label": "Ferroniobium, per kg"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "NIOBIUM (COLUMBIUM)",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (niobium content)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "720293",
+          "label": "Ferro-niobium"
+        }
+      ]
+    },
+    {
+      "slug": "phosphate-rock",
+      "name": "Phosphate rock",
+      "short": "P-rock",
+      "group": "Industrial minerals",
+      "strategic": false,
+      "themes": [
+        "green",
+        "industrial"
+      ],
+      "prices": [
+        {
+          "source": "worldbank",
+          "column": "Phosphate rock",
+          "label": "Phosphate rock, FOB North Africa",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "PHOSPHATE ROCK",
+          "detail": "Price, average value",
+          "label": "Phosphate rock, FOB mine (US)"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "PHOSPHATE ROCK",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "251010",
+          "label": "Natural calcium phosphates, unground"
+        },
+        {
+          "code": "251020",
+          "label": "Natural calcium phosphates, ground"
+        }
+      ]
+    },
+    {
+      "slug": "phosphorus",
+      "name": "Phosphorus",
+      "short": "P4",
+      "group": "Industrial minerals",
+      "strategic": false,
+      "themes": [
+        "digital",
+        "green",
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [],
+      "production": [],
+      "trade": [
+        {
+          "code": "280470",
+          "label": "Phosphorus (elemental)"
+        }
+      ]
+    },
+    {
+      "slug": "platinum-group-metals",
+      "name": "Platinum group metals",
+      "short": "PGM",
+      "group": "Precious metals",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital",
+        "industrial"
+      ],
+      "prices": [
+        {
+          "source": "yahoo",
+          "symbol": "PL=F",
+          "label": "Platinum futures, NYMEX front month",
+          "unit": "USD/oz t",
+          "factor": 1.0
+        },
+        {
+          "source": "yahoo",
+          "symbol": "PA=F",
+          "label": "Palladium futures, NYMEX front month",
+          "unit": "USD/oz t",
+          "factor": 1.0
+        },
+        {
+          "source": "imf",
+          "code": "PPLAT",
+          "label": "Platinum, spot",
+          "unit": "USD/oz t"
+        },
+        {
+          "source": "imf",
+          "code": "PPALLA",
+          "label": "Palladium, spot",
+          "unit": "USD/oz t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "PLATINUM-GROUP METALS",
+          "detail": "Price, dollars per troy ounce: Rhodium",
+          "label": "Rhodium"
+        },
+        {
+          "chapter": "PLATINUM-GROUP METALS",
+          "detail": "Price, dollars per troy ounce: Iridium",
+          "label": "Iridium"
+        },
+        {
+          "chapter": "PLATINUM-GROUP METALS",
+          "detail": "Price, dollars per troy ounce: Ruthenium",
+          "label": "Ruthenium"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "PLATINUM-GROUP METALS",
+          "commodity": "Platinum",
+          "detail": "Mine production: Platinum",
+          "label": "Platinum mine production",
+          "reserves_detail": null,
+          "comparable": true
+        },
+        {
+          "chapter": "PLATINUM-GROUP METALS",
+          "commodity": "Palladium",
+          "detail": "Mine production: Palladium",
+          "label": "Palladium mine production",
+          "reserves_detail": "PGM reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "711011",
+          "label": "Platinum, unwrought or powder"
+        },
+        {
+          "code": "711021",
+          "label": "Palladium, unwrought or powder"
+        },
+        {
+          "code": "711031",
+          "label": "Rhodium, unwrought or powder"
+        },
+        {
+          "code": "711041",
+          "label": "Iridium, osmium and ruthenium, unwrought or powder"
+        }
+      ]
+    },
+    {
+      "slug": "scandium",
+      "name": "Scandium",
+      "short": "Sc",
+      "group": "Rare earths",
+      "strategic": false,
+      "themes": [
+        "green",
+        "defence"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "SCANDIUM",
+          "detail": "Price, global, dollars per kilogram, range of average values: Scandium-aluminum alloy",
+          "label": "Scandium-aluminium master alloy, 2% Sc"
+        }
+      ],
+      "production": [],
+      "trade": [
+        {
+          "code": "28053040",
+          "label": "Scandium, 95% purity or more"
+        }
+      ]
+    },
+    {
+      "slug": "silicon-metal",
+      "name": "Silicon metal",
+      "short": "Si",
+      "group": "Base and bulk metals",
+      "strategic": true,
+      "themes": [
+        "green",
+        "digital"
+      ],
+      "prices": [
+        {
+          "source": "imf",
+          "code": "PSILLUMP",
+          "label": "Silicon lumps, CIF Northwest Europe",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "SILICON",
+          "detail": "Price, average, cents per pound of silicon: Silicon metal",
+          "label": "Silicon metal, US"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "SILICON",
+          "commodity": null,
+          "detail": "Silicon metal",
+          "label": "Silicon metal production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "280469",
+          "label": "Silicon, less than 99.99% (metallurgical grade)"
+        },
+        {
+          "code": "280461",
+          "label": "Silicon, 99.99% or more (polysilicon)"
+        }
+      ]
+    },
+    {
+      "slug": "strontium",
+      "name": "Strontium",
+      "short": "Sr",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "industrial",
+        "green"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "STRONTIUM",
+          "detail": "Price, average unit value of celestite imports",
+          "label": "Celestite, US import unit value"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "STRONTIUM",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (celestite)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "283692",
+          "label": "Strontium carbonate"
+        },
+        {
+          "code": "28051910",
+          "label": "Strontium and barium metals"
+        }
+      ]
+    },
+    {
+      "slug": "tantalum",
+      "name": "Tantalum",
+      "short": "Ta",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "digital",
+        "defence"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "TANTALUM",
+          "detail": "Price, tantalite",
+          "label": "Tantalite, per kg of Ta2O5 content"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "TANTALUM",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (tantalum content)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "810320",
+          "label": "Unwrought tantalum and powders"
+        }
+      ]
+    },
+    {
+      "slug": "titanium-metal",
+      "name": "Titanium metal",
+      "short": "Ti",
+      "group": "Base and bulk metals",
+      "strategic": true,
+      "themes": [
+        "defence",
+        "green",
+        "industrial"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "TITANIUM AND TITANIUM DIOXIDE",
+          "detail": "Price, dollars per kilogram",
+          "label": "Titanium sponge"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "TITANIUM AND TITANIUM DIOXIDE",
+          "commodity": "Titanium Sponge Metal",
+          "detail": "Titanium sponge metal production",
+          "label": "Titanium sponge production",
+          "reserves_detail": null,
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "810820",
+          "label": "Unwrought titanium and powders"
+        }
+      ]
+    },
+    {
+      "slug": "tungsten",
+      "name": "Tungsten",
+      "short": "W",
+      "group": "Technology metals",
+      "strategic": true,
+      "themes": [
+        "defence",
+        "industrial",
+        "digital"
+      ],
+      "prices": [],
+      "usgs_prices": [
+        {
+          "chapter": "TUNGSTEN",
+          "detail": "Price, concentrate",
+          "label": "Tungsten concentrate, Rotterdam, per dry metric ton unit of WO3"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "TUNGSTEN",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (tungsten content)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "284180",
+          "label": "Tungstates (including ammonium paratungstate)"
+        },
+        {
+          "code": "810110",
+          "label": "Tungsten powders"
+        },
+        {
+          "code": "720280",
+          "label": "Ferro-tungsten"
+        },
+        {
+          "code": "261100",
+          "label": "Tungsten ores and concentrates"
+        }
+      ]
+    },
+    {
+      "slug": "vanadium",
+      "name": "Vanadium",
+      "short": "V",
+      "group": "Technology metals",
+      "strategic": false,
+      "themes": [
+        "green",
+        "industrial",
+        "defence"
+      ],
+      "prices": [
+        {
+          "source": "imf",
+          "code": "PVANPENT",
+          "label": "Vanadium pentoxide, CIF Northwest Europe",
+          "unit": "USD/t"
+        }
+      ],
+      "usgs_prices": [
+        {
+          "chapter": "VANADIUM",
+          "detail": "Price, average, vanadium pentoxide",
+          "label": "Vanadium pentoxide"
+        }
+      ],
+      "production": [
+        {
+          "chapter": "VANADIUM",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production (vanadium content)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
+      "trade": [
+        {
+          "code": "282530",
+          "label": "Vanadium oxides and hydroxides"
+        },
+        {
+          "code": "720292",
+          "label": "Ferro-vanadium"
+        }
+      ]
+    }
+  ]
+}

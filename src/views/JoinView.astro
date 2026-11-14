@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui } from '../i18n';
+import { site } from '../site.config';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+const j = t.join;
+const formId = site.tallyFormId;
+---
+
+<Base locale={locale} current="join" title={j.title} description={j.lede}>
+  <div class="page-head">
+    <h1>{j.title}</h1>
+    <p class="lede">{j.lede}</p>
+  </div>
+  <div class="grid cols-2">
+    <div class="grid" style="align-content:start">
+      {
+        j.items.map((i) => (
+          <div class="card">
+            <h3>{i.title}</h3>
+            <p class="muted" style="margin:0">{i.text}</p>
+          </div>
+        ))
+      }
+      <p class="small">{j.privacy}</p>
+    </div>
+    <div class="card">
+      {
+        formId ? (
+          <iframe class="tally-frame" data-tally-src={`https://tally.so/embed/${formId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`} loading="lazy" title={j.formTitle} />
+        ) : (
+          <p class="muted" style="margin:0">{j.pending}</p>
+        )
+      }
+    </div>
+  </div>
+  {formId && <script is:inline src="https://tally.so/widgets/embed.js" async onload="Tally.loadEmbeds()" />}
+</Base>

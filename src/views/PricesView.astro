@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Spark from '../components/Spark.astro';
+import Delta from '../components/Delta.astro';
+import { ui } from '../i18n';
+import { priceIndex, material, isStale } from '../lib/data';
+import { href, fmtNumber, fmtDate } from '../lib/format';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+const p = t.prices;
+const rank = { daily: 0, monthly: 1, annual: 2 } as const;
+const rows = [...priceIndex.series].sort((a, b) => rank[a.frequency] - rank[b.frequency] || a.source.localeCompare(b.source) || a.material.localeCompare(b.material));
+const sources = [...new Set(rows.map((r) => r.source_name))];
+---
+
+<Base locale={locale} current="prices" title={p.title} description={p.lede}>
+  <div class="page-head">
+    <h1>{p.title}</h1>
+    <p class="lede">{p.lede}</p>
+  </div>
+
+  <section aria-label={p.layersTitle}>
+    <div class="grid cols-4">
+      {
+        p.layers.map((l) => (
+          <div class="card">
+            <span class="badge freq">{l.freq}</span>
+            <h3 style="margin-top:10px">{l.title}</h3>
+            <p class="small" style="margin:0">{l.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="filters" data-filter-for="prices-table">
+      <input type="search" placeholder={p.searchPlaceholder} aria-label={p.searchPlaceholder} />
+      <div class="seg" role="group" aria-label={t.common.frequency}>
+        <button type="button" data-attr="freq" data-value="" aria-pressed="true">{t.common.all}</button>
+        <button type="button" data-attr="freq" data-value="daily" aria-pressed="false">{t.freq.daily}</button>
+        <button type="button" data-attr="freq" data-value="monthly" aria-pressed="false">{t.freq.monthly}</button>
+        <button type="button" data-attr="freq" data-value="annual" aria-pressed="false">{t.freq.annual}</button>
+      </div>
+      <select data-attr="source" aria-label={t.common.source}>
+        <option value="">{p.filterSource}</option>
+        {sources.map((s) => <option value={s}>{s}</option>)}
+      </select>
+      <span class="small"><span data-count>{rows.length}</span> {p.count} {t.common.shown}</span>
+    </div>
+    <div class="table-scroll">
+      <table class="data" id="prices-table" data-sortable>
+        <thead>
+          <tr>
+            <th data-sort="text">{t.common.material}</th>
+            <th data-sort="text">{t.common.series}</th>
+            <th>{t.common.frequency}</th>
+            <th class="r">{t.common.latest}</th>
+            <th data-sort="text">{t.common.period}</th>
+            <th class="r" data-sort="num">{t.common.change}</th>
+            <th class="r" data-sort="num">{t.common.change1y}</th>
+            <th>{t.common.trend}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((s) => (
+              <tr data-freq={s.frequency} data-source={s.source_name} data-search={`${material(s.material).name} ${s.label} ${s.source_name}`}>
+                <td class="name" data-v={material(s.material).name}>
+                  <a href={href(`/materials/${s.material}/#prices`)}>{material(s.material).name}</a>
+                </td>
+                <td>
+                  {s.label}
+                  <span class="sub">{s.source_name}</span>
+                </td>
+                <td>
+                  <span class="badge freq">{t.freq[s.frequency]}</span>
+                </td>
+                <td class="r">
+                  {fmtNumber(s.latest)} <span class="muted">{s.unit}</span>
+                </td>
+                <td data-v={s.latest_date}>
+                  {fmtDate(s.latest_date)}
+                  {isStale(s) && <span class="sub">{p.stale}</span>}
+                </td>
+                <td class="r" data-v={s.change_pct ?? ''}>
+                  <Delta value={s.change_pct} />
+                </td>
+                <td class="r" data-v={s.change_1y_pct ?? ''}>
+                  <Delta value={s.change_1y_pct} />
+                </td>
+                <td>
+                  <Spark values={s.spark} />
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="fig-note">
+      {t.common.change}: against the previous observation of the same series (day, month or year). <a href={href('/methodology/')}>{t.footer.methodology}</a>
+    </p>
+  </section>
+</Base>

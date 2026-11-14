@@ -1,0 +1,31 @@
+---
+// Wraps the <ts-chart> custom element: serialises the series for the client.
+export interface ChartSeries {
+  id: string;
+  label: string;
+  unit: string;
+  frequency: 'daily' | 'monthly' | 'annual';
+  kind?: 'line' | 'column';
+  group?: string;
+  source?: string;
+  sourceUrl?: string;
+  note?: string | null;
+  points: [string, number][];
+}
+interface Props {
+  series: ChartSeries[];
+  initial?: string;
+  selectLabel?: string;
+}
+const { series, initial, selectLabel } = Astro.props;
+// "</script" inside a label would end the JSON block early
+const payload = JSON.stringify(series).replace(/</g, '\\u003c');
+---
+
+<ts-chart series={initial} select-label={selectLabel}>
+  <script type="application/json" set:html={payload} />
+</ts-chart>
+
+<script>
+  import '../scripts/ts-chart.ts';
+</script>

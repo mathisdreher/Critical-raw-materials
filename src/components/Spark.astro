@@ -1,0 +1,28 @@
+---
+// Minimal trend line for table rows. Decorative: the values sit next to it.
+interface Props {
+  values: number[];
+}
+const { values } = Astro.props;
+const w = 96;
+const h = 28;
+const pad = 3;
+const lo = Math.min(...values);
+const hi = Math.max(...values);
+const pts = values.map((v, i) => {
+  const x = pad + (i / Math.max(1, values.length - 1)) * (w - 2 * pad);
+  const y = pad + (1 - (v - lo) / (hi - lo || 1)) * (h - 2 * pad);
+  return [x, y];
+});
+const d = pts.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`).join('');
+const last = pts[pts.length - 1];
+---
+
+{
+  values.length > 1 && (
+    <svg class="spark" viewBox={`0 0 ${w} ${h}`} aria-hidden="true">
+      <path d={d} />
+      <circle cx={last[0]} cy={last[1]} r="2.2" />
+    </svg>
+  )
+}

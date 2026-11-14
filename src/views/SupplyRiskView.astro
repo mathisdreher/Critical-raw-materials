@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+import BarList from '../components/BarList.astro';
+import Scatter from '../components/Scatter.astro';
+import { ui } from '../i18n';
+import { materials, criticality, importConcentration, topProducer } from '../lib/data';
+import { href, fmtDate, fmtNumber } from '../lib/format';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+const r = t.risk;
+
+const rows = materials.map((m) => ({ m, c: criticality(m.slug), imp: importConcentration(m.slug), top: topProducer(m.slug) }));
+const points = rows
+  .filter((x) => x.c?.supply_risk != null && x.c?.economic_importance != null)
+  .map((x) => ({ slug: x.m.slug, name: x.m.name, short: x.m.short, x: x.c!.economic_importance as number, y: x.c!.supply_risk as number, strategic: x.m.strategic }));
+const imports = rows.filter((x) => x.imp).sort((a, b) => b.imp!.share - a.imp!.share);
+const producers = rows.filter((x) => x.top).sort((a, b) => b.top!.share - a.top!.share);
+const window = imports[0]?.imp;
+const over = imports.filter((x) => x.imp!.share > 65).length;
+---
+
+<Base locale={locale} current="supply-risk" title={r.title} description={r.lede}>
+  <div class="page-head">
+    <h1>{r.title}</h1>
+    <p class="lede">{r.lede}</p>
+  </div>
+
+  <section class="card">
+    <p class="fig-title">{r.scatterTitle}</p>
+    <p class="fig-sub">{r.scatterSub}</p>
+    {
+      points.length > 0 ? (
+        <Scatter points={points} xLabel={r.xLabel} yLabel={r.yLabel} xThreshold={2.8} yThreshold={1.0} legend={r.legend} thresholdNote={r.thresholdNote} />
+      ) : (
+        <p class="muted">{r.scatterMissing}</p>
+      )
+    }
+    <p class="fig-note">{t.material.factsSource}</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{r.benchTitle}</h2></div>
+    <p class="muted" style="max-width:72ch">{t.home.benchSub}</p>
+    <div class="grid cols-4">
+      {
+        t.home.bench.map((b) => (
+          <div class="tile">
+            <div class="value">{b.value}</div>
+            <div class="sub">{b.label}</div>
+            <div class="meter" aria-hidden="true">
+              <span style={`width:${b.pct}%`} />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <p class="fig-note" style="max-width:86ch" set:html={t.home.projectsHtml} />
+  </section>
+
+  <section class="section">
+    <div class="grid cols-2">
+      <div class="card">
+        <p class="fig-title">{r.importTitle}</p>
+        <p class="fig-sub">
+          {window && r.importSub(fmtDate(window.from), fmtDate(window.to))} {over} of {imports.length} {r.over}.
+        </p>
+        <BarList
+          rows={imports.map((x) => ({
+            label: x.m.name,
+            href: href(`/materials/${x.m.slug}/#trade`),
+            value: x.imp!.share,
+            display: `${Math.round(x.imp!.share)}%`,
+            detail: x.imp!.country,
+            tip: `${x.imp!.share}% from ${x.imp!.country}|${x.m.name}|${x.imp!.product} (CN ${x.imp!.code})|HHI ${x.imp!.hhi}`,
+          }))}
+          max={100}
+          threshold={65}
+          thresholdLabel="65% benchmark"
+        />
+        <p class="fig-note">{r.importNote}</p>
+      </div>
+      <div class="card">
+        <p class="fig-title">{r.prodTitle}</p>
+        <p class="fig-sub">{r.prodSub}</p>
+        <BarList
+          rows={producers.map((x) => ({
+            label: x.m.name,
+            href: href(`/materials/${x.m.slug}/#supply`),
+            value: x.top!.share,
+            display: `${Math.round(x.top!.share)}%`,
+            detail: x.top!.country,
+            tip: `${x.top!.share}% ${x.top!.country}|${x.m.name}|${x.top!.stage}, ${x.top!.year}`,
+          }))}
+          max={100}
+        />
+        <p class="fig-note">{r.prodNote} USGS Mineral Commodity Summaries.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{r.tableTitle}</h2></div>
+    <div class="table-scroll">
+      <table class="data" data-sortable>
+        <thead>
+          <tr>
+            <th data-sort="text">{t.common.material}</th>
+            <th class="r" data-sort="num">{t.materials.cols.sr}</th>
+            <th class="r" data-sort="num">{t.materials.cols.ei}</th>
+            <th class="r" data-sort="num">{t.materials.cols.ir}</th>
+            <th data-sort="num">{r.cols.topProducer}</th>
+            <th data-sort="num">{r.cols.topOrigin}</th>
+            <th class="r" data-sort="num">{r.cols.hhi}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map(({ m, c, imp, top }) => (
+              <tr>
+                <td class="name" data-v={m.name}>
+                  <a href={href(`/materials/${m.slug}/`)}>{m.name}</a> {m.strategic && <span class="badge strategic">{t.common.strategic}</span>}
+                </td>
+                <td class="r" data-v={c?.supply_risk ?? ''}>{c?.supply_risk != null ? c.supply_risk.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
+                <td class="r" data-v={c?.economic_importance ?? ''}>{c?.economic_importance != null ? c.economic_importance.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
+                <td class="r" data-v={c?.import_reliance_pct ?? ''}>{c?.import_reliance_pct != null ? `${Math.round(c.import_reliance_pct)}%` : <span class="muted">{t.common.na}</span>}</td>
+                <td data-v={top?.share ?? ''}>
+                  {top ? (
+                    <>
+                      {top.country} <span class="muted num">{Math.round(top.share)}%</span>
+                    </>
+                  ) : (
+                    <span class="muted">{t.common.na}</span>
+                  )}
+                </td>
+                <td data-v={imp?.share ?? ''}>
+                  {imp ? (
+                    <>
+                      {imp.country} <span class="muted num">{Math.round(imp.share)}%</span> {imp.share > 65 && <span class="badge warn">⚠ {r.over}</span>}
+                    </>
+                  ) : (
+                    <span class="muted">{t.common.na}</span>
+                  )}
+                </td>
+                <td class="r" data-v={imp?.hhi ?? ''}>{imp?.hhi != null ? fmtNumber(imp.hhi) : <span class="muted">{t.common.na}</span>}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="fig-note">{r.hhiNote}</p>
+  </section>
+</Base>

@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import Delta from '../components/Delta.astro';
+import { ui } from '../i18n';
+import { materials, groups, criticality, headline, topProducer } from '../lib/data';
+import { href, fmtNumber, fmtDate } from '../lib/format';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+const m = t.materials;
+const rows = materials.map((mat) => ({ mat, c: criticality(mat.slug), p: headline(mat.slug), top: topProducer(mat.slug) }));
+---
+
+<Base locale={locale} current="materials" title={m.title} description={m.lede}>
+  <div class="page-head">
+    <h1>{m.title}</h1>
+    <p class="lede">{m.lede}</p>
+  </div>
+
+  <div class="filters" data-filter-for="materials-table">
+    <input type="search" placeholder={m.searchPlaceholder} aria-label={m.searchPlaceholder} />
+    <div class="seg" role="group" aria-label={t.common.strategic}>
+      <button type="button" data-attr="strategic" data-value="" aria-pressed="true">{t.common.all}</button>
+      <button type="button" data-attr="strategic" data-value="yes" aria-pressed="false">{m.filterStrategic}</button>
+    </div>
+    <select data-attr="group" aria-label={t.common.group}>
+      <option value="">{m.filterAllGroups}</option>
+      {groups.map((g) => <option value={g}>{t.groups[g] ?? g}</option>)}
+    </select>
+    <span class="small"><span data-count>{rows.length}</span> {m.count} {t.common.shown}</span>
+  </div>
+
+  <div class="table-scroll">
+    <table class="data" id="materials-table" data-sortable>
+      <thead>
+        <tr>
+          <th data-sort="text">{t.common.material}</th>
+          <th data-sort="text">{t.common.group}</th>
+          <th class="r" data-sort="num">{m.cols.sr}</th>
+          <th class="r" data-sort="num">{m.cols.ei}</th>
+          <th class="r" data-sort="num">{m.cols.ir}</th>
+          <th data-sort="num">{m.cols.top}</th>
+          <th class="r">{m.cols.price}</th>
+          <th class="r" data-sort="num">{t.common.change1y}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map(({ mat, c, p, top }) => (
+            <tr data-strategic={mat.strategic ? 'yes' : 'no'} data-group={mat.group} data-search={`${mat.name} ${mat.short} ${mat.group}`}>
+              <td class="name" data-v={mat.name}>
+                <a href={href(`/materials/${mat.slug}/`)}>{mat.name}</a> {mat.strategic && <span class="badge strategic">{t.common.strategic}</span>}
+              </td>
+              <td>{t.groups[mat.group] ?? mat.group}</td>
+              <td class="r" data-v={c?.supply_risk ?? ''}>{c?.supply_risk != null ? c.supply_risk.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
+              <td class="r" data-v={c?.economic_importance ?? ''}>{c?.economic_importance != null ? c.economic_importance.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
+              <td class="r" data-v={c?.import_reliance_pct ?? ''}>{c?.import_reliance_pct != null ? `${Math.round(c.import_reliance_pct)}%` : <span class="muted">{t.common.na}</span>}</td>
+              <td data-v={top?.share ?? ''}>
+                {top ? (
+                  <>
+                    {top.country} <span class="muted num">{Math.round(top.share)}%</span>
+                  </>
+                ) : (
+                  <span class="muted">{t.common.na}</span>
+                )}
+              </td>
+              <td class="r">
+                {p ? (
+                  <>
+                    {fmtNumber(p.latest)} <span class="muted">{p.unit}</span>
+                    <span class="sub">
+                      {t.freq[p.frequency]} · {fmtDate(p.latest_date)}
+                    </span>
+                  </>
+                ) : (
+                  <span class="muted">{t.common.na}</span>
+                )}
+              </td>
+              <td class="r" data-v={p?.change_1y_pct ?? ''}>
+                <Delta value={p?.change_1y_pct} />
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="fig-note">{t.material.factsSource} {t.risk.prodNote}</p>
+</Base>

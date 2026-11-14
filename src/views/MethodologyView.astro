@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui } from '../i18n';
+import { pipelineStatus, euStudy } from '../lib/data';
+import { fmtTimestamp } from '../lib/format';
+import { site } from '../site.config';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+const m = t.method;
+const order = ['yahoo', 'imf', 'worldbank', 'eurostat', 'usgs'];
+const euSource = euStudy.sources?.[0];
+---
+
+<Base locale={locale} current="methodology" title={m.title} description={m.lede}>
+  <div class="page-head">
+    <h1>{m.title}</h1>
+    <p class="lede">{m.lede}</p>
+  </div>
+
+  <section>
+    <h2>{m.scopeTitle}</h2>
+    <p class="prose" set:html={m.scopeHtml} />
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{m.sourcesTitle}</h2></div>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th>{t.common.source}</th>
+            <th>{m.cols.layer}</th>
+            <th>{m.cols.freq}</th>
+            <th>{m.cols.status}</th>
+            <th>{m.cols.licence}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            order
+              .filter((k) => pipelineStatus.sources[k])
+              .map((k) => {
+                const s = pipelineStatus.sources[k];
+                return (
+                  <tr>
+                    <td class="name">
+                      <a href={s.url}>{s.name}</a>
+                    </td>
+                    <td>{m.layers[k]}</td>
+                    <td>{m.refresh[k]}</td>
+                    <td>
+                      {fmtTimestamp(s.last_success ?? '')}
+                      <span class="sub">{s.ok ? `${m.ok}: ${s.detail}` : `⚠ ${m.failed}`}</span>
+                    </td>
+                    <td class="small">{s.licence}</td>
+                  </tr>
+                );
+              })
+          }
+          <tr>
+            <td class="name">{euSource ? <a href={euSource.url}>{euSource.title}</a> : 'European Commission, Study on the Critical Raw Materials for the EU 2023'}</td>
+            <td>{m.layers.eu}</td>
+            <td>{m.refresh.eu}</td>
+            <td>2023</td>
+            <td class="small">© European Union, reuse authorised with attribution (CC BY 4.0).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{m.howTitle}</h2></div>
+    <div class="grid cols-2">
+      {
+        m.how.map((h) => (
+          <div class="card">
+            <h3>{h.title}</h3>
+            <p class="muted" style="margin:0" set:html={h.html} />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{m.limitsTitle}</h2></div>
+    <ul class="prose">
+      {m.limits.map((l) => <li>{l}</li>)}
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{m.updateTitle}</h2></div>
+    <p class="prose" set:html={m.updateHtml.replace('{repo}', site.repo)} />
+  </section>
+</Base>

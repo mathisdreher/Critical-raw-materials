@@ -1,0 +1,11 @@
+---
+import View from '../../views/MaterialView.astro';
+import { materials } from '../../lib/data';
+
+export function getStaticPaths() {
+  return materials.map((m) => ({ params: { slug: m.slug } }));
+}
+const { slug } = Astro.params;
+---
+
+<View locale="en" slug={slug as string} />

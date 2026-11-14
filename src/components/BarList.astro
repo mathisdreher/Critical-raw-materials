@@ -1,0 +1,41 @@
+---
+// Ranked horizontal bars with the value printed at the tip of every bar.
+// One series, one colour; "Other" rows are greyed. Optional threshold marker.
+export interface BarRow {
+  label: string;
+  value: number;
+  display: string;
+  detail?: string;
+  other?: boolean;
+  href?: string;
+  tip?: string;
+}
+interface Props {
+  rows: BarRow[];
+  max?: number;
+  threshold?: number;
+  thresholdLabel?: string;
+}
+const { rows, max, threshold, thresholdLabel } = Astro.props;
+const top = max ?? Math.max(...rows.map((r) => r.value), 0.0001);
+---
+
+<div class="barlist" role="list">
+  {
+    rows.map((r) => (
+      <>
+        <span class="bl-label" role="listitem" title={r.label}>
+          {r.href ? <a href={r.href}>{r.label}</a> : r.label}
+        </span>
+        <span class="bl-track" data-tip={r.tip ?? `${r.display}|${r.label}${r.detail ? `|${r.detail}` : ''}`} tabindex="0">
+          <span class:list={['bl-bar', { other: r.other }]} style={`width:${Math.max(0, Math.min(100, (r.value / top) * 100)).toFixed(2)}%`} />
+          {threshold !== undefined && <span class="bl-threshold" style={`left:${((threshold / top) * 100).toFixed(2)}%`} title={thresholdLabel} />}
+        </span>
+        <span class="bl-value">
+          {r.display}
+          {r.detail && <small>{r.detail}</small>}
+        </span>
+      </>
+    ))
+  }
+</div>

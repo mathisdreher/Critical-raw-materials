@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+import Spark from '../components/Spark.astro';
+import Delta from '../components/Delta.astro';
+import { ui } from '../i18n';
+import { materials, groups, priceIndex, material, trade } from '../lib/data';
+import { href, fmtNumber, fmtDate } from '../lib/format';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+const h = t.home;
+
+const series = priceIndex.series;
+const count = (f: string) => series.filter((s) => s.frequency === f).length;
+// rare earths for magnets are one strategic raw material in the regulation, two groups here
+const strategicSlugs = materials.filter((m) => m.strategic).map((m) => m.slug);
+const strategicCount = strategicSlugs.length - (strategicSlugs.includes('heavy-rare-earths') && strategicSlugs.includes('light-rare-earths') ? 1 : 0);
+const market = series.filter((s) => ['yahoo', 'imf', 'worldbank'].includes(s.source));
+const latestTrade = trade('copper')?.latest_period ?? '';
+---
+
+<Base locale={locale} current="home">
+  <section class="hero">
+    <p class="eyebrow">{h.eyebrow}</p>
+    <h1>{h.title}</h1>
+    <p class="lede">{h.lede}</p>
+    <div class="actions">
+      <a class="btn" href={href('/materials/')}>{h.ctaMaterials}</a>
+      <a class="btn ghost" href={href('/supply-risk/')}>{h.ctaRisk}</a>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Key figures">
+    <div class="grid cols-4">
+      <div class="tile">
+        <div class="label">{h.tiles.materials}</div>
+        <div class="value">{materials.length}</div>
+        <div class="sub">{h.tiles.materialsSub}</div>
+      </div>
+      <div class="tile">
+        <div class="label">{h.tiles.strategic}</div>
+        <div class="value">{strategicCount}</div>
+        <div class="sub">{h.tiles.strategicSub}</div>
+      </div>
+      <div class="tile">
+        <div class="label">{h.tiles.series}</div>
+        <div class="value">{series.length}</div>
+        <div class="sub">{h.tiles.seriesSub(count('daily'), count('monthly'), count('annual'))}</div>
+      </div>
+      <div class="tile">
+        <div class="label">{h.tiles.trade}</div>
+        <div class="value">{materials.reduce((n, m) => n + m.trade.length, 0)}</div>
+        <div class="sub">{latestTrade && h.tiles.tradeSub(fmtDate(latestTrade))}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{h.pricesTitle}</h2>
+      <a href={href('/prices/')}>{h.pricesAll} →</a>
+    </div>
+    <p class="muted" style="max-width:72ch">{h.pricesSub}</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th>{t.common.material}</th>
+            <th>{t.common.series}</th>
+            <th class="r">{t.common.latest}</th>
+            <th>{t.common.period}</th>
+            <th class="r">{t.common.change}</th>
+            <th class="r">{t.common.change1y}</th>
+            <th>{t.common.trend}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            market.map((s) => (
+              <tr>
+                <td class="name">
+                  <a href={href(`/materials/${s.material}/`)}>{material(s.material).name}</a>
+                </td>
+                <td>
+                  {s.label}
+                  <span class="sub">{s.source_name}</span>
+                </td>
+                <td class="r">
+                  {fmtNumber(s.latest)} <span class="muted">{s.unit}</span>
+                </td>
+                <td style="white-space:nowrap">
+                  <span class="badge freq">{t.freq[s.frequency]}</span> <span class="small">{fmtDate(s.latest_date)}</span>
+                </td>
+                <td class="r">
+                  <Delta value={s.change_pct} />
+                </td>
+                <td class="r">
+                  <Delta value={s.change_1y_pct} />
+                </td>
+                <td>
+                  <Spark values={s.spark} />
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{h.whyTitle}</h2></div>
+    <div class="grid cols-3">
+      {
+        h.why.map((w) => (
+          <div class="card">
+            <h3>{w.title}</h3>
+            <p class="muted" style="margin:0">{w.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{h.benchTitle}</h2></div>
+    <p class="muted" style="max-width:72ch">{h.benchSub}</p>
+    <div class="grid cols-4">
+      {
+        h.bench.map((b) => (
+          <div class="tile">
+            <div class="value">{b.value}</div>
+            <div class="sub">{b.label}</div>
+            <div class="meter" aria-hidden="true">
+              <span style={`width:${b.pct}%`} />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <p class="fig-note" style="max-width:86ch" set:html={h.projectsHtml} />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>{h.allTitle}</h2>
+      <p>{h.allSub}</p>
+    </div>
+    {
+      groups.map((g) => (
+        <>
+          <p class="eyebrow" style="margin-top:22px">{t.groups[g] ?? g}</p>
+          <div class="mat-grid">
+            {materials
+              .filter((m) => m.group === g)
+              .map((m) => (
+                <a class:list={['mat-chip', { strategic: m.strategic }]} href={href(`/materials/${m.slug}/`)}>
+                  <span class="sym">{m.short}</span>
+                  <span>{m.name}</span>
+                </a>
+              ))}
+          </div>
+        </>
+      ))
+    }
+  </section>
+
+  <section class="section">
+    <div class="card" style="display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <div style="max-width:62ch">
+        <h2 style="font-size:1.2rem">{h.joinTitle}</h2>
+        <p class="muted" style="margin:0">{h.joinText}</p>
+      </div>
+      <a class="btn" href={href('/join/')}>{h.joinCta}</a>
+    </div>
+  </section>
+</Base>

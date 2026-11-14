@@ -1,0 +1,10 @@
+---
+import { fmtPct, direction } from '../lib/format';
+interface Props {
+  value: number | null | undefined;
+  decimals?: number;
+}
+const { value, decimals = 1 } = Astro.props;
+---
+
+{value === null || value === undefined ? <span class="muted">n/a</span> : <span class="delta" data-dir={direction(value)}>{fmtPct(value, decimals)}</span>}

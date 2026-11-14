@@ -1,0 +1,2386 @@
+{
+ "dataset": "EU critical raw materials 2023 - official criticality assessment results",
+ "generated": "2026-11-14",
+ "reference_period": "Five-year average 2016-2020 (where possible), as stated in the study",
+ "thresholds": {
+  "supply_risk_min": 1.0,
+  "economic_importance_min": 2.8
+ },
+ "regulation_2024_1252": {
+  "annex_I_section_1_strategic_raw_materials": [
+   "bauxite/alumina/aluminium",
+   "bismuth",
+   "boron — metallurgy grade",
+   "cobalt",
+   "copper",
+   "gallium",
+   "germanium",
+   "lithium — battery grade",
+   "magnesium metal",
+   "manganese — battery grade",
+   "graphite — battery grade",
+   "nickel — battery grade",
+   "platinum group metals",
+   "rare earth elements for permanent magnets (Nd, Pr, Tb, Dy, Gd, Sm, and Ce)",
+   "silicon metal",
+   "titanium metal",
+   "tungsten"
+  ],
+  "annex_II_section_1_critical_raw_materials": [
+   "antimony",
+   "arsenic",
+   "bauxite/alumina/aluminium",
+   "baryte",
+   "beryllium",
+   "bismuth",
+   "boron",
+   "cobalt",
+   "coking coal",
+   "copper",
+   "feldspar",
+   "fluorspar",
+   "gallium",
+   "germanium",
+   "hafnium",
+   "helium",
+   "heavy rare earth elements",
+   "light rare earth elements",
+   "lithium",
+   "magnesium",
+   "manganese",
+   "graphite",
+   "nickel — battery grade",
+   "niobium",
+   "phosphate rock",
+   "phosphorus",
+   "platinum group metals",
+   "scandium",
+   "silicon metal",
+   "strontium",
+   "tantalum",
+   "titanium metal",
+   "tungsten",
+   "vanadium"
+  ]
+ },
+ "materials": [
+  {
+   "slug": "aluminium-bauxite",
+   "supply_risk": 1.2,
+   "economic_importance": 5.8,
+   "import_reliance_pct": 89,
+   "eol_rir_pct": 32,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "Australia",
+     "share_pct": 28.4,
+     "stage": "extraction"
+    },
+    {
+     "country": "China",
+     "share_pct": 20.8,
+     "stage": "extraction"
+    },
+    {
+     "country": "Guinea",
+     "share_pct": 17.9,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Guinea",
+     "share_pct": 62,
+     "stage": "extraction"
+    },
+    {
+     "country": "Brazil",
+     "share_pct": 12,
+     "stage": "extraction"
+    },
+    {
+     "country": "Greece",
+     "share_pct": 10,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 1.2, processing 0.5. Import reliance is for the extraction stage; processing-stage import reliance is 58% (Annex 10). Table 6 of the study prints Guinea 63% as main EU supplier. All figures are for bauxite (extraction stage); the study merged aluminium and bauxite into one entry in 2023. Processing-stage (primary aluminium) figures from Annex 7/8: global producers China 55.6%, Russia 6.0%, India 5.5%; EU sourcing Russia 19%, Germany 10%, Mozambique 9%. Table 15 of the study prints SR 1.1 / EI 5.5 for 'Aluminium' in 2023, which differs from Annex 2 (SR 1.2 / EI 5.8 for aluminium/bauxite); the Annex 2 results table is used.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 78), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 107), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'bauxite/alumina/aluminium'"
+   ]
+  },
+  {
+   "slug": "antimony",
+   "supply_risk": 1.8,
+   "economic_importance": 5.4,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": 28,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 56.4,
+     "stage": "extraction"
+    },
+    {
+     "country": "Tajikistan",
+     "share_pct": 20.3,
+     "stage": "extraction"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 11.6,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Türkiye",
+     "share_pct": 63,
+     "stage": "extraction"
+    },
+    {
+     "country": "Bolivia",
+     "share_pct": 26,
+     "stage": "extraction"
+    },
+    {
+     "country": "China",
+     "share_pct": 6,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 1.8, processing 0.7. Import reliance is for the extraction stage; processing-stage import reliance is 47% (Annex 10).",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 78), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 107), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "arsenic",
+   "supply_risk": 1.9,
+   "economic_importance": 2.9,
+   "import_reliance_pct": 39,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 44.3,
+     "stage": "processing"
+    },
+    {
+     "country": "Peru",
+     "share_pct": 40.0,
+     "stage": "processing"
+    },
+    {
+     "country": "Morocco",
+     "share_pct": 11.4,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Belgium",
+     "share_pct": 60,
+     "stage": "processing"
+    },
+    {
+     "country": "China",
+     "share_pct": 39,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the processing stage only. EU sourcing taken from Annex 1 (Belgium 60%, China 39%); Table 6 and the report text give Belgium 59%. Annex 8 lists a different set (United Kingdom 44%, Belgium 24%, China 16%, Morocco 14%).",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 79-80), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 1 (p. 47): EU sourcing; Table 6 (p. 26) as cross-check; Annex 8 (p. 107) differs",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "baryte",
+   "supply_risk": 1.3,
+   "economic_importance": 3.5,
+   "import_reliance_pct": 74,
+   "eol_rir_pct": 0,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 31.5,
+     "stage": "extraction"
+    },
+    {
+     "country": "India",
+     "share_pct": 25.1,
+     "stage": "extraction"
+    },
+    {
+     "country": "Morocco",
+     "share_pct": 8.9,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "China",
+     "share_pct": 44,
+     "stage": "extraction"
+    },
+    {
+     "country": "Morocco",
+     "share_pct": 28,
+     "stage": "extraction"
+    },
+    {
+     "country": "Bulgaria",
+     "share_pct": 11,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the extraction stage only. Table 6 of the study prints China 45% as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 79), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 107), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "beryllium",
+   "supply_risk": 1.8,
+   "economic_importance": 5.4,
+   "import_reliance_pct": null,
+   "eol_rir_pct": 0,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "United States",
+     "share_pct": 67.3,
+     "stage": "extraction"
+    },
+    {
+     "country": "China",
+     "share_pct": 26.0,
+     "stage": "extraction"
+    },
+    {
+     "country": "Mozambique",
+     "share_pct": 3.6,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "United States",
+     "share_pct": 60,
+     "stage": "processing"
+    },
+    {
+     "country": "Kazakhstan",
+     "share_pct": 25,
+     "stage": "processing"
+    },
+    {
+     "country": "Japan",
+     "share_pct": 10,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 1.8, processing 1.2. Import reliance is null: the study says it cannot be calculated at the assessed (extraction) stage because there is no EU production or trade of beryllium ores and concentrates (Annex 1 footnote 31). Annex 10 gives 100% for the processing stage. EU sourcing is not available at the assessed (extraction) stage (Annex 1: n/a; the report says reliable trade data are lacking). The entries given are the processing-stage EU sourcing shares from Annex 8. Table 6 prints USA 60% (stage E) as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 1 footnote 31 (p. 47) and Annex 10 (p. 117): import reliance not available at extraction stage",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 80), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 107), processing stage: EU sourcing; Annex 1 (p. 47) gives n/a for the extraction stage",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "bismuth",
+   "supply_risk": 1.9,
+   "economic_importance": 5.7,
+   "import_reliance_pct": 71,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 69,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "China",
+     "share_pct": 50,
+     "stage": "processing"
+    },
+    {
+     "country": "Belgium",
+     "share_pct": 26,
+     "stage": "processing"
+    },
+    {
+     "country": "Thailand",
+     "share_pct": 9,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at the processing stage only. Global producers: only China is recorded. Annex 7 lists China 69%, Laos 9%, Vietnam 8%, whereas Annex 1 lists China 70%, Vietnam 18%, Japan 5% (Table 5: China 70%); the second and third producers are therefore left out. Table 6 of the study prints China 65% as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 80), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 107), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'bismuth'"
+   ]
+  },
+  {
+   "slug": "boron",
+   "supply_risk": 3.6,
+   "economic_importance": 3.9,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": 1,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "Türkiye",
+     "share_pct": 48.4,
+     "stage": "extraction"
+    },
+    {
+     "country": "United States",
+     "share_pct": 24.9,
+     "stage": "extraction"
+    },
+    {
+     "country": "Chile",
+     "share_pct": 10.7,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Türkiye",
+     "share_pct": 99,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 3.6, processing 1.4. Import reliance is for the extraction stage; processing-stage import reliance is 70% (Annex 10). Strategic raw material status is limited to 'boron — metallurgy grade' in Annex I of Regulation (EU) 2024/1252. Study figures are for borates (extraction stage).",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 80), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 108), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'boron — metallurgy grade'"
+   ]
+  },
+  {
+   "slug": "cobalt",
+   "supply_risk": 2.8,
+   "economic_importance": 6.8,
+   "import_reliance_pct": 81,
+   "eol_rir_pct": 22,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "DR Congo",
+     "share_pct": 62.8,
+     "stage": "extraction"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 6.6,
+     "stage": "extraction"
+    },
+    {
+     "country": "Canada",
+     "share_pct": 4.1,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Finland",
+     "share_pct": 62,
+     "stage": "processing"
+    },
+    {
+     "country": "Belgium",
+     "share_pct": 29,
+     "stage": "processing"
+    },
+    {
+     "country": "DR Congo",
+     "share_pct": 2,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 2.8, processing 0.5. Import reliance is for the extraction stage; processing-stage import reliance is 1% (Annex 10). EU sourcing is not available at the assessed (extraction) stage (Annex 1: n/a; the report says reliable trade data are lacking). The entries given are the processing-stage EU sourcing shares from Annex 8. The processing-stage EU sourcing reflects cobalt refining inside the EU (Finland, Belgium).",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 81), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 108), processing stage: EU sourcing; Annex 1 (p. 47) gives n/a for the extraction stage",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'cobalt'"
+   ]
+  },
+  {
+   "slug": "coking-coal",
+   "supply_risk": 1.0,
+   "economic_importance": 3.1,
+   "import_reliance_pct": 66,
+   "eol_rir_pct": 0,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 52.7,
+     "stage": "extraction"
+    },
+    {
+     "country": "Australia",
+     "share_pct": 18.2,
+     "stage": "extraction"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 8.8,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Poland",
+     "share_pct": 26,
+     "stage": "extraction"
+    },
+    {
+     "country": "Australia",
+     "share_pct": 24,
+     "stage": "extraction"
+    },
+    {
+     "country": "United States",
+     "share_pct": 20,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 1.0, processing 0.4. Import reliance is for the extraction stage; processing-stage import reliance is 0% (Annex 10). SR is exactly at the 1.0 threshold.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 81), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 108), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "copper",
+   "supply_risk": 0.1,
+   "economic_importance": 4.0,
+   "import_reliance_pct": 48,
+   "eol_rir_pct": 55,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "Chile",
+     "share_pct": 27.7,
+     "stage": "extraction"
+    },
+    {
+     "country": "Peru",
+     "share_pct": 11.5,
+     "stage": "extraction"
+    },
+    {
+     "country": "China",
+     "share_pct": 8.4,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Poland",
+     "share_pct": 19,
+     "stage": "extraction"
+    },
+    {
+     "country": "Chile",
+     "share_pct": 14,
+     "stage": "extraction"
+    },
+    {
+     "country": "Peru",
+     "share_pct": 10,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 0.1, processing 0.1. Import reliance is for the extraction stage; processing-stage import reliance is 17% (Annex 10). Does not meet the CRM thresholds (SR >= 1.0 and EI >= 2.8): SR is 0.1. It is on the CRM list only because it is a strategic raw material.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 81-82), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 108), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'copper'"
+   ]
+  },
+  {
+   "slug": "feldspar",
+   "supply_risk": 1.5,
+   "economic_importance": 3.2,
+   "import_reliance_pct": 54,
+   "eol_rir_pct": 1,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "Türkiye",
+     "share_pct": 31.8,
+     "stage": "extraction"
+    },
+    {
+     "country": "India",
+     "share_pct": 19.8,
+     "stage": "extraction"
+    },
+    {
+     "country": "China",
+     "share_pct": 7.7,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Türkiye",
+     "share_pct": 51,
+     "stage": "extraction"
+    },
+    {
+     "country": "Italy",
+     "share_pct": 22,
+     "stage": "extraction"
+    },
+    {
+     "country": "Spain",
+     "share_pct": 7,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the extraction stage only.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 83-84), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 108), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "fluorspar",
+   "supply_risk": 1.1,
+   "economic_importance": 3.8,
+   "import_reliance_pct": 60,
+   "eol_rir_pct": 1,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 55.6,
+     "stage": "extraction"
+    },
+    {
+     "country": "Mexico",
+     "share_pct": 20.5,
+     "stage": "extraction"
+    },
+    {
+     "country": "Mongolia",
+     "share_pct": 7.4,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Mexico",
+     "share_pct": 33,
+     "stage": "extraction"
+    },
+    {
+     "country": "Spain",
+     "share_pct": 23,
+     "stage": "extraction"
+    },
+    {
+     "country": "South Africa",
+     "share_pct": 11,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the extraction stage only.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 84-85), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 108-109), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "gallium",
+   "supply_risk": 3.9,
+   "economic_importance": 3.7,
+   "import_reliance_pct": 98,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 93.8,
+     "stage": "processing"
+    },
+    {
+     "country": "Ukraine",
+     "share_pct": 2.2,
+     "stage": "processing"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 1.9,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "China",
+     "share_pct": 69,
+     "stage": "processing"
+    },
+    {
+     "country": "United States",
+     "share_pct": 10,
+     "stage": "processing"
+    },
+    {
+     "country": "United Kingdom",
+     "share_pct": 9,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at the processing stage only. EU sourcing: Annex 8 gives China 69%, Annex 1 gives 71%; the Annex 8 value is recorded. Table 6 of the study prints China 71% as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 82-83), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 109), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'gallium'"
+   ]
+  },
+  {
+   "slug": "germanium",
+   "supply_risk": 1.8,
+   "economic_importance": 3.6,
+   "import_reliance_pct": 42,
+   "eol_rir_pct": 2,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 83.1,
+     "stage": "processing"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 5.0,
+     "stage": "processing"
+    },
+    {
+     "country": "Belgium",
+     "share_pct": 4.5,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "China",
+     "share_pct": 45,
+     "stage": "processing"
+    },
+    {
+     "country": "Belgium",
+     "share_pct": 32,
+     "stage": "processing"
+    },
+    {
+     "country": "Germany",
+     "share_pct": 19,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at the processing stage only. EU sourcing taken from Annex 1 (China 45%, Belgium 32%, Germany 19%), which Table 6 confirms (China 45%). Annex 8 prints figures identical to the global supply shares (China 83%, Russia 5%, Belgium 4%), apparently in error.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 83), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 1 (p. 48): EU sourcing; Table 6 (p. 26) as cross-check; Annex 8 (p. 109) differs",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'germanium'"
+   ]
+  },
+  {
+   "slug": "hafnium",
+   "supply_risk": 1.5,
+   "economic_importance": 4.3,
+   "import_reliance_pct": 0,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "France",
+     "share_pct": 49.3,
+     "stage": "processing"
+    },
+    {
+     "country": "United States",
+     "share_pct": 43.7,
+     "stage": "processing"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 2.8,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "France",
+     "share_pct": 76,
+     "stage": "processing"
+    },
+    {
+     "country": "Ukraine",
+     "share_pct": 14,
+     "stage": "processing"
+    },
+    {
+     "country": "China",
+     "share_pct": 5,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the processing stage only. Annex 1 prints the hafnium columns swapped (global: France 76%, EU sourcing: France 49%). Annex 7, Annex 8, Table 5 and Table 6 agree that France has 49% of global supply and 76% of EU sourcing; those are used here. Import reliance 0%: the EU is a net exporter of hafnium (Annex 1 footnote 32); SR is calculated from EU sourcing only.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 83), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 109), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "helium",
+   "supply_risk": 1.2,
+   "economic_importance": 2.9,
+   "import_reliance_pct": 94,
+   "eol_rir_pct": 2,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "United States",
+     "share_pct": 55.8,
+     "stage": "processing"
+    },
+    {
+     "country": "Qatar",
+     "share_pct": 29.8,
+     "stage": "processing"
+    },
+    {
+     "country": "Algeria",
+     "share_pct": 8.3,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Qatar",
+     "share_pct": 34,
+     "stage": "processing"
+    },
+    {
+     "country": "Algeria",
+     "share_pct": 29,
+     "stage": "processing"
+    },
+    {
+     "country": "United States",
+     "share_pct": 21,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the processing stage only. Table 6 of the study prints Qatar 35% as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 83), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 109), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "heavy-rare-earths",
+   "supply_risk": 5.1,
+   "economic_importance": 4.2,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": null,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 100,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [],
+   "is_strategic": true,
+   "notes": "Group value for the ten heavy rare earth elements (Dy, Er, Eu, Gd, Ho, Lu, Tb, Tm, Yb, Y); the study also scores each element separately (SR 3.3-5.6, EI 2.9-7.8). Assessed at both stages; headline SR is the processing-stage value (higher of the two). Annex 2 stage SRs: extraction 2.3, processing 5.1. EoL-RIR is null because the study gives two different values: 1% in Annex 11 (the table of rates used in the assessment, also plotted in Figure 8) and 4% in the Annex 1 overview table. Global producer share is the processing-stage group figure (China 100% for every HREE in Annex 7). EU sourcing left empty: Annex 1 gives n/a and the report says HREEs are excluded from the EU sourcing analysis for lack of reliable data, although Table 6 prints China 100%. Strategic status applies to the 'rare earth elements for permanent magnets' entry of Annex I, which covers the HREEs Tb, Dy and Gd only.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 (p. 118) and Annex 1 (p. 47-50): conflicting EoL-RIR values",
+    "CRM Study 2023 Final Report, Table 5 grouped materials (p. 23), Annex 1 (p. 50) and Annex 7 (per element): global producers",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'rare earth elements for permanent magnets (Nd, Pr, Tb, Dy, Gd, Sm, and Ce)'"
+   ]
+  },
+  {
+   "slug": "light-rare-earths",
+   "supply_risk": 3.7,
+   "economic_importance": 5.9,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": null,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 85,
+     "stage": "processing"
+    },
+    {
+     "country": "Malaysia",
+     "share_pct": 11,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [],
+   "is_strategic": true,
+   "notes": "Group value for the five light rare earth elements (Ce, La, Nd, Pr, Sm); the study also scores each element separately (SR 3.2-4.5, EI 2.9-7.7). Assessed at both stages; headline SR 3.7 is the processing-stage group value. The extraction-stage group SR is misprinted in Annex 2 ('281%'). Import reliance is for the processing stage; extraction-stage import reliance is 80% (Annex 10). EoL-RIR is null because the study gives two different values: 1% in Annex 11 (the table of rates used in the assessment, also plotted in Figure 8) and 3% in the Annex 1 overview table. Global producer shares are the processing-stage group figures from Annex 1 (Annex 7 gives 84.9% / 10.5% for each LREE). EU sourcing left empty: Annex 1 gives n/a; Table 6 prints China 85%, which only repeats the global share. Strategic status applies to the 'rare earth elements for permanent magnets' entry of Annex I, which covers the LREEs Nd, Pr, Sm and Ce (not La).",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 (p. 118) and Annex 1 (p. 47-50): conflicting EoL-RIR values",
+    "CRM Study 2023 Final Report, Annex 1 (p. 50), Table 5 grouped materials (p. 23) and Annex 7 (per element): global producers",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'rare earth elements for permanent magnets (Nd, Pr, Tb, Dy, Gd, Sm, and Ce)'"
+   ]
+  },
+  {
+   "slug": "lithium",
+   "supply_risk": 1.9,
+   "economic_importance": 3.9,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 56.2,
+     "stage": "processing"
+    },
+    {
+     "country": "Chile",
+     "share_pct": 32.1,
+     "stage": "processing"
+    },
+    {
+     "country": "Argentina",
+     "share_pct": 10.5,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Chile",
+     "share_pct": 79,
+     "stage": "processing"
+    },
+    {
+     "country": "Switzerland",
+     "share_pct": 7,
+     "stage": "processing"
+    },
+    {
+     "country": "Argentina",
+     "share_pct": 6,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the processing-stage value (higher of the two). Annex 2 stage SRs: extraction 0.8, processing 1.9. Import reliance is for the processing stage; extraction-stage import reliance is 81% (Annex 10). Strategic raw material status is limited to 'lithium — battery grade' in Annex I of Regulation (EU) 2024/1252. The study figures are for lithium generally, not battery grade.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 87), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 111), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'lithium — battery grade'"
+   ]
+  },
+  {
+   "slug": "magnesium",
+   "supply_risk": 4.1,
+   "economic_importance": 7.4,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": 13,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 90.6,
+     "stage": "processing"
+    },
+    {
+     "country": "United States",
+     "share_pct": 3.4,
+     "stage": "processing"
+    },
+    {
+     "country": "Israel",
+     "share_pct": 2.2,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "China",
+     "share_pct": 97,
+     "stage": "processing"
+    },
+    {
+     "country": "Israel",
+     "share_pct": 1,
+     "stage": "processing"
+    },
+    {
+     "country": "United Kingdom",
+     "share_pct": 1,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at the processing stage only. Strategic raw material status is limited to 'magnesium metal' in Annex I of Regulation (EU) 2024/1252. Study figures are for magnesium metal (processing stage).",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 87), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 111), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'magnesium metal'"
+   ]
+  },
+  {
+   "slug": "manganese",
+   "supply_risk": 1.2,
+   "economic_importance": 6.9,
+   "import_reliance_pct": 96,
+   "eol_rir_pct": 9,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "South Africa",
+     "share_pct": 29.3,
+     "stage": "extraction"
+    },
+    {
+     "country": "Australia",
+     "share_pct": 16.3,
+     "stage": "extraction"
+    },
+    {
+     "country": "Gabon",
+     "share_pct": 14.4,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "South Africa",
+     "share_pct": 41,
+     "stage": "extraction"
+    },
+    {
+     "country": "Gabon",
+     "share_pct": 39,
+     "stage": "extraction"
+    },
+    {
+     "country": "Brazil",
+     "share_pct": 8,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 1.2, processing 1.0. Import reliance is for the extraction stage; processing-stage import reliance is 66% (Annex 10). Strategic raw material status is limited to 'manganese — battery grade' in Annex I of Regulation (EU) 2024/1252. The study figures are for manganese generally, not battery grade.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 94), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 110-111), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'manganese — battery grade'"
+   ]
+  },
+  {
+   "slug": "natural-graphite",
+   "supply_risk": 1.8,
+   "economic_importance": 3.4,
+   "import_reliance_pct": 99,
+   "eol_rir_pct": 3,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 66.7,
+     "stage": "extraction"
+    },
+    {
+     "country": "Brazil",
+     "share_pct": 7.5,
+     "stage": "extraction"
+    },
+    {
+     "country": "Mozambique",
+     "share_pct": 5.4,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "China",
+     "share_pct": 40,
+     "stage": "extraction"
+    },
+    {
+     "country": "Brazil",
+     "share_pct": 13,
+     "stage": "extraction"
+    },
+    {
+     "country": "Mozambique",
+     "share_pct": 12,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at the extraction stage only. Strategic raw material status is limited to 'graphite — battery grade' in Annex I of Regulation (EU) 2024/1252. Study figures are for natural graphite; Annex II of the Regulation lists 'graphite'.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 95), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 111), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'graphite — battery grade'"
+   ]
+  },
+  {
+   "slug": "nickel",
+   "supply_risk": 0.5,
+   "economic_importance": 5.7,
+   "import_reliance_pct": 75,
+   "eol_rir_pct": 16,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 33.4,
+     "stage": "processing"
+    },
+    {
+     "country": "Indonesia",
+     "share_pct": 12.2,
+     "stage": "processing"
+    },
+    {
+     "country": "Japan",
+     "share_pct": 8.6,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Russia",
+     "share_pct": 29,
+     "stage": "processing"
+    },
+    {
+     "country": "Finland",
+     "share_pct": 17,
+     "stage": "processing"
+    },
+    {
+     "country": "Norway",
+     "share_pct": 10,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the processing-stage value (higher of the two). Annex 2 stage SRs: extraction 0.4, processing 0.5. Import reliance is for the processing stage; extraction-stage import reliance is 31% (Annex 10). Strategic raw material status is limited to 'nickel — battery grade' in Annex I of Regulation (EU) 2024/1252. Does not meet the CRM thresholds (SR >= 1.0 and EI >= 2.8): SR is 0.5. It is on the CRM list only because it is a strategic raw material; Annex II also lists it as 'nickel — battery grade'. The study figures are for nickel generally, not battery grade.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 88-89), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 111-112), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'nickel — battery grade'"
+   ]
+  },
+  {
+   "slug": "niobium",
+   "supply_risk": 4.4,
+   "economic_importance": 6.5,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": 0,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "Brazil",
+     "share_pct": 91.8,
+     "stage": "extraction"
+    },
+    {
+     "country": "Canada",
+     "share_pct": 6.6,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Brazil",
+     "share_pct": 82,
+     "stage": "processing"
+    },
+    {
+     "country": "Canada",
+     "share_pct": 16,
+     "stage": "processing"
+    },
+    {
+     "country": "United Kingdom",
+     "share_pct": 2,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 4.4, processing 3.8. Import reliance 100%: Annex 1 prints 100% on the niobium (extraction) row; Annex 10 gives no extraction-stage figure and lists the 100% under processing. EU sourcing is not available at the assessed (extraction) stage (Annex 1: n/a; the report says reliable trade data are lacking). The entries given are the processing-stage EU sourcing shares from Annex 8. Table 6 prints Brazil 92% (stage P) as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 1 (p. 49) and Annex 10 (p. 117, processing column): import reliance",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 97), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 112), processing stage: EU sourcing; Annex 1 (p. 49) gives n/a for the extraction stage",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "phosphate-rock",
+   "supply_risk": 1.0,
+   "economic_importance": 6.4,
+   "import_reliance_pct": 82,
+   "eol_rir_pct": null,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 43.6,
+     "stage": "extraction"
+    },
+    {
+     "country": "Morocco",
+     "share_pct": 14.2,
+     "stage": "extraction"
+    },
+    {
+     "country": "United States",
+     "share_pct": 9.5,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Morocco",
+     "share_pct": 27,
+     "stage": "extraction"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 24,
+     "stage": "extraction"
+    },
+    {
+     "country": "Finland",
+     "share_pct": 17,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the extraction stage only. EoL-RIR is null because the study gives two different values: 0% in Annex 11 (the table of rates used in the assessment, also plotted in Figure 8) and 17% in the Annex 1 overview table. Table 5 of the study prints China 48% as main global supplier; Annex 7 and Annex 1 give 43.6%. SR is exactly at the 1.0 threshold.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 (p. 118) and Annex 1 (p. 47-50): conflicting EoL-RIR values",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 97-98), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 112), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "phosphorus",
+   "supply_risk": 3.3,
+   "economic_importance": 4.7,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 78.5,
+     "stage": "processing"
+    },
+    {
+     "country": "United States",
+     "share_pct": 10.6,
+     "stage": "processing"
+    },
+    {
+     "country": "Kazakhstan",
+     "share_pct": 6.4,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Kazakhstan",
+     "share_pct": 62,
+     "stage": "processing"
+    },
+    {
+     "country": "Vietnam",
+     "share_pct": 22,
+     "stage": "processing"
+    },
+    {
+     "country": "China",
+     "share_pct": 13,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the processing stage only. EU sourcing: Annex 8 gives Kazakhstan 62%, Annex 1 gives 65%; the Annex 8 value is recorded. Table 6 of the study prints Kazakhstan 65% as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 89), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 112), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "platinum-group-metals",
+   "supply_risk": 2.7,
+   "economic_importance": 7.1,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": null,
+   "assessed_stage": "processing",
+   "global_producers": [],
+   "eu_sourcing": [],
+   "is_strategic": true,
+   "notes": "Group value for the five platinum group metals (Ir, Pd, Pt, Rh, Ru); the study also scores each metal separately (SR 1.5-3.9, EI 5.5-8.6). Assessed at the processing stage only. EoL-RIR is null because the study gives two different values: 12% in Annex 11 (the table of rates used in the assessment, also plotted in Figure 8) and 10% in the Annex 1 overview table. Global producers are not shares of one PGM total. South Africa 75% is the Table 5 group figure (it equals the mean of South Africa's share across the five metals in Annex 7: Ir 93.5%, Pt 70.8%, Rh 81.1%, Ru 93.5%, Pd 36.1%); Annex 1 prints 94% instead, which is the iridium/ruthenium share. Russia 40% is its share of palladium only. EU sourcing left empty: Annex 1 gives n/a and Table 6 says trade data likely do not reflect reality. Trade data mix primary and secondary metal (Annex 1 footnote 36). Global supplier shares are not charted for the group because the study reports them per metal.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 (p. 118) and Annex 1 (p. 47-50): conflicting EoL-RIR values",
+    "CRM Study 2023 Final Report, Table 5 grouped materials (p. 23), Annex 1 (p. 50), Annex 7 (per metal, p. 83-90): global producers",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'platinum group metals'"
+   ]
+  },
+  {
+   "slug": "scandium",
+   "supply_risk": 2.4,
+   "economic_importance": 3.7,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 66.7,
+     "stage": "processing"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 16.7,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [],
+   "is_strategic": false,
+   "notes": "Assessed at the processing stage only. Only two global producers listed: third place is a three-way tie at 4.2% (Ukraine, Philippines, Canada) in Annex 7. EU sourcing left empty: Annex 1 gives n/a. Annex 8 lists United Kingdom 85%, China 6%, United States 4% (trade data), while Table 6 prints China 67%, which is the global share; the two do not agree.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 90), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 1 (p. 49): EU sourcing n/a; Annex 8 (p. 112) and Table 6 (p. 26) conflict",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "silicon-metal",
+   "supply_risk": 1.3,
+   "economic_importance": 4.9,
+   "import_reliance_pct": 60,
+   "eol_rir_pct": 0,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 75.7,
+     "stage": "processing"
+    },
+    {
+     "country": "Brazil",
+     "share_pct": 7.2,
+     "stage": "processing"
+    },
+    {
+     "country": "Norway",
+     "share_pct": 6.3,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Norway",
+     "share_pct": 33,
+     "stage": "processing"
+    },
+    {
+     "country": "France",
+     "share_pct": 28,
+     "stage": "processing"
+    },
+    {
+     "country": "Brazil",
+     "share_pct": 9,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at the processing stage only. EU sourcing: Annex 8 gives France 28%, Annex 1 gives 27%; the Annex 8 value is recorded.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 90-91), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 112-113), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'silicon metal'"
+   ]
+  },
+  {
+   "slug": "strontium",
+   "supply_risk": 2.6,
+   "economic_importance": 6.5,
+   "import_reliance_pct": 0,
+   "eol_rir_pct": 0,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "Iran",
+     "share_pct": 37.5,
+     "stage": "extraction"
+    },
+    {
+     "country": "Spain",
+     "share_pct": 34.2,
+     "stage": "extraction"
+    },
+    {
+     "country": "China",
+     "share_pct": 16.4,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Spain",
+     "share_pct": 99,
+     "stage": "extraction"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at the extraction stage only. Import reliance 0%: Spain supplies 99% of EU sourcing.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 102), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 113), extraction stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "tantalum",
+   "supply_risk": 1.3,
+   "economic_importance": 4.8,
+   "import_reliance_pct": 99,
+   "eol_rir_pct": null,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "DR Congo",
+     "share_pct": 35.4,
+     "stage": "extraction"
+    },
+    {
+     "country": "Rwanda",
+     "share_pct": 17.3,
+     "stage": "extraction"
+    },
+    {
+     "country": "Brazil",
+     "share_pct": 15.9,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [],
+   "is_strategic": false,
+   "notes": "Assessed at the extraction stage only. EoL-RIR is null because the study gives two different values: 1% in Annex 11 (the table of rates used in the assessment, also plotted in Figure 8) and 0% in the Annex 1 overview table. EU sourcing left empty: Annex 1 gives n/a. Annex 8 and Table 6 do list figures (DR Congo 35%, Rwanda 17%, Brazil 16%), but they are identical to the global supply shares rather than actual EU trade data.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), extraction column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 (p. 118) and Annex 1 (p. 47-50): conflicting EoL-RIR values",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 102-103), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 1 (p. 49): EU sourcing n/a; Annex 8 (p. 113) and Table 6 (p. 26) conflict",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  },
+  {
+   "slug": "titanium-metal",
+   "supply_risk": 1.6,
+   "economic_importance": 6.3,
+   "import_reliance_pct": 100,
+   "eol_rir_pct": null,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 42.8,
+     "stage": "processing"
+    },
+    {
+     "country": "Japan",
+     "share_pct": 26.0,
+     "stage": "processing"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 20.3,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Kazakhstan",
+     "share_pct": 36,
+     "stage": "processing"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 34,
+     "stage": "processing"
+    },
+    {
+     "country": "China",
+     "share_pct": 9,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the processing-stage value (higher of the two). Annex 2 stage SRs: extraction 0.5, processing 1.6. EoL-RIR is null because the study gives two different values: 1% in Annex 11 (the table of rates used in the assessment, also plotted in Figure 8) and 19% in the Annex 1 overview table. Global producers are for titanium metal (sponge) at the processing stage (Annex 7; Table 5 also gives China 43%). The Annex 1 overview instead prints the titanium ore (extraction) shares on this row (China 25%, South Africa 13%, Australia 12%). Annex 1 footnote 33: no EU trade codes exist for titanium sponge.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 (p. 118) and Annex 1 (p. 47-50): conflicting EoL-RIR values",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 92), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 113), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'titanium metal'"
+   ]
+  },
+  {
+   "slug": "tungsten",
+   "supply_risk": 1.2,
+   "economic_importance": 8.7,
+   "import_reliance_pct": 80,
+   "eol_rir_pct": 42,
+   "assessed_stage": "processing",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 85.6,
+     "stage": "processing"
+    },
+    {
+     "country": "United States",
+     "share_pct": 4.4,
+     "stage": "processing"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 2.8,
+     "stage": "processing"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "China",
+     "share_pct": 31,
+     "stage": "processing"
+    },
+    {
+     "country": "Austria",
+     "share_pct": 19,
+     "stage": "processing"
+    },
+    {
+     "country": "Vietnam",
+     "share_pct": 14,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": true,
+   "notes": "Assessed at both stages; headline SR is the processing-stage value (higher of the two). Annex 2 stage SRs: extraction 0.5, processing 1.2. Import reliance is for the processing stage; extraction-stage import reliance is 21% (Annex 10). Global shares use the distribution of tungsten smelters and refiners as a proxy for production (Annex 1 footnote 34). Third place is a tie: Russia and Vietnam both 2.8%. Table 6 of the study prints China 32% as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 10 'Import Reliance' (p. 117), processing column; same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 11 'End of life recycling input rate' (p. 118); same value in Annex 1 (p. 47-50)",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 93), processing stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 114), processing stage: EU sourcing; cross-checked with Annex 1 (p. 47-50) and Table 6 (p. 26)",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: listed as 'tungsten'"
+   ]
+  },
+  {
+   "slug": "vanadium",
+   "supply_risk": 2.3,
+   "economic_importance": 3.9,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "assessed_stage": "extraction",
+   "global_producers": [
+    {
+     "country": "China",
+     "share_pct": 61.6,
+     "stage": "extraction"
+    },
+    {
+     "country": "Russia",
+     "share_pct": 19.8,
+     "stage": "extraction"
+    },
+    {
+     "country": "South Africa",
+     "share_pct": 10.6,
+     "stage": "extraction"
+    }
+   ],
+   "eu_sourcing": [
+    {
+     "country": "Russia",
+     "share_pct": 44,
+     "stage": "processing"
+    },
+    {
+     "country": "South Korea",
+     "share_pct": 17,
+     "stage": "processing"
+    },
+    {
+     "country": "South Africa",
+     "share_pct": 16,
+     "stage": "processing"
+    }
+   ],
+   "is_strategic": false,
+   "notes": "Assessed at both stages; headline SR is the extraction-stage value (higher of the two). Annex 2 stage SRs: extraction 2.3, processing 1.7. Import reliance is null because the study contradicts itself: Annex 1 says n/a (footnote 35: cannot be calculated, no EU production or trade of vanadium ores and concentrates), while Annex 10 prints 0% for extraction and 100% for processing. EoL-RIR is null because the study gives two different values: 6% in Annex 11 (the table of rates used in the assessment, also plotted in Figure 8) and 1% in the Annex 1 overview table. EU sourcing is not available at the assessed (extraction) stage (Annex 1: n/a; the report says reliable trade data are lacking). The entries given are the processing-stage EU sourcing shares from Annex 8. Table 6 prints China 62% (stage E) as main EU supplier.",
+   "source_refs": [
+    "CRM Study 2023 Final Report, Annex 2 'Overview of the assessment results' (p. 51-53): SR, EI, stage used in SR",
+    "CRM Study 2023 Final Report, Annex 1 footnote 35 (p. 50) and Annex 10 (p. 117): conflicting import reliance",
+    "CRM Study 2023 Final Report, Annex 11 (p. 118) and Annex 1 (p. 47-50): conflicting EoL-RIR values",
+    "CRM Study 2023 Final Report, Annex 7 'Global supply shares' (p. 104-105), extraction stage: global producers; cross-checked with Annex 1 (p. 47-50) and Table 5 (p. 23)",
+    "CRM Study 2023 Final Report, Annex 8 'EU sourcing shares' (p. 114), processing stage: EU sourcing; Annex 1 (p. 50) gives n/a for the extraction stage",
+    "Regulation (EU) 2024/1252, Annex I, Section 1: not listed (Annex II only)"
+   ]
+  }
+ ],
+ "conflicts": [
+  {
+   "slug": "arsenic",
+   "field": "eu_sourcing",
+   "status": "resolved",
+   "value_in_dataset": [
+    {
+     "country": "Belgium",
+     "share_pct": 60,
+     "stage": "processing"
+    },
+    {
+     "country": "China",
+     "share_pct": 39,
+     "stage": "processing"
+    }
+   ],
+   "candidates": [
+    {
+     "value": [
+      [
+       "Belgium",
+       60
+      ],
+      [
+       "China",
+       39
+      ]
+     ],
+     "source": "Annex 1 (p. 47); Table 6 gives Belgium 59%"
+    },
+    {
+     "value": [
+      [
+       "United Kingdom",
+       "44%"
+      ],
+      [
+       "Belgium",
+       "24%"
+      ],
+      [
+       "China",
+       "16%"
+      ],
+      [
+       "Morocco",
+       "14%"
+      ]
+     ],
+     "source": "Annex 8 (p. 107)"
+    }
+   ],
+   "comment": "Annex 1 and Table 6 agree; the RMIS raw material profile shows the same Annex 1 figures."
+  },
+  {
+   "slug": "bismuth",
+   "field": "global_producers",
+   "status": "partly resolved",
+   "value_in_dataset": [
+    {
+     "country": "China",
+     "share_pct": 69,
+     "stage": "processing"
+    }
+   ],
+   "candidates": [
+    {
+     "value": [
+      [
+       "China",
+       "69%"
+      ],
+      [
+       "Laos",
+       "9%"
+      ],
+      [
+       "Vietnam",
+       "8%"
+      ]
+     ],
+     "source": "Annex 7 (p. 80)"
+    },
+    {
+     "value": [
+      [
+       "China",
+       70
+      ],
+      [
+       "Vietnam",
+       18
+      ],
+      [
+       "Japan",
+       5
+      ]
+     ],
+     "source": "Annex 1 (p. 47)"
+    },
+    {
+     "value": [
+      "China",
+      "70%"
+     ],
+     "source": "Table 5 (p. 23)"
+    }
+   ],
+   "comment": "China's share differs by one point (69 vs 70); second and third producers disagree and are omitted."
+  },
+  {
+   "slug": "gallium",
+   "field": "eu_sourcing",
+   "status": "resolved",
+   "value_in_dataset": {
+    "country": "China",
+    "share_pct": 69,
+    "stage": "processing"
+   },
+   "candidates": [
+    {
+     "value": 71,
+     "source": "Annex 1 (p. 48)"
+    },
+    {
+     "value": 69,
+     "source": "Annex 8 (p. 109)"
+    }
+   ],
+   "comment": "Small difference between the overview and the detailed table; RMIS profile shows the Annex 8 figure."
+  },
+  {
+   "slug": "germanium",
+   "field": "eu_sourcing",
+   "status": "resolved",
+   "value_in_dataset": [
+    {
+     "country": "China",
+     "share_pct": 45,
+     "stage": "processing"
+    },
+    {
+     "country": "Belgium",
+     "share_pct": 32,
+     "stage": "processing"
+    },
+    {
+     "country": "Germany",
+     "share_pct": 19,
+     "stage": "processing"
+    }
+   ],
+   "candidates": [
+    {
+     "value": [
+      [
+       "China",
+       45
+      ],
+      [
+       "Belgium",
+       32
+      ],
+      [
+       "Germany",
+       19
+      ]
+     ],
+     "source": "Annex 1 (p. 48); Table 6 gives China 45%"
+    },
+    {
+     "value": [
+      [
+       "China",
+       "83%"
+      ],
+      [
+       "Russia",
+       "5%"
+      ],
+      [
+       "Belgium",
+       "4%"
+      ],
+      [
+       "Germany",
+       "3%"
+      ]
+     ],
+     "source": "Annex 8 (p. 109)"
+    }
+   ],
+   "comment": "Annex 1 and Table 6 agree; the RMIS raw material profile shows the same Annex 1 figures."
+  },
+  {
+   "slug": "hafnium",
+   "field": "global_producers/eu_sourcing",
+   "status": "resolved",
+   "value_in_dataset": "Annex 7 / Annex 8 values",
+   "candidates": [
+    {
+     "value": [
+      [
+       "France",
+       76
+      ],
+      [
+       "Ukraine",
+       14
+      ],
+      [
+       "China",
+       5
+      ]
+     ],
+     "source": "Annex 1 global column (p. 48)"
+    },
+    {
+     "value": [
+      [
+       "France",
+       "49.3%"
+      ],
+      [
+       "United States",
+       "43.7%"
+      ],
+      [
+       "Russia",
+       "2.8%"
+      ]
+     ],
+     "source": "Annex 7 (p. 83); Table 5 gives France 49%"
+    }
+   ],
+   "comment": "Annex 1 column swap; four other tables agree with each other."
+  },
+  {
+   "slug": "heavy-rare-earths",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": 1,
+     "source": "Annex 11 (p. 118), consistent with Figure 8 (p. 32)"
+    },
+    {
+     "value": 4,
+     "source": "Annex 1 overview (p. 47-50)"
+    }
+   ],
+   "comment": "If one value must be shown, Annex 11 is the table the study names as the EoL-RIR 'used for each of the candidate materials'."
+  },
+  {
+   "slug": "heavy-rare-earths",
+   "field": "eu_sourcing",
+   "status": "unresolved",
+   "value_in_dataset": [],
+   "candidates": [
+    {
+     "value": "n/a",
+     "source": "Annex 1 (p. 50)"
+    },
+    {
+     "value": [
+      "China",
+      "100%"
+     ],
+     "source": "Table 6 grouped materials (p. 26)"
+    }
+   ],
+   "comment": "Report text (p. 27) says HREEs are excluded from the EU sourcing analysis."
+  },
+  {
+   "slug": "light-rare-earths",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": 1,
+     "source": "Annex 11 (p. 118), consistent with Figure 8 (p. 32)"
+    },
+    {
+     "value": 3,
+     "source": "Annex 1 overview (p. 47-50)"
+    }
+   ],
+   "comment": "If one value must be shown, Annex 11 is the table the study names as the EoL-RIR 'used for each of the candidate materials'."
+  },
+  {
+   "slug": "light-rare-earths",
+   "field": "eu_sourcing",
+   "status": "unresolved",
+   "value_in_dataset": [],
+   "candidates": [
+    {
+     "value": "n/a",
+     "source": "Annex 1 (p. 50)"
+    },
+    {
+     "value": [
+      "China",
+      "85%"
+     ],
+     "source": "Table 6 grouped materials (p. 26)"
+    }
+   ],
+   "comment": "Table 6 figure equals the global share."
+  },
+  {
+   "slug": "niobium",
+   "field": "eu_sourcing",
+   "status": "resolved",
+   "value_in_dataset": {
+    "country": "Brazil",
+    "share_pct": 82,
+    "stage": "processing"
+   },
+   "candidates": [
+    {
+     "value": [
+      "Brazil",
+      "92%"
+     ],
+     "source": "Table 6 (p. 26), processing"
+    },
+    {
+     "value": [
+      [
+       "Brasil",
+       "82%"
+      ],
+      [
+       "Canada",
+       "16%"
+      ],
+      [
+       "United Kingdom",
+       "2%"
+      ]
+     ],
+     "source": "Annex 8 (p. 112), processing"
+    }
+   ],
+   "comment": "Table 6 figure equals the global extraction share; Annex 8 is the detailed table and the RMIS profile shows the same 82/16/2 split."
+  },
+  {
+   "slug": "phosphate-rock",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": 0,
+     "source": "Annex 11 (p. 118), consistent with Figure 8 (p. 32)"
+    },
+    {
+     "value": 17,
+     "source": "Annex 1 overview (p. 47-50)"
+    }
+   ],
+   "comment": "If one value must be shown, Annex 11 is the table the study names as the EoL-RIR 'used for each of the candidate materials'."
+  },
+  {
+   "slug": "phosphate-rock",
+   "field": "global_producers",
+   "status": "resolved",
+   "value_in_dataset": {
+    "country": "China",
+    "share_pct": 43.6,
+    "stage": "extraction"
+   },
+   "candidates": [
+    {
+     "value": [
+      "China",
+      "48%"
+     ],
+     "source": "Table 5 (p. 23)"
+    },
+    {
+     "value": [
+      "China",
+      "43.6%"
+     ],
+     "source": "Annex 7 (p. 97-98) and Annex 1"
+    }
+   ],
+   "comment": "Two detailed tables agree; Table 5 differs."
+  },
+  {
+   "slug": "phosphorus",
+   "field": "eu_sourcing",
+   "status": "resolved",
+   "value_in_dataset": {
+    "country": "Kazakhstan",
+    "share_pct": 62,
+    "stage": "processing"
+   },
+   "candidates": [
+    {
+     "value": 65,
+     "source": "Annex 1 (p. 49)"
+    },
+    {
+     "value": 62,
+     "source": "Annex 8 (p. 112)"
+    }
+   ],
+   "comment": "Small difference between the overview and the detailed table; RMIS profile shows the Annex 8 figure."
+  },
+  {
+   "slug": "platinum-group-metals",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": 12,
+     "source": "Annex 11 (p. 118), consistent with Figure 8 (p. 32)"
+    },
+    {
+     "value": 10,
+     "source": "Annex 1 overview (p. 47-50)"
+    }
+   ],
+   "comment": "If one value must be shown, Annex 11 is the table the study names as the EoL-RIR 'used for each of the candidate materials'."
+  },
+  {
+   "slug": "platinum-group-metals",
+   "field": "global_producers",
+   "status": "resolved",
+   "value_in_dataset": {
+    "country": "South Africa",
+    "share_pct": 75,
+    "stage": "processing"
+   },
+   "candidates": [
+    {
+     "value": [
+      "South Africa",
+      "75%"
+     ],
+     "source": "Table 5 grouped materials (p. 23)"
+    },
+    {
+     "value": [
+      "South Africa",
+      "94%"
+     ],
+     "source": "Annex 1 (p. 50)"
+    }
+   ],
+   "comment": "75% matches the five-metal mean computed from Annex 7; 94% is the iridium/ruthenium share."
+  },
+  {
+   "slug": "scandium",
+   "field": "eu_sourcing",
+   "status": "unresolved",
+   "value_in_dataset": [],
+   "candidates": [
+    {
+     "value": "n/a",
+     "source": "Annex 1 (p. 49)"
+    },
+    {
+     "value": [
+      [
+       "United Kingdom",
+       "85%"
+      ],
+      [
+       "China",
+       "6%"
+      ],
+      [
+       "United States",
+       "4%"
+      ]
+     ],
+     "source": "Annex 8 (p. 112)"
+    },
+    {
+     "value": [
+      "China",
+      "67%"
+     ],
+     "source": "Table 6 (p. 26)"
+    }
+   ],
+   "comment": "No consistent EU sourcing figure at the assessed stage."
+  },
+  {
+   "slug": "silicon-metal",
+   "field": "eu_sourcing",
+   "status": "resolved",
+   "value_in_dataset": {
+    "country": "France",
+    "share_pct": 28,
+    "stage": "processing"
+   },
+   "candidates": [
+    {
+     "value": 27,
+     "source": "Annex 1 (p. 49)"
+    },
+    {
+     "value": 28,
+     "source": "Annex 8 (p. 112-113)"
+    }
+   ],
+   "comment": "Small difference between the overview and the detailed table."
+  },
+  {
+   "slug": "tantalum",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": 1,
+     "source": "Annex 11 (p. 118), consistent with Figure 8 (p. 32)"
+    },
+    {
+     "value": 0,
+     "source": "Annex 1 overview (p. 47-50)"
+    }
+   ],
+   "comment": "If one value must be shown, Annex 11 is the table the study names as the EoL-RIR 'used for each of the candidate materials'."
+  },
+  {
+   "slug": "tantalum",
+   "field": "eu_sourcing",
+   "status": "unresolved",
+   "value_in_dataset": [],
+   "candidates": [
+    {
+     "value": "n/a",
+     "source": "Annex 1 (p. 49)"
+    },
+    {
+     "value": [
+      [
+       "DRC",
+       "35%"
+      ],
+      [
+       "Rwanda",
+       "17%"
+      ],
+      [
+       "Brazil",
+       "16%"
+      ]
+     ],
+     "source": "Annex 8 (p. 113)"
+    },
+    {
+     "value": [
+      "Congo, D.R.",
+      "35%"
+     ],
+     "source": "Table 6 (p. 26)"
+    }
+   ],
+   "comment": "No consistent EU sourcing figure at the assessed stage."
+  },
+  {
+   "slug": "titanium-metal",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": 1,
+     "source": "Annex 11 (p. 118), consistent with Figure 8 (p. 32)"
+    },
+    {
+     "value": 19,
+     "source": "Annex 1 overview (p. 47-50)"
+    }
+   ],
+   "comment": "If one value must be shown, Annex 11 is the table the study names as the EoL-RIR 'used for each of the candidate materials'."
+  },
+  {
+   "slug": "titanium-metal",
+   "field": "global_producers",
+   "status": "resolved",
+   "value_in_dataset": "Annex 7 processing-stage values",
+   "candidates": [
+    {
+     "value": [
+      [
+       "China",
+       25
+      ],
+      [
+       "South Africa",
+       13
+      ],
+      [
+       "Australia",
+       12
+      ]
+     ],
+     "source": "Annex 1 (p. 50) - identical to Annex 7 extraction-stage (ore) shares"
+    },
+    {
+     "value": [
+      [
+       "China",
+       "42.8%"
+      ],
+      [
+       "Japan",
+       "26.0%"
+      ],
+      [
+       "Russia",
+       "20.3%"
+      ]
+     ],
+     "source": "Annex 7 processing (p. 92); Table 5 gives China 43%"
+    }
+   ],
+   "comment": "Assessed stage is processing; Annex 1 shows ore figures."
+  },
+  {
+   "slug": "vanadium",
+   "field": "import_reliance_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": null,
+     "source": "Annex 1 (p. 50): n/a, cannot be calculated"
+    },
+    {
+     "value": 0,
+     "source": "Annex 10 (p. 117), extraction"
+    },
+    {
+     "value": 100,
+     "source": "Annex 10 (p. 117), processing"
+    }
+   ],
+   "comment": "Assessed stage is extraction. 100% (processing stage) is the figure that describes the EU's dependence on imported vanadium products."
+  },
+  {
+   "slug": "vanadium",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": 6,
+     "source": "Annex 11 (p. 118), consistent with Figure 8 (p. 32)"
+    },
+    {
+     "value": 1,
+     "source": "Annex 1 overview (p. 47-50)"
+    }
+   ],
+   "comment": "If one value must be shown, Annex 11 is the table the study names as the EoL-RIR 'used for each of the candidate materials'."
+  }
+ ],
+ "sources": [
+  {
+   "title": "European Commission (DG GROW), Study on the Critical Raw Materials for the EU 2023 - Final Report, doi:10.2873/725585 (PDF dated 28 June 2023, 158 pages)",
+   "url": "https://single-market-economy.ec.europa.eu/publications/study-critical-raw-materials-eu-2023-final-report_en",
+   "accessed": "2026-11-14"
+  },
+  {
+   "title": "Same report, Publications Office of the EU record and PDF download",
+   "url": "https://op.europa.eu/en/publication-detail/-/publication/57318397-fdd4-11ed-a05c-01aa75ed71a1",
+   "accessed": "2026-11-14"
+  },
+  {
+   "title": "Regulation (EU) 2024/1252 (Critical Raw Materials Act), OJ L, 3.5.2024 - Annex I Section 1 (strategic raw materials) and Annex II Section 1 (critical raw materials)",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1252/oj",
+   "accessed": "2026-11-14"
+  },
+  {
+   "title": "JRC Raw Materials Information System (RMIS) - More on Critical Raw Materials (2023 list) and raw material profiles (used as cross-check only; profiles contain newer data)",
+   "url": "https://rmis.jrc.ec.europa.eu/eu-critical-raw-materials",
+   "accessed": "2026-11-14"
+  },
+  {
+   "title": "European Commission, Critical raw materials web page (fifth list 2023)",
+   "url": "https://single-market-economy.ec.europa.eu/sectors/raw-materials/areas-specific-interest/critical-raw-materials_en",
+   "accessed": "2026-11-14"
+  }
+ ],
+ "caveats": [
+  "All values were parsed from the PDF of the 2023 Final Report (tables extracted programmatically) and cross-checked between the report's own tables. Nothing was filled from memory.",
+  "The report is internally inconsistent in places. Every disagreement that affects this dataset is listed under 'conflicts' with the candidate values and their table/page. Where the disagreement could not be settled the field is null (or the list is empty).",
+  "eol_rir_pct is null for 7 materials (heavy-rare-earths, light-rare-earths, phosphate-rock, platinum-group-metals, tantalum, titanium-metal, vanadium) because Annex 11 and the Annex 1 overview give different rates.",
+  "supply_risk is the value at the stage with the higher supply risk (the study's rule); assessed_stage says which. import_reliance_pct, global_producers and eu_sourcing refer to that same stage unless an entry's own 'stage' says otherwise.",
+  "global_producers shares are from Annex 7 (one decimal) and eu_sourcing shares from Annex 8 (whole percent, sources of 1% or more, EU domestic production plus imports). The report's Annex 1 and Tables 5/6 show the same data rounded, sometimes differing by one point.",
+  "Heavy rare earths, light rare earths and platinum group metals carry group values; per-element results exist in the study but are not in this file.",
+  "Data reflect 2016-2020 supply patterns. They predate later shifts (for example in gallium, germanium, nickel and lithium markets) and should be labelled as the 2023 assessment, not as current market shares.",
+  "is_strategic follows Annex I Section 1 of Regulation (EU) 2024/1252 as published in the Official Journal on 3 May 2024 (17 entries); several entries are grade-specific (battery grade, metallurgy grade, magnesium metal, rare earths for permanent magnets) - see notes.",
+  "Copper and nickel do not meet the criticality thresholds; they are on the list of 34 because strategic raw materials are automatically critical.",
+  "Page numbers in source_refs and conflicts are the report's printed page numbers (PDF page = printed page + 4).",
+  "RMIS raw material profiles were consulted only to help judge conflicts; they mix 2023-assessment figures with newer data and are not the source of any value here."
+ ]
+}
