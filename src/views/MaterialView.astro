@@ -161,7 +161,7 @@ const pageSources = [
     RARE_PAGE_SLUGS.includes(slug) && (
       <section style="margin-bottom:20px">
         <a class="card tool-link" href={H('/rare-earths/', locale)} style="display:block">
-          <h3 style="margin:0 0 4px">{t.rare.link.title} →</h3>
+          <p class="fig-title" style="margin:0 0 4px">{t.rare.link.title} →</p>
           <p class="muted" style="margin:0">{t.rare.link.text}</p>
         </a>
       </section>
@@ -191,7 +191,7 @@ const pageSources = [
         {crit?.notes && (
           <details class="table-view">
             <summary>{x.factsNotes}</summary>
-            <p class="small" style="max-width:80ch;margin-top:8px">{crit.notes}</p>
+            <p class="small" style="max-width:80ch;margin-top:8px" lang={locale === 'en' ? undefined : 'en'}>{crit.notes}</p>
           </details>
         )}
       </section>
@@ -330,7 +330,7 @@ const pageSources = [
               <table class="data">
                 <thead>
                   <tr>
-                    <th>{dem.rows.length > 1 ? t.demand.cols.component : ''}</th>
+                    <th>{dem.rows.length > 1 ? t.demand.cols.component : <span class="sr-only">{t.demand.cols.component}</span>}</th>
                     <th class="r">{t.demand.cols.base}</th>
                     <th class="r">{t.demand.cols.high2030}</th>
                     <th class="r">{t.demand.cols.growth}</th>

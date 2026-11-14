@@ -37,7 +37,7 @@ const sources = [...new Set(rows.map((r) => r.source_name))];
         p.layers.map((l) => (
           <div class="card">
             <span class="badge freq">{l.freq}</span>
-            <h3 style="margin-top:10px">{l.title}</h3>
+            <p class="fig-title" style="margin-top:10px">{l.title}</p>
             <p class="small" style="margin:0">{l.text}</p>
           </div>
         ))

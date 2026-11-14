@@ -5,7 +5,7 @@ import Delta from '../components/Delta.astro';
 import BarList from '../components/BarList.astro';
 import PriceChart, { type ChartSeries } from '../components/PriceChart.astro';
 import IndexedLines from '../components/IndexedLines.astro';
-import { ui, materialName, dataLabel } from '../i18n';
+import { ui, crma, materialName, dataLabel } from '../i18n';
 import { supply, trade } from '../lib/data';
 import { href, formatters } from '../lib/format';
 import { countryName } from '../lib/countries';
@@ -64,7 +64,7 @@ const sources = [
   { title: sup?.source_name ?? 'USGS', url: sup?.source_url ?? '' },
   { title: trade('light-rare-earths')?.source_name ?? 'Eurostat Comext', url: trade('light-rare-earths')?.source_url ?? '' },
   { title: 'European Commission, Study on the Critical Raw Materials for the EU 2023', url: 'https://single-market-economy.ec.europa.eu/publications/study-critical-raw-materials-eu-2023-final-report_en' },
-  { title: 'Regulation (EU) 2024/1252, Annexes I and II', url: 'https://eur-lex.europa.eu/eli/reg/2024/1252/oj' },
+  { title: crma(locale).regulationName, url: 'https://eur-lex.europa.eu/eli/reg/2024/1252/oj' },
   { title: 'JRC Raw Materials Information System', url: 'https://rmis.jrc.ec.europa.eu/' },
 ];
 ---

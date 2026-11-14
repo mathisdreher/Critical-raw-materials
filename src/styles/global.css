@@ -2022,3 +2022,29 @@ world-map {
     right: 0;
   }
 }
+
+/* layer buttons of the map: separate pills that wrap cleanly on narrow screens */
+.map-controls .seg {
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  gap: 6px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.map-controls .seg button {
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 5px 12px;
+  background: var(--surface);
+  text-align: left;
+}
+
+.map-controls .seg button:first-child {
+  border-left: 1px solid var(--border-strong);
+}
+
+.map-controls .seg button[aria-pressed='true'] {
+  border-color: var(--ink);
+}

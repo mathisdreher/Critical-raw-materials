@@ -202,6 +202,7 @@ class WorldMap extends HTMLElement {
       path.removeAttribute('data-bin');
       path.removeAttribute('tabindex');
       path.removeAttribute('aria-label');
+      path.removeAttribute('role');
       path.dataset.tip = `${path.dataset.name}|${t.noData}`;
     }
     this.markers.replaceChildren();
@@ -246,6 +247,7 @@ class WorldMap extends HTMLElement {
       if (!path) continue;
       path.dataset.bin = String(bin(r.share, SHARE_BOUNDS));
       path.tabIndex = 0;
+      path.setAttribute('role', 'graphics-symbol');
       const lines = [`${this.nf.format(r.share)}%`, path.dataset.name as string];
       if (r.value !== undefined) lines.push(`${this.nf.format(r.value)} ${layer.unit}`);
       path.dataset.tip = lines.join('|');
@@ -279,6 +281,8 @@ class WorldMap extends HTMLElement {
       track.append(bar);
       track.dataset.tip = [`${this.nf.format(r.share)}%`, name, r.value !== undefined ? `${this.nf.format(r.value)} ${layer.unit}` : ''].filter(Boolean).join('|');
       track.tabIndex = 0;
+      track.setAttribute('role', 'img');
+      track.setAttribute('aria-label', track.dataset.tip.replace(/\|/g, ', '));
       const value = el('span', 'bl-value', `${this.nf.format(r.share)}%`);
       bars.append(el('span', 'bl-label', name), track, value);
     }
@@ -329,6 +333,7 @@ class WorldMap extends HTMLElement {
       circle.setAttribute('r', String(3.5 + 2.2 * Math.sqrt(list.length)));
       circle.setAttribute('class', 'marker');
       circle.setAttribute('tabindex', '0');
+      circle.setAttribute('role', 'graphics-symbol');
       const name = this.name(iso, iso);
       const lines = [`${list.length} ${list.length === 1 ? t.projectOne : t.projectMany}`, name];
       for (const pr of list.slice(0, 5)) lines.push(`${pr.name}${pr.stages.length ? ` (${pr.stages.map((s) => this.p.stages[s] ?? s).join(', ')})` : ''}`);

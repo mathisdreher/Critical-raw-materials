@@ -43,6 +43,8 @@ The tools are a reading aid, not legal advice, and say so on every page.
 
 The site is published in English (at the root) and in French, German, Dutch and Spanish (under `/fr/`, `/de/`, `/nl/`, `/es/`). The interface text lives in `src/i18n/<lang>.ts` and the toolkit text in `src/i18n/crma.<lang>.ts`; both must have exactly the structure of the English files, which TypeScript enforces. Labels that come with the data (series names, customs product names, source names) are translated in `src/i18n/data-labels.<lang>.ts`, keyed by their English text, and fall back to English when missing. The material profiles are Markdown files in `src/content/materials/<lang>/` and fall back to English when a file is missing. Country names are localised from ISO codes, numbers and dates follow each language's conventions, and every page carries hreflang links.
 
+The four translations were drafted with AI assistance from the official wording of Regulation (EU) 2024/1252 in each language and have not been reviewed by native-speaking domain experts. Have them reviewed before promoting the site in each language.
+
 To change a text, edit the English file and update the four translations. To add a language, copy `en.ts` and `crma.en.ts`, translate them, register the language in `src/i18n/index.ts` and `astro.config.mjs`, and add its name to `LOCALE_NAMES`.
 
 ## Project layout

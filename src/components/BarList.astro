@@ -20,14 +20,14 @@ const { rows, max, threshold, thresholdLabel } = Astro.props;
 const top = max ?? Math.max(...rows.map((r) => r.value), 0.0001);
 ---
 
-<div class="barlist" role="list">
+<div class="barlist">
   {
     rows.map((r) => (
       <>
-        <span class="bl-label" role="listitem" title={r.label}>
+        <span class="bl-label" title={r.label}>
           {r.href ? <a href={r.href}>{r.label}</a> : r.label}
         </span>
-        <span class="bl-track" data-tip={r.tip ?? `${r.display}|${r.label}${r.detail ? `|${r.detail}` : ''}`} tabindex="0">
+        <span class="bl-track" data-tip={r.tip ?? `${r.display}|${r.label}${r.detail ? `|${r.detail}` : ''}`} tabindex="0" role="img" aria-label={(r.tip ?? `${r.display}|${r.label}${r.detail ? `|${r.detail}` : ''}`).replace(/\|/g, ', ')}>
           <span class:list={['bl-bar', { other: r.other }]} style={`width:${Math.max(0, Math.min(100, (r.value / top) * 100)).toFixed(2)}%`} />
           {threshold !== undefined && <span class="bl-threshold" style={`left:${((threshold / top) * 100).toFixed(2)}%`} title={thresholdLabel} />}
         </span>

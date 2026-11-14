@@ -1,14 +1,33 @@
 import { en, type Dict } from './en';
 import { crmaEn, type CrmaDict } from './crma.en';
 
-// Register additional languages here, for example: { en, fr }.
-const dictionaries: Record<string, Dict> = { en };
+// Language files are picked up by name, so adding a language means adding its files
+// (<lang>.ts, crma.<lang>.ts, data-labels.<lang>.ts) and listing it in LOCALES below.
+type Mods = Record<string, Record<string, unknown>>;
+
+function byLang<T>(mods: Mods, re: RegExp): Record<string, T> {
+  const out: Record<string, T> = {};
+  for (const [file, mod] of Object.entries(mods)) {
+    const m = file.match(re);
+    if (m) out[m[1]] = Object.values(mod)[0] as T;
+  }
+  return out;
+}
+
+const dictionaries: Record<string, Dict> = {
+  ...byLang<Dict>(import.meta.glob('./??.ts', { eager: true }) as Mods, /^\.\/([a-z]{2})\.ts$/),
+  en,
+};
 
 export function ui(locale: string = 'en'): Dict {
   return dictionaries[locale] ?? en;
 }
 
-const crmaDictionaries: Record<string, CrmaDict> = { en: crmaEn };
+const crmaDictionaries: Record<string, CrmaDict> = {
+  // the English file also exports constants, so it is registered explicitly and last
+  ...byLang<CrmaDict>(import.meta.glob('./crma.??.ts', { eager: true }) as Mods, /^\.\/crma\.([a-z]{2})\.ts$/),
+  en: crmaEn,
+};
 
 /** Content of the CRMA toolkit in the requested language. */
 export function crma(locale: string = 'en'): CrmaDict {
@@ -23,7 +42,7 @@ export function materialName(locale: string, slug: string): string {
 
 // Translations of labels that come with the data (series, products, tables, sources),
 // keyed by their English text. Missing entries fall back to English.
-const dataLabels: Record<string, Record<string, string>> = {};
+const dataLabels: Record<string, Record<string, string>> = byLang<Record<string, string>>(import.meta.glob('./data-labels.??.ts', { eager: true }) as Mods, /^\.\/data-labels\.([a-z]{2})\.ts$/);
 
 export function dataLabel(locale: string, text: string): string {
   return dataLabels[locale]?.[text] ?? text;

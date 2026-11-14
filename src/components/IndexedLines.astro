@@ -52,7 +52,7 @@ const labelled = new Set(ends.filter((e, i) => (i === 0 || e.py - ends[i - 1].py
         <g>
           <path class={`il-line il-${s.n}`} d={s.pts.map((p, i) => `${i ? 'L' : 'M'}${x(p.y).toFixed(1)},${y(p.idx).toFixed(1)}`).join('')} />
           {s.pts.map((p) => (
-            <g data-tip={`${F.number(p.v)} ${s.unit}|${s.label}, ${p.y}|${indexLabel} ${F.number(p.idx, 0)}`} tabindex="0" aria-label={`${s.label}, ${p.y}: ${F.number(p.v)} ${s.unit}`}>
+            <g data-tip={`${F.number(p.v)} ${s.unit}|${s.label}, ${p.y}|${indexLabel} ${F.number(p.idx, 0)}`} tabindex="0" role="img" aria-label={`${s.label}, ${p.y}: ${F.number(p.v)} ${s.unit}`}>
               <circle cx={x(p.y)} cy={y(p.idx)} r="14" fill="transparent" />
               <circle class={`il-dot il-${s.n}`} cx={x(p.y)} cy={y(p.idx)} r="4.5" />
             </g>
