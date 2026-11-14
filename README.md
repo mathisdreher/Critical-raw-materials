@@ -59,9 +59,9 @@ src/
 
 ## One-time setup on GitHub
 
-1. Make sure the default branch is `main` and contains this code. The scheduled job and the Pages deployment only run from the default branch.
+1. The scheduled job and the Pages deployment run from the repository's default branch, whatever its name. Renaming it to `main` is optional.
 2. In **Settings > Pages**, set **Source** to **GitHub Actions**.
-3. In **Actions**, run the workflow **Update data and deploy** once by hand. Later runs happen every day at 05:17 UTC and on every push to `main`.
+3. In **Actions**, run the workflow **Update data and deploy** once by hand. Later runs happen every day at 05:17 UTC and on every push to the default branch.
 4. Optional, for the sign-up page: publish the Tally form, then add a repository variable `PUBLIC_TALLY_FORM_ID` with the form id under **Settings > Secrets and variables > Actions > Variables**. Without it the page shows a "being set up" notice.
 
 The workflow reads the site address and base path from GitHub Pages, so a custom domain works without code changes.
