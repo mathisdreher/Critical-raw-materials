@@ -135,3 +135,15 @@ toggle?.addEventListener('click', () => {
     /* storage unavailable: the choice lasts for this page only */
   }
 });
+
+// ---------------------------------------------------------------- language menu
+const langMenu = document.querySelector<HTMLDetailsElement>('.lang-menu');
+document.addEventListener('click', (e) => {
+  if (langMenu?.open && !langMenu.contains(e.target as Node)) langMenu.open = false;
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && langMenu?.open) {
+    langMenu.open = false;
+    langMenu.querySelector('summary')?.focus();
+  }
+});

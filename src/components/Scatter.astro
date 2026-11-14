@@ -2,7 +2,7 @@
 // Supply risk against economic importance, the two axes of the EU criticality
 // assessment. Two colours (strategic or not), a legend, selective labels, and
 // a tooltip on every point. The same data is in the table below the chart.
-import { href } from '../lib/format';
+import { href, formatters } from '../lib/format';
 
 export interface ScatterPoint {
   slug: string;
@@ -13,6 +13,7 @@ export interface ScatterPoint {
   strategic: boolean;
 }
 interface Props {
+  locale: string;
   points: ScatterPoint[];
   xLabel: string;
   yLabel: string;
@@ -21,7 +22,8 @@ interface Props {
   legend: [string, string];
   thresholdNote: string;
 }
-const { points, xLabel, yLabel, xThreshold, yThreshold, legend, thresholdNote } = Astro.props;
+const { locale, points, xLabel, yLabel, xThreshold, yThreshold, legend, thresholdNote } = Astro.props;
+const F = formatters(locale);
 const W = 760;
 const H = 440;
 const m = { l: 48, r: 20, t: 16, b: 44 };
@@ -67,7 +69,7 @@ for (const p of ranked) {
     <text class="axis-title" transform={`translate(12 ${(m.t + H - m.b) / 2}) rotate(-90)`} text-anchor="middle">{yLabel}</text>
     {
       points.map((p) => (
-        <a href={href(`/materials/${p.slug}/`)} data-tip={`${p.name}|${yLabel}: ${p.y.toFixed(1)}|${xLabel}: ${p.x.toFixed(1)}|${p.strategic ? legend[0] : legend[1]}`} aria-label={`${p.name}: ${yLabel} ${p.y.toFixed(1)}, ${xLabel} ${p.x.toFixed(1)}`}>
+        <a href={href(`/materials/${p.slug}/`, locale)} data-tip={`${p.name}|${yLabel}: ${F.fixed(p.y, 1)}|${xLabel}: ${F.fixed(p.x, 1)}|${p.strategic ? legend[0] : legend[1]}`} aria-label={`${p.name}: ${yLabel} ${F.fixed(p.y, 1)}, ${xLabel} ${F.fixed(p.x, 1)}`}>
           <circle cx={sx(p.x)} cy={sy(p.y)} r="12" fill="transparent" />
           <circle class:list={['pt', p.strategic ? 's1' : 's2']} cx={sx(p.x)} cy={sy(p.y)} r="5" />
         </a>

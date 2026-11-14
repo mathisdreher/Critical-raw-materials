@@ -1,0 +1,12 @@
+---
+import View from '../../../views/MaterialView.astro';
+import { materials } from '../../../lib/data';
+import { OTHER_LOCALES } from '../../../lib/locales';
+
+export function getStaticPaths() {
+  return OTHER_LOCALES.flatMap((lang) => materials.map((m) => ({ params: { lang, slug: m.slug } })));
+}
+const { lang, slug } = Astro.params;
+---
+
+<View locale={lang as string} slug={slug as string} />

@@ -136,8 +136,9 @@ def load_registry() -> list[dict]:
     return json.loads(REGISTRY.read_text(encoding="utf-8"))["materials"]
 
 
-def series_doc(*, sid, material, label, unit, frequency, source, points, note=None):
-    return {
+def series_doc(*, sid, material, label, unit, frequency, source, points, note=None, element=None,
+               kind=None, product=None, note_key=None, note_params=None):
+    doc = {
         "id": sid,
         "material": material,
         "label": label,
@@ -151,6 +152,18 @@ def series_doc(*, sid, material, label, unit, frequency, source, points, note=No
         "updated": now_iso(),
         "points": points,
     }
+    if element:
+        doc["element"] = element
+    # structured fields let the website translate labels and notes
+    if kind:
+        doc["kind"] = kind
+    if product:
+        doc["product"] = product
+    if note_key:
+        doc["note_key"] = note_key
+    if note_params:
+        doc["note_params"] = note_params
+    return doc
 
 
 # --------------------------------------------------------------------------- Yahoo (daily)
@@ -190,6 +203,7 @@ def run_yahoo(materials: list[dict]) -> str:
                     sid=sid, material=m["slug"], label=p["label"], unit=p["unit"], frequency="daily",
                     source="yahoo", points=points,
                     note="Front-month futures settlement, continuous series. Delayed and indicative.",
+                    note_key="yahoo",
                 ))
                 done += 1
             except Exception as exc:  # keep the previous file
@@ -225,7 +239,7 @@ def run_imf(materials: list[dict]) -> str:
         sid = f"{m['slug']}--monthly-imf-{code.lower()}"
         write_json(PRICES / f"{sid}.json", series_doc(
             sid=sid, material=m["slug"], label=p["label"], unit=p["unit"], frequency="monthly",
-            source="imf", points=points, note="Monthly average of the benchmark quotation.",
+            source="imf", points=points, note="Monthly average of the benchmark quotation.", note_key="imf",
         ))
         done += 1
     if done != len(wanted):
@@ -267,7 +281,7 @@ def run_worldbank(materials: list[dict]) -> str:
         sid = f"{m['slug']}--monthly-wb-{slugify(p['column'])}"
         write_json(PRICES / f"{sid}.json", series_doc(
             sid=sid, material=m["slug"], label=p["label"], unit=p["unit"], frequency="monthly",
-            source="worldbank", points=points, note="Monthly average, nominal US dollars.",
+            source="worldbank", points=points, note="Monthly average, nominal US dollars.", note_key="worldbank",
         ))
         done += 1
     return f"{done} series"
@@ -362,6 +376,8 @@ def run_usgs(materials: list[dict]) -> str:
             write_json(path, series_doc(
                 sid=sid, material=m["slug"], label=cfg["label"], unit=unit, frequency="annual",
                 source="usgs", points=sorted([k, v] for k, v in merged.items()), note=note,
+                note_key="usgs", note_params={"edition": edition, **({"estimated": estimated} if estimated else {})},
+                element=cfg.get("element"),
             ))
             n_price += 1
 
@@ -569,6 +585,7 @@ def run_eurostat(materials: list[dict]) -> str:
                 "code": code,
                 "label": t["label"],
                 "primary": n == 0,
+                "focus": bool(t.get("focus")),
                 "columns": ["period", "import_t", "import_eur", "export_t", "export_eur"],
                 "monthly": series,
                 "origins": {
@@ -594,6 +611,7 @@ def run_eurostat(materials: list[dict]) -> str:
                     write_json(PRICES / f"{sid}.json", series_doc(
                         sid=sid, material=m["slug"], label=f"EU import unit value: {t['label']}", unit=unit,
                         frequency="monthly", source="eurostat", points=pts,
+                        kind="import-unit-value", product=t["label"], note_key="eurostat", note_params={"code": code},
                         note=f"Customs value of extra-EU imports divided by net mass (CN {code}), three-month rolling. "
                              "A trade-weighted indicator, not a market quotation. Recent months are revised.",
                     ))
@@ -633,12 +651,14 @@ def build_index() -> int:
         year_ago = {"daily": back(252), "monthly": back(12), "annual": back(1)}[s["frequency"]]
         entries.append({
             "id": s["id"], "material": s["material"], "label": s["label"], "unit": s["unit"],
+            **({"kind": s["kind"], "product": s["product"]} if s.get("kind") else {}),
             "frequency": s["frequency"], "source": s["source"], "source_name": s["source_name"],
             "latest_date": last_date, "latest": last,
             "change_pct": None if not prev else round(100 * (last / prev - 1), 2),
             "change_1y_pct": None if not year_ago else round(100 * (last / year_ago - 1), 1),
             "spark": [p[1] for p in pts[-(260 if s["frequency"] == "daily" else 36 if s["frequency"] == "monthly" else 10):]],
             "n": len(pts),
+            **({"element": s["element"]} if s.get("element") else {}),
         })
     entries.sort(key=lambda e: (e["material"], FREQ_RANK[e["frequency"]], SOURCE_RANK[e["source"]], e["id"]))
     write_json(PRICES / "index.json", {"updated": now_iso(), "series": entries})

@@ -1,10 +1,12 @@
 ---
-import { fmtPct, direction } from '../lib/format';
+import { formatters, direction } from '../lib/format';
 interface Props {
   value: number | null | undefined;
   decimals?: number;
+  locale?: string;
 }
-const { value, decimals = 1 } = Astro.props;
+const { value, decimals = 1, locale = 'en' } = Astro.props;
+const F = formatters(locale);
 ---
 
-{value === null || value === undefined ? <span class="muted">n/a</span> : <span class="delta" data-dir={direction(value)}>{fmtPct(value, decimals)}</span>}
+{value === null || value === undefined ? <span class="muted">n/a</span> : <span class="delta" data-dir={direction(value)}>{F.pct(value, decimals)}</span>}

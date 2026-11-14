@@ -86,6 +86,7 @@ class CrmaRisk extends HTMLElement {
   private pub: PublicMat[] = [];
   private eu = new Set<string>();
   private base = '';
+  private tag = 'en-GB';
   private state: State = blankState();
   private panels!: HTMLElement;
   private report!: HTMLElement;
@@ -100,6 +101,7 @@ class CrmaRisk extends HTMLElement {
     this.pub = cfg.materials;
     this.eu = new Set(cfg.eu);
     this.base = cfg.base;
+    this.tag = cfg.tag;
     this.load();
     this.build();
   }
@@ -259,7 +261,7 @@ class CrmaRisk extends HTMLElement {
           el.append(t.mapping.nodata);
           continue;
         }
-        el.append(`${t.mapping.top}: ${s.top.country} ${Math.round(s.top.share as number)}% · ${t.mapping.hhi} ${s.hhi.toLocaleString('en-GB')}`);
+        el.append(`${t.mapping.top}: ${s.top.country} ${Math.round(s.top.share as number)}% · ${t.mapping.hhi} ${s.hhi.toLocaleString(this.tag)}`);
         if (s.over) el.append(h('span', { class: 'badge warn' }, `⚠ ${t.mapping.over}`));
         if (Math.abs(s.total - 100) > 1.5) el.append(h('span', { class: 'small' }, ` ${t.mapping.incomplete} ${Math.round(s.total)}%`));
       }
@@ -322,7 +324,7 @@ class CrmaRisk extends HTMLElement {
     const add = (k: string, v: string | null) => v && ctx.append(h('dt', {}, k), h('dd', {}, v));
     add(t.context.sr, p.sr !== null ? p.sr.toFixed(1) : null);
     add(t.context.ir, p.ir !== null ? `${Math.round(p.ir)}%` : null);
-    add(t.context.top, p.top ? `${p.top.country} ${Math.round(p.top.share)}% (${p.top.stage.toLowerCase()})` : null);
+    add(t.context.top, p.top ? `${p.top.country} ${Math.round(p.top.share)}% (${p.top.stage})` : null);
     add(t.context.price, p.price && p.price.change1y !== null ? `${p.price.change1y > 0 ? '+' : ''}${p.price.change1y}% (${p.price.label})` : null);
 
     // factors ----------------------------------------------------------------
@@ -449,8 +451,8 @@ class CrmaRisk extends HTMLElement {
       row(t.rating.justification, m.justification);
       const planned = Object.entries(m.mitigations).filter(([, v]) => v === 'planned').map(([k]) => t.mitigations[k]);
       const done = Object.entries(m.mitigations).filter(([, v]) => v === 'done').map(([k]) => t.mitigations[k]);
-      row(`${r.measures}: ${t.mitigationStatus.done.toLowerCase()}`, done.join('; '));
-      row(`${r.measures}: ${t.mitigationStatus.planned.toLowerCase()}`, planned.join('; '));
+      row(`${r.measures}: ${t.mitigationStatus.done}`, done.join('; '));
+      row(`${r.measures}: ${t.mitigationStatus.planned}`, planned.join('; '));
       if (!planned.length && !done.length) row(r.measures, r.none);
       row(r.sources, t.basis[m.basis]);
       row(t.notes, m.notes);
@@ -502,7 +504,7 @@ class CrmaRisk extends HTMLElement {
       this.build();
       this.changed();
     } catch {
-      window.alert('This file could not be read as an assessment.');
+      window.alert(this.t.importError);
     }
     input.value = '';
   }

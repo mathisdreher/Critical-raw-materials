@@ -6,16 +6,21 @@ The site is rebuilt once a day by GitHub Actions and served by GitHub Pages. The
 
 ## What is covered
 
+The counts below are numbers of materials (out of 34), not of series.
+
 | Layer | Source | Frequency | Materials |
 |---|---|---|---|
-| Exchange futures | Yahoo Finance (unofficial endpoint) | Daily | 4 (copper, aluminium, platinum, palladium) |
-| Benchmark prices | IMF Primary Commodity Price System, World Bank Pink Sheet | Monthly | 12 |
-| EU import unit values and volumes by origin | Eurostat Comext | Monthly | 34 |
-| Reference prices | USGS Mineral Commodity Summaries | Annual | 31 |
-| World production and reserves by country | USGS Mineral Commodity Summaries | Annual | 28 |
-| Supply risk, economic importance, import reliance, recycling rate | European Commission, 2023 criticality study | Static | 34 |
+| Exchange futures | Yahoo Finance (unofficial endpoint) | Daily | 3 (aluminium, copper, platinum group metals), through 4 series |
+| Benchmark prices | IMF Primary Commodity Price System, World Bank Pink Sheet | Monthly | 11, through 12 series |
+| EU import volumes, origins and unit values | Eurostat Comext | Monthly | 34 (unit value series for 32) |
+| Reference prices, including 17 rare earth elements | USGS Mineral Commodity Summaries | Annual | 31, through 54 series |
+| World production and reserves by country | USGS Mineral Commodity Summaries | Annual | 29 |
+| EU demand of modelled technologies, 2030 and 2050 | JRC foresight study 2023 (Zenodo, CC BY 4.0) | Static | 28 |
+| Supply risk, economic importance, import reliance, recycling rate | European Commission, 2023 criticality study | Static | 34 (per element for 15 rare earths) |
+| Strategic Projects by country | Commission decisions of 25 Mar 2025, 4 Jun 2025, 9 Oct 2026 | Updated by hand | 106 projects |
+| Stage shares for magnet rare earths | IEA, Rare Earth Elements (2026, CC BY 4.0) | Static | Rare earths |
 
-Free daily prices exist only for a few exchange-traded metals. Most critical raw materials are priced by commercial reporting agencies whose data cannot be republished, so the monitor falls back on monthly and annual open sources and labels each series with its frequency and origin.
+Only 11 materials have a market quotation. The other 23 have only EU import unit values and USGS annual averages, because the market prices of most minor metals are assessed by commercial agencies whose data cannot be republished. Free daily prices exist for three materials.
 
 ## Critical Raw Materials Act toolkit
 
@@ -34,6 +39,12 @@ All legal content lives in `src/i18n/crma.en.ts` and was written against the Off
 
 The tools are a reading aid, not legal advice, and say so on every page.
 
+## Languages
+
+The site is published in English (at the root) and in French, German, Dutch and Spanish (under `/fr/`, `/de/`, `/nl/`, `/es/`). The interface text lives in `src/i18n/<lang>.ts` and the toolkit text in `src/i18n/crma.<lang>.ts`; both must have exactly the structure of the English files, which TypeScript enforces. Labels that come with the data (series names, customs product names, source names) are translated in `src/i18n/data-labels.<lang>.ts`, keyed by their English text, and fall back to English when missing. The material profiles are Markdown files in `src/content/materials/<lang>/` and fall back to English when a file is missing. Country names are localised from ISO codes, numbers and dates follow each language's conventions, and every page carries hreflang links.
+
+To change a text, edit the English file and update the four translations. To add a language, copy `en.ts` and `crma.en.ts`, translate them, register the language in `src/i18n/index.ts` and `astro.config.mjs`, and add its name to `LOCALE_NAMES`.
+
 ## Project layout
 
 ```
@@ -43,14 +54,19 @@ data/
   trade/                    EU imports and exports per material (Eurostat)
   supply/                   world production and reserves per material (USGS)
   eu/criticality.json       2023 EU criticality assessment values, with notes on source conflicts
+  eu/rare-earths.json       the same assessment per rare earth element, plus IEA stage figures
+  demand/                   EU demand projections of the JRC foresight study
+  projects/                 Strategic Projects under the Critical Raw Materials Act
   status.json               outcome of the last pipeline run, per source
 pipeline/
   build_registry.py         edit this to change which series a material tracks
   update.py                 fetches every source and rewrites data/
 src/
   content/materials/en/     the written profiles, one Markdown file per material
-  i18n/en.ts                every interface string
-  i18n/crma.en.ts           legal content of the CRMA toolkit
+  i18n/en.ts                every interface string (one file per language)
+  i18n/crma.en.ts           legal content of the CRMA toolkit (one file per language)
+  lib/worldmap.ts           world geometry for the map, computed at build time
+  lib/rareEarths.ts         element-level view of the rare earths
   views/                    page templates, language-independent
   pages/                    thin routes that call the views with a language
   components/, scripts/     charts and tables
@@ -99,6 +115,10 @@ A single source can be refreshed on its own, for example `python pipeline/update
 **Add a language.** Copy `src/i18n/en.ts` to, for example, `fr.ts` and register it in `src/i18n/index.ts`. Translate the profiles into `src/content/materials/fr/` (missing ones fall back to English). Add `fr` to `locales` in `astro.config.mjs` and `src/site.config.ts`, then copy the files of `src/pages/` into `src/pages/fr/` with `locale="fr"`.
 
 ## Caveats to keep in mind
+
+- Demand figures cover only the eleven technologies modelled by the JRC. They are not total EU demand, 2050 values leave out information and communication technologies, and the growth multiples are computed by this site. The Commission must publish official consumption projections by 24 November 2026 (Article 44 of the Act), which should replace them.
+- Strategic Projects are shown by country because the official lists give no project locations. The list in `data/projects/` is updated by hand when the Commission adopts a new decision.
+- The IEA figures on the rare earths page are reused under CC BY 4.0, which requires the credit line and the derived-work disclaimer shown on that page. Keep them if you edit it.
 
 - The daily futures layer uses an unofficial Yahoo Finance endpoint. It is delayed, it can stop working without notice, and Yahoo's terms do not grant redistribution rights. It is displayed as an indication, with attribution. To switch it off, remove the `yahoo(...)` entries from the registry and delete the matching files in `data/prices/`.
 - The EU import unit value is customs value divided by net mass for one customs code per material, summed over three months. It is a trade indicator, not a market price, and it is volatile for materials traded in a few tonnes per year.

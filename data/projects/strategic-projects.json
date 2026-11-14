@@ -1,0 +1,2722 @@
+{
+  "generated": "2026-11-14",
+  "sources": {
+    "commission_page": "https://single-market-economy.ec.europa.eu/sectors/raw-materials/areas-specific-interest/critical-raw-materials/strategic-projects-under-crma/selected-projects_en",
+    "commission_page_tables": [
+      "https://ec.europa.eu/assets/grow/growth/embeds/crma-projects/data/data-eu-fs-2026-10-08.json",
+      "https://ec.europa.eu/assets/grow/growth/embeds/crma-projects/data/data-noneu-fs-2025-10-17.json"
+    ],
+    "overview_2026_pdf": "https://op.europa.eu/en/publication-detail/-/publication/b6e4a9b9-c3b2-11f1-bfcb-01aa75ed71a1/language-en",
+    "press_releases": [
+      "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_864",
+      "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_1419",
+      "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2113"
+    ],
+    "primary_basis": "Annexes of the three Commission decisions (legal text); Commission page table and 2026 overview used for cross-checks and for stage detail of 8 bare 'integrated' 2026 projects"
+  },
+  "decisions": [
+    {
+      "id": "C(2025)1904",
+      "title": "Commission Decision of 25.3.2025 recognising certain critical raw material projects as Strategic Projects under Regulation (EU) 2024/1252",
+      "date": "2025-03-25",
+      "scope": "eu",
+      "declared_count": 47,
+      "url": "https://single-market-economy.ec.europa.eu/document/download/9b159533-2a45-4d43-bf33-6ca5fa88440d_en?filename=C_2025_1904_1_EN_ACT_part1_v2.pdf",
+      "annex_url": "https://single-market-economy.ec.europa.eu/document/download/e9c90c91-7492-4047-bc51-d0c9d5e89a2f_en?filename=C_2025_1904_1_EN_annexe_acte_autonome_part1_v2.pdf",
+      "press_release_url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_864"
+    },
+    {
+      "id": "C(2025)3491",
+      "title": "Commission Decision of 4.6.2025 recognising certain critical raw material projects located in third countries and in overseas countries or territories as Strategic Projects under Regulation (EU) 2024/1252",
+      "date": "2025-06-04",
+      "scope": "third-country",
+      "declared_count": 13,
+      "url": "https://single-market-economy.ec.europa.eu/publications/commission-decision-recognising-certain-critical-raw-material-projects-located-third-countries_en",
+      "annex_url": "https://single-market-economy.ec.europa.eu/document/download/60c576a5-435e-43e6-83de-c81f3652259b_en?filename=C_2025_3491_1_EN_annexe_acte_autonome_part1_v3.pdf",
+      "press_release_url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_1419"
+    },
+    {
+      "id": "C(2026)8051",
+      "title": "Commission Decision of 9.10.2026 recognising certain critical raw material projects as Strategic Projects under Regulation (EU) 2024/1252",
+      "date": "2026-10-09",
+      "scope": "eu",
+      "declared_count": 46,
+      "url": "https://single-market-economy.ec.europa.eu/document/download/56f5457c-2ed0-4c10-8c76-d66a79cb00b6_en?filename=C_2026_8051_F1_COMMISSION_DECISION_EN_V2_P1_5091203.PDF",
+      "annex_url": "https://single-market-economy.ec.europa.eu/document/download/efabd887-9c12-4a3d-910e-8433c0f63a81_en?filename=C_2026_8051_F1_ANNEX_EN_V3_P1_5091583.PDF",
+      "press_release_url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2113",
+      "overview_url": "https://op.europa.eu/en/publication-detail/-/publication/b6e4a9b9-c3b2-11f1-bfcb-01aa75ed71a1/language-en"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Ageli",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Eramet",
+      "source_ref": "Annex to C(2025)1904, item (1) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 1,
+      "name_on_commission_page": "Ageli",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/15a214a8-2963-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Aguablanca project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt",
+        "platinum-group-metals",
+        "copper",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "platinum group metals",
+        "copper",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Rio Narcea Recursos S.A.",
+      "source_ref": "Annex to C(2025)1904, item (2) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 2,
+      "name_on_commission_page": "Aguablanca Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/f1dd6f16-2962-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Alpha Project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "platinum group metals"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Solvay Chimica Italia Spa",
+      "source_ref": "Annex to C(2025)1904, item (3) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 3,
+      "name_on_commission_page": "Alpha Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/1b497cf3-2962-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "BAM4EVER (Phase I&II)",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Tokai COBEX savoie",
+      "source_ref": "Annex to C(2025)1904, item (4) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 4,
+      "name_on_commission_page": "BAM4EVER (Phase I&II)",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/9f050542-2964-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Barroso Lithium Project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "PT",
+      "country_name": "Portugal",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Savannah Lithium, Unipessoal, Lda.",
+      "source_ref": "Annex to C(2025)1904, item (5) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 5,
+      "name_on_commission_page": "Barroso Lithium Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/c87272ae-2963-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "BAUX-EU, GALLANT and LEADER project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "GR",
+      "country_name": "Greece",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite",
+        "gallium"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium",
+        "gallium"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Metlen Energy & Metals and European Bauxites",
+      "source_ref": "Annex to C(2025)1904, item (6) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 6,
+      "name_on_commission_page": "Metlen BAUX-EU, GALLANT, LEADER",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/5eda5224-263a-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "CAREMAG",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets",
+        "boron"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets",
+        "boron (metallurgy grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Caremag SAS",
+      "source_ref": "Annex to C(2025)1904, item (7) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 7,
+      "name_on_commission_page": "CAREMAG",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/91e4dead-2960-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Chvaletice Manganese Project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "CZ",
+      "country_name": "Czechia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "manganese"
+      ],
+      "materials_as_stated": [
+        "manganese (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Euro Manganese Inc",
+      "source_ref": "Annex to C(2025)1904, item (8) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 8,
+      "name_on_commission_page": "Chvaletice manganese Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/a4ae906d-2963-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Cínovec lithium project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "CZ",
+      "country_name": "Czechia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Geomet s.r.o.",
+      "source_ref": "Annex to C(2025)1904, item (9) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 9,
+      "name_on_commission_page": "Cínovec lithium project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/7b420d5f-2964-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "CirCular",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "nickel",
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "nickel",
+        "platinum group metals"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Atlantic Copper SLU",
+      "source_ref": "Annex to C(2025)1904, item (10) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 10,
+      "name_on_commission_page": "CirCular",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/5d262faa-2963-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "CO2Graphite",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "EE",
+      "country_name": "Estonia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "UP Catalyst OU",
+      "source_ref": "Annex to C(2025)1904, item (11) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 11,
+      "name_on_commission_page": "CO2 Graphite",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/d3c42971-2961-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "EMILI",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "IMERYS Ceramics France and IMERYS Lithium France",
+      "source_ref": "Annex to C(2025)1904, item (12) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 12,
+      "name_on_commission_page": "Emili",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/3f0c26b4-2962-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "European Initiative for Strategic and Sustainable Graphite Production",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [
+        "NA",
+        "DE"
+      ],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "NGC Battery Materials GmbH",
+      "source_ref": "Annex to C(2025)1904, item (13) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 13,
+      "name_on_commission_page": "European Initiative for Strategic and Sustainable Graphite Production",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/22bf2dfa-2967-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "GePETO",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "BE",
+      "country_name": "Belgium",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "germanium"
+      ],
+      "materials_as_stated": [
+        "germanium"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Umicore",
+      "source_ref": "Annex to C(2025)1904, item (14) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 14,
+      "name_on_commission_page": "GePETO",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/6e23bb89-2960-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "GALLICAM",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "nickel",
+        "cobalt",
+        "lithium",
+        "other:graphite (battery grade)",
+        "manganese",
+        "copper"
+      ],
+      "materials_as_stated": [
+        "nickel (battery grade)",
+        "cobalt",
+        "lithium (battery grade)",
+        "graphite (battery grade)",
+        "manganese (battery grade)",
+        "copper"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Sibanye-Stillwater Sandouville Refinery",
+      "source_ref": "Annex to C(2025)1904, item (15) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 15,
+      "name_on_commission_page": "GALLICAM",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/04a6f9c8-2966-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Hycamite TCD Technologies Ltd",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Hycamite TCD Technologies Ltd",
+      "source_ref": "Annex to C(2025)1904, item (16) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 16,
+      "name_on_commission_page": "Hycamite TCD Technologies Ltd",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/b3a979c2-637f-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Hydrometallurgy",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium",
+        "cobalt",
+        "nickel",
+        "manganese",
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)",
+        "cobalt",
+        "nickel (battery grade)",
+        "manganese (battery grade)",
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Orano Batteries",
+      "source_ref": "Annex to C(2025)1904, item (17) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 17,
+      "name_on_commission_page": "Hydrometallurgy",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/39624d69-2963-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Jervois Finland Cobalt Refinery Expansion Project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt"
+      ],
+      "materials_as_stated": [
+        "cobalt"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Jervois Finland Oy",
+      "source_ref": "Annex to C(2025)1904, item (18) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 18,
+      "name_on_commission_page": "Jervois Finland Cobalt Refinery Expansion Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/62cf1e95-2962-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "KELIBER LITHIUM",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Keliber Technology Oy",
+      "source_ref": "Annex to C(2025)1904, item (19) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 19,
+      "name_on_commission_page": "KELIBER LITHIUM PROJECT",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/ea0b8b6f-2641-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Kolmisoppi",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "nickel",
+        "cobalt"
+      ],
+      "materials_as_stated": [
+        "nickel (battery grade)",
+        "cobalt"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Terrafame Ltd.",
+      "source_ref": "Annex to C(2025)1904, item (20) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 20,
+      "name_on_commission_page": "Kolmisoppi",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/63afeab3-26fd-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Las Navas",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Lithium Iberia S.L.",
+      "source_ref": "Annex to C(2025)1904, item (21) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 21,
+      "name_on_commission_page": "LAS NAVAS",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/a284150d-2641-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "LIFE22-ENV- IT-INSPIREE",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Itelyum Regeneration SpA",
+      "source_ref": "Annex to C(2025)1904, item (22) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 22,
+      "name_on_commission_page": "LIFE-22-ENV- IT- INSPIREE",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/7ec562eb-2641-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Lift One",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "PT",
+      "country_name": "Portugal",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Lifthium energy S.A.",
+      "source_ref": "Annex to C(2025)1904, item (23) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 23,
+      "name_on_commission_page": "Lift One",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/c647821e-2641-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Lithium Hydroxide Converter Guben",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Rock Tech Guben GmbH",
+      "source_ref": "Annex to C(2025)1904, item (24) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 24,
+      "name_on_commission_page": "Lithium Hydroxide Converter Guben",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/9397c8a6-2637-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "MagFactory",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "MagREEsource",
+      "source_ref": "Annex to C(2025)1904, item (25) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 25,
+      "name_on_commission_page": "MagFactory",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/6fd3bf55-2637-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "MINA DOADE PROJECT",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Recursos Minerales de Galicia S.A.",
+      "source_ref": "Annex to C(2025)1904, item (26) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 26,
+      "name_on_commission_page": "MINA DOADE PROJECT",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/065772bf-263d-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Mining Project El Moto",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "tungsten"
+      ],
+      "materials_as_stated": [
+        "tungsten"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Abenojar Tungsten S.L.",
+      "source_ref": "Annex to C(2025)1904, item (27) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 27,
+      "name_on_commission_page": "Mining project EL MOTO",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/e672555e-2635-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "NorthCYCLE",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "SE",
+      "country_name": "Sweden",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "manganese",
+        "lithium",
+        "other:graphite (battery grade)",
+        "nickel",
+        "cobalt"
+      ],
+      "materials_as_stated": [
+        "manganese (battery grade)",
+        "lithium (battery grade)",
+        "graphite (battery grade)",
+        "nickel (battery grade)",
+        "cobalt"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Northvolt Revolt AB",
+      "source_ref": "Annex to C(2025)1904, item (28) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 28,
+      "name_on_commission_page": "NorthCYCLE",
+      "factsheet_url": null
+    },
+    {
+      "name": "Lombador North Phase 2, Semblana and 3rd SILO project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "PT",
+      "country_name": "Portugal",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "SOMINCOR",
+      "source_ref": "Annex to C(2025)1904, item (29) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 29,
+      "name_on_commission_page": "Neves Corvo - 3RD SILO, LOMBADOR, Semblana",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/f5b99bf4-295b-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "P6 Metals",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "tungsten"
+      ],
+      "materials_as_stated": [
+        "tungsten"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Iberian Resources Spain",
+      "source_ref": "Annex to C(2025)1904, item (30) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 30,
+      "name_on_commission_page": "La Parrilla Mine (P6 Metals)",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/c293ca57-6389-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "POLVOLT",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "PL",
+      "country_name": "Poland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "nickel",
+        "copper",
+        "cobalt",
+        "lithium",
+        "platinum-group-metals",
+        "manganese"
+      ],
+      "materials_as_stated": [
+        "nickel (battery grade)",
+        "copper",
+        "cobalt",
+        "lithium (battery grade)",
+        "platinum group metals",
+        "manganese (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Elemental Battery Metals SP. z.o.o.",
+      "source_ref": "Annex to C(2025)1904, item (31) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 31,
+      "name_on_commission_page": "POLVOLT",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/80d17245-2634-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Polymetallic primary sulphide project",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Cobre las Cruces S.A.U.",
+      "source_ref": "Annex to C(2025)1904, item (32) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 32,
+      "name_on_commission_page": "Polymetallic primary sulphite project PMR project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/d5803b30-2638-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Portovesme CRM Hub",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium",
+        "manganese"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)",
+        "manganese (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Portovesme s.r.l.",
+      "source_ref": "Annex to C(2025)1904, item (33) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 33,
+      "name_on_commission_page": "Portovesme CRM Hub",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/b75d5897-2637-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "ProHiPerSi",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "substitution"
+      ],
+      "promoter": "PCC Thorion GmbH",
+      "source_ref": "Annex to C(2025)1904, item (34) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 34,
+      "name_on_commission_page": "ProHiPerSi",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/db1e7bbb-2637-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Project Fortum Hydromet",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium",
+        "other:graphite (battery grade)",
+        "copper",
+        "nickel",
+        "cobalt"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)",
+        "graphite (battery grade)",
+        "copper",
+        "nickel (battery grade)",
+        "cobalt"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Fortum Battery Recycling Oy",
+      "source_ref": "Annex to C(2025)1904, item (35) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 35,
+      "name_on_commission_page": "Project Fortum Hydromet",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/c47bf88b-263b-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Pulawy Rare Earths Separation Plant",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "PL",
+      "country_name": "Poland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Mkango Resources Ltd.",
+      "source_ref": "Annex to C(2025)1904, item (36) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 36,
+      "name_on_commission_page": "Pulawy Rare Earths Separation Plant",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/6a2b6cac-2638-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "RECOVER-IT",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "nickel",
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "nickel (battery grade)",
+        "platinum group metals"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Circular Materials s.r.l.",
+      "source_ref": "Annex to C(2025)1904, item (37) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 37,
+      "name_on_commission_page": "RECOVER-IT",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/b1b6657f-2638-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "ReeMAP Project: Malmberget, Per Geijer and Lulea Industrial Park",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "SE",
+      "country_name": "Sweden",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Luossavaara-Kirunavaara AB (LKAB)",
+      "source_ref": "Annex to C(2025)1904, item (38) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 38,
+      "name_on_commission_page": "ReeMAP Project: Malmberget, Lulea Industrial Park, Per Geijer",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/c0fb13f5-295e-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "ReGAIN",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "BE",
+      "country_name": "Belgium",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "germanium"
+      ],
+      "materials_as_stated": [
+        "germanium"
+      ],
+      "stages": [
+        "substitution"
+      ],
+      "promoter": "Umicore",
+      "source_ref": "Annex to C(2025)1904, item (39) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 39,
+      "name_on_commission_page": "ReGAIN",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/3ef47160-2633-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Romano Mine",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "PT",
+      "country_name": "Portugal",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Lusorecursos Portugal Lithium S.A.",
+      "source_ref": "Annex to C(2025)1904, item (40) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 40,
+      "name_on_commission_page": "Romano Mine",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/6bf8a3f3-263e-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Rovina",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "RO",
+      "country_name": "Romania",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Euro Sun Mining Inc.",
+      "source_ref": "Annex to C(2025)1904, item (41) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 41,
+      "name_on_commission_page": "Rovina",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/e4be32e6-295e-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Sakatti",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt",
+        "platinum-group-metals",
+        "copper",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "platinum group metals",
+        "copper",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Anglo American Services (UK) Ltd.",
+      "source_ref": "Annex to C(2025)1904, item (42) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 42,
+      "name_on_commission_page": "Sakatti Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/bd1ceb56-2965-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "SALROM Baia de Fier",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "RO",
+      "country_name": "Romania",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Societatea Națională a Sării S.A.",
+      "source_ref": "Annex to C(2025)1904, item (43) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 43,
+      "name_on_commission_page": "SALROM Baia de Fier",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/80ebbf9c-2963-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Talga Natural Graphite ONE",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "SE",
+      "country_name": "Sweden",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Talga AB",
+      "source_ref": "Annex to C(2025)1904, item (44) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 44,
+      "name_on_commission_page": "Talga Natural Graphite ONE",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/286b2a29-2966-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Verde Magnesium",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "RO",
+      "country_name": "Romania",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "magnesium"
+      ],
+      "materials_as_stated": [
+        "magnesium metal"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Verde Magnesium SRL",
+      "source_ref": "Annex to C(2025)1904, item (45) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 45,
+      "name_on_commission_page": "Verde Magnesium",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/f7894432-2961-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Viridian Lithium",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Viridian Lithium",
+      "source_ref": "Annex to C(2025)1904, item (46) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 46,
+      "name_on_commission_page": "Viridian Lithium",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/e68c7ba5-2964-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Zero Carbon Lithium",
+      "decision": "C(2025)1904",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Vulcan Energie Ressourcen GmbH",
+      "source_ref": "Annex to C(2025)1904, item (47) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 47,
+      "name_on_commission_page": "Zero Carbon Lithium",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/c2c935a3-2964-11f0-8a44-01aa75ed71a1"
+    },
+    {
+      "name": "Balakhivka Graphite Deposit",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "UA",
+      "country_name": "Ukraine",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Pobuzhzhya’s Development LLC",
+      "source_ref": "Annex to C(2025)3491, item (1) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 1,
+      "name_on_commission_page": "Balakhivka Graphite Deposit",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/bfdf36a9-65e8-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "CaledoNi",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "NC",
+      "country_name": "New Caledonia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Société Le Nickel",
+      "source_ref": "Annex to C(2025)3491, item (2) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 2,
+      "name_on_commission_page": "CaledoNi project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/3c261f5b-65e6-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Norgraph a/s and Greenland Graphite a/s",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "NO",
+      "country_name": "Norway",
+      "other_countries_iso2": [
+        "GL"
+      ],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "GreenRoc Strategic Materials Plc",
+      "source_ref": "Annex to C(2025)3491, item (3) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 3,
+      "name_on_commission_page": "Greenland Graphite a/s and Norgraph a/s",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/404b8c19-91e0-11f0-97c8-01aa75ed71a1"
+    },
+    {
+      "name": "Integrated Dumont Nickel Project",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "CA",
+      "country_name": "Canada",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "nickel",
+        "cobalt"
+      ],
+      "materials_as_stated": [
+        "nickel (battery grade)",
+        "cobalt"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Magneto Investments Limited Partnership",
+      "source_ref": "Annex to C(2025)3491, item (4) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 4,
+      "name_on_commission_page": "Integrated Dumont Nickel Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/367fef90-65e7-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Jadar",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "RS",
+      "country_name": "Serbia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium",
+        "boron"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)",
+        "boron (metallurgy grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Rio Tinto via the local entity Rio Sava Exploration doo",
+      "source_ref": "Annex to C(2025)3491, item (5) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 5,
+      "name_on_commission_page": "Jadar",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/70eeb967-65e3-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Kobaloni Energy Zambia Ltd",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "ZM",
+      "country_name": "Zambia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt"
+      ],
+      "materials_as_stated": [
+        "cobalt"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Kobaloni Energy Zambia Limited",
+      "source_ref": "Annex to C(2025)3491, item (6) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 6,
+      "name_on_commission_page": "Kobaloni Energy Zambia Ltd",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/e3a3b52b-65e8-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Maniry Graphite Mine Project",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "MG",
+      "country_name": "Madagascar",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Evion Group NL",
+      "source_ref": "Annex to C(2025)3491, item (7) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 7,
+      "name_on_commission_page": "Maniry Graphite Mine Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/659e1415-65e5-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Nussir",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "NO",
+      "country_name": "Norway",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Nussir ASA",
+      "source_ref": "Annex to C(2025)3491, item (8) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 8,
+      "name_on_commission_page": "Nussir",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/a1c554c4-65e7-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "São Miguel Paulista (SMP) Nickel and Cobalt Refinery Restart Project",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "BR",
+      "country_name": "Brazil",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "nickel",
+        "cobalt"
+      ],
+      "materials_as_stated": [
+        "nickel (battery grade)",
+        "cobalt"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Jervois Brasil Metalurgia Ltda.",
+      "source_ref": "Annex to C(2025)3491, item (9) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 9,
+      "name_on_commission_page": "São Miguel Paulista (SMP) Nickel and Cobalt Refinery Restart Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/6b3fd70c-65e4-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Sarytogan Graphite Project",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "KZ",
+      "country_name": "Kazakhstan",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Sarytogan Graphite Limited",
+      "source_ref": "Annex to C(2025)3491, item (10) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 10,
+      "name_on_commission_page": "Sarytogan Graphite Project",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/5fe82cdc-65e6-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Songwe Hill Rare Earths",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "MW",
+      "country_name": "Malawi",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Mkango Resources Limited",
+      "source_ref": "Annex to C(2025)3491, item (11) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 11,
+      "name_on_commission_page": "Songwe Hill Rare Earths",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/ad170b88-65e5-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Tungsten West",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "GB",
+      "country_name": "United Kingdom",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "tungsten"
+      ],
+      "materials_as_stated": [
+        "tungsten"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Tungsten West PLC",
+      "source_ref": "Annex to C(2025)3491, item (12) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 12,
+      "name_on_commission_page": "Tungsten West",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/83ac5d3d-65e6-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "Zandkopsdrift",
+      "decision": "C(2025)3491",
+      "scope": "third-country",
+      "country_iso2": "ZA",
+      "country_name": "South Africa",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets",
+        "manganese"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets",
+        "manganese (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Frontier Rare Earths Limited",
+      "source_ref": "Annex to C(2025)3491, item (13) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 13,
+      "name_on_commission_page": "Zandkopsdrift",
+      "factsheet_url": "https://op.europa.eu/en/publication-detail/-/publication/94a61889-65e3-11f0-bf4e-01aa75ed71a1"
+    },
+    {
+      "name": "3ECYCLE",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "NL",
+      "country_name": "Netherlands",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Mitsubishi Materials Europe B.V",
+      "source_ref": "Annex to C(2026)8051, item (1) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 1,
+      "name_on_commission_page": "3ECYCLE",
+      "factsheet_url": null
+    },
+    {
+      "name": "9PV-up: Upcycling raw materials from end-of-life photovoltaic panels",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite",
+        "copper",
+        "silicon-metal"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium",
+        "copper",
+        "silicon metal"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "9-Tech",
+      "source_ref": "Annex to C(2026)8051, item (2) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 2,
+      "name_on_commission_page": "9PV-up: Upcycling raw materials from end-of-life photovoltaic panels",
+      "factsheet_url": null
+    },
+    {
+      "name": "ALE - Altmark Lithium Extraction",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Neptune Energy Innovations GmbH",
+      "source_ref": "Annex to C(2026)8051, item (3) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 3,
+      "name_on_commission_page": "ALE - Altmark Lithium Extraction",
+      "factsheet_url": null
+    },
+    {
+      "name": "Alkeemia PureGraph",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Alkeemia S.p.A.",
+      "source_ref": "Annex to C(2026)8051, item (4) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 4,
+      "name_on_commission_page": "Alkeemia PureGraph",
+      "factsheet_url": null
+    },
+    {
+      "name": "EU APT Tungsten Plant",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "tungsten"
+      ],
+      "materials_as_stated": [
+        "tungsten"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "ABENÓJAR TUNGSTEN S.A.",
+      "source_ref": "Annex to C(2026)8051, item (5) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 5,
+      "name_on_commission_page": "EU APT Tungsten Plant",
+      "factsheet_url": null
+    },
+    {
+      "name": "BORRALHA MINING PROJECT",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "PT",
+      "country_name": "Portugal",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "tungsten"
+      ],
+      "materials_as_stated": [
+        "tungsten"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "MINERALIA - Minas, Geotecnia e Construções, Lda.",
+      "source_ref": "Annex to C(2026)8051, item (6) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 6,
+      "name_on_commission_page": "BORRALHA MINING PROJECT",
+      "factsheet_url": null
+    },
+    {
+      "name": "BREES (Best Rare Earth Element Separation)",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Rhodia Operations",
+      "source_ref": "Annex to C(2026)8051, item (7) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 7,
+      "name_on_commission_page": "BREES (Best Rare Earth Element Separation)",
+      "factsheet_url": null
+    },
+    {
+      "name": "CRM4Defence – Byproducts and Recycling of CRM for Defence",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [
+        "PL",
+        "GB",
+        "FR"
+      ],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite",
+        "magnesium",
+        "titanium-metal"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium",
+        "magnesium",
+        "titanium-metal"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Leonardo S.p.A.",
+      "source_ref": "Annex to C(2026)8051, item (8) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 8,
+      "name_on_commission_page": "CRM4Defence – Byproducts and Recycling of CRM for Defence",
+      "factsheet_url": null
+    },
+    {
+      "name": "Cobre San Rafael Project",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "ES",
+      "country_name": "Spain",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Cobre San Rafael, S.L.",
+      "source_ref": "Annex to C(2026)8051, item (9) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 9,
+      "name_on_commission_page": "Cobre San Rafael Project",
+      "factsheet_url": null
+    },
+    {
+      "name": "CoNiKo - Cobalt and Nickel refining in Kokkola",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Umicore",
+      "source_ref": "Annex to C(2026)8051, item (10) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 10,
+      "name_on_commission_page": "CoNiKo - Cobalt and Nickel refining in Kokkola",
+      "factsheet_url": null
+    },
+    {
+      "name": "CUPIDON",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "BE",
+      "country_name": "Belgium",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Comet Traitements",
+      "source_ref": "Annex to C(2026)8051, item (11) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 11,
+      "name_on_commission_page": "CUPIDON",
+      "factsheet_url": null
+    },
+    {
+      "name": "Development and extraction of the Retków-Grodziszcze Deposit in KGHM Polska Miedź S.A",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "PL",
+      "country_name": "Poland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "KGHM Polska Miedź S.A.",
+      "source_ref": "Annex to C(2026)8051, item (12) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 12,
+      "name_on_commission_page": "Development and extraction of the Retków-Grodziszcze Deposit in KGHM Polska Miedź S.A.",
+      "factsheet_url": null
+    },
+    {
+      "name": "EMME",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "processing",
+        "recycling"
+      ],
+      "promoter": "ELECTRO MOBILITY MATERIALS EUROPE (EMME)",
+      "source_ref": "Annex to C(2026)8051, item (13) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 13,
+      "name_on_commission_page": "EMME",
+      "factsheet_url": null
+    },
+    {
+      "name": "Establishment of electric battery recycling capacity, Racari city, Dambovita county",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "RO",
+      "country_name": "Romania",
+      "other_countries_iso2": [],
+      "location": "Racari city, Dambovita county",
+      "materials": [
+        "cobalt",
+        "lithium",
+        "manganese",
+        "other:graphite (battery grade)",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "lithium (battery grade)",
+        "manganese (battery grade)",
+        "graphite (battery grade)",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "ECO LIFE STYLE S.R.L.",
+      "source_ref": "Annex to C(2026)8051, item (14) 'LIST OF STRATEGIC PROJECTS'; location = place stated in the official project title",
+      "annex_item": 14,
+      "name_on_commission_page": "Establishment of electric battery recycling capacity, Racari city, Dambovita county",
+      "factsheet_url": null
+    },
+    {
+      "name": "ETEOCLES - Developing a recycling hub for low quality copper scrap",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "GR",
+      "country_name": "Greece",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "ElvalHalcor Hellenic Copper and Aluminium industry S.A.",
+      "source_ref": "Annex to C(2026)8051, item (15) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 15,
+      "name_on_commission_page": "ETEOCLES - Developing a recycling hub for low quality copper scrap",
+      "factsheet_url": null
+    },
+    {
+      "name": "EU BEST STRAT: Battery Economical Sustainable (Recycling-) Technology",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite",
+        "copper",
+        "cobalt",
+        "lithium",
+        "manganese",
+        "other:graphite (battery grade)",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium",
+        "copper",
+        "cobalt",
+        "lithium (battery grade)",
+        "manganese (battery grade)",
+        "graphite (battery grade)",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "cylib Production I GmbH",
+      "source_ref": "Annex to C(2026)8051, item (16) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 16,
+      "name_on_commission_page": "EU BEST STRAT: Battery Economical Sustainable (Recycling-) Technology",
+      "factsheet_url": null
+    },
+    {
+      "name": "European Lithium Refining and Recycling Hub Bitterfeld: from primary raw materials via recycling to critical solid state battery components",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "processing",
+        "recycling"
+      ],
+      "promoter": "AMG Lithium GmbH",
+      "source_ref": "Annex to C(2026)8051, item (17) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 17,
+      "name_on_commission_page": "European Lithium Refining and Recycling Hub Bitterfeld: from primary raw materials via recycling to critical solid state battery components",
+      "factsheet_url": null
+    },
+    {
+      "name": "GaRefine - Gallium Recycling & Refining for Europe",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "SK",
+      "country_name": "Slovakia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "gallium"
+      ],
+      "materials_as_stated": [
+        "gallium"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "CMK s.r.o.",
+      "source_ref": "Annex to C(2026)8051, item (18) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 18,
+      "name_on_commission_page": "GaRefine - Gallium Recycling & Refining for Europe",
+      "factsheet_url": null
+    },
+    {
+      "name": "Hautalampi Cobalt-Nickel-Copper Mine Project",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "cobalt",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "cobalt",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "FinnCobalt Oy",
+      "source_ref": "Annex to C(2026)8051, item (19) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 19,
+      "name_on_commission_page": "Hautalampi Cobalt-Nickel-Copper Mine Project",
+      "factsheet_url": null
+    },
+    {
+      "name": "HyProMag GmbH",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "HyProMag GmbH",
+      "source_ref": "Annex to C(2026)8051, item (20) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 20,
+      "name_on_commission_page": "HyProMag GmbH",
+      "factsheet_url": null
+    },
+    {
+      "name": "Lithium de France",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Lithium de France",
+      "source_ref": "Annex to C(2026)8051, item (21) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 21,
+      "name_on_commission_page": "Lithium de France",
+      "factsheet_url": null
+    },
+    {
+      "name": "LUERN",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "titanium-metal"
+      ],
+      "materials_as_stated": [
+        "titanium-metal"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Aubert & Duval SAS",
+      "source_ref": "Annex to C(2026)8051, item (22) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 22,
+      "name_on_commission_page": "LUERN",
+      "factsheet_url": null
+    },
+    {
+      "name": "Myne Circular Metals Harderwijk",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "NL",
+      "country_name": "Netherlands",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite",
+        "copper"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium",
+        "copper"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Myne Circular Metals B.V",
+      "source_ref": "Annex to C(2026)8051, item (23) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 23,
+      "name_on_commission_page": "Myne Circular Metals Harderwijk",
+      "factsheet_url": null
+    },
+    {
+      "name": "NEOMAT-PCAM",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FR",
+      "country_name": "France",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt",
+        "manganese",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "manganese (battery grade)",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "NEOMAT PCAM",
+      "source_ref": "Annex to C(2026)8051, item (24) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 24,
+      "name_on_commission_page": "NEOMAT-PCAM",
+      "factsheet_url": null
+    },
+    {
+      "name": "NEW ALUMINIUM RECYCLING HUB IN GREECE",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "GR",
+      "country_name": "Greece",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Aluminium Rolling Division of ELVALHALCOR (Hellenic Copper and Aluminium Industry S.A)",
+      "source_ref": "Annex to C(2026)8051, item (25) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 25,
+      "name_on_commission_page": "NEW ALUMINIUM RECYCLING HUB IN GREECE",
+      "factsheet_url": null
+    },
+    {
+      "name": "OREON (Optimal REcycling Of Nickel)",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "BE",
+      "country_name": "Belgium",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "cobalt",
+        "nickel",
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "cobalt",
+        "nickel (battery grade)",
+        "platinum group metals"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Umicore",
+      "source_ref": "Annex to C(2026)8051, item (26) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 26,
+      "name_on_commission_page": "OREON (Optimal REcycling Of Nickel)",
+      "factsheet_url": null
+    },
+    {
+      "name": "Production of Primary Aluminium and Product Diversification in Slovalco, a.s",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "SK",
+      "country_name": "Slovakia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Slovalco, a.s.",
+      "source_ref": "Annex to C(2026)8051, item (27) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 27,
+      "name_on_commission_page": "Production of Primary Aluminium and Product Diversification in Slovalco, a.s.",
+      "factsheet_url": null
+    },
+    {
+      "name": "Project Arctial",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Arctial Group Oy",
+      "source_ref": "Annex to C(2026)8051, item (28) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 28,
+      "name_on_commission_page": "Project Arctial",
+      "factsheet_url": null
+    },
+    {
+      "name": "Pure Battery Technologies pCAM plant Europe",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt",
+        "manganese",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "manganese (battery grade)",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "processing",
+        "recycling"
+      ],
+      "promoter": "Pure Batterry Technologies Ltd.",
+      "source_ref": "Annex to C(2026)8051, item (29) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 29,
+      "name_on_commission_page": "Pure Battery Technologies pCAM plant Europe",
+      "factsheet_url": null
+    },
+    {
+      "name": "Integrated Recycling Smelter",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "PL",
+      "country_name": "Poland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "KGHM Polska Miedź S.A.",
+      "source_ref": "Annex to C(2026)8051, item (30) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 30,
+      "name_on_commission_page": "Integrated Recycling Smelter",
+      "factsheet_url": null
+    },
+    {
+      "name": "Refinis",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "LT",
+      "country_name": "Lithuania",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "platinum group metals"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Refinis recycling plant (UAB Refinis)",
+      "source_ref": "Annex to C(2026)8051, item (31) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 31,
+      "name_on_commission_page": "Refinis recycling plant (UAB Refinis)",
+      "factsheet_url": null
+    },
+    {
+      "name": "ReSuPLIR - Recovery and Supply of Platinum, Iridium and Ruthenium",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "platinum group metals"
+      ],
+      "stages": [
+        "processing",
+        "recycling"
+      ],
+      "promoter": "Italrecycling & Investment srl",
+      "source_ref": "Annex to C(2026)8051, item (32) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 32,
+      "name_on_commission_page": "ReSuPLIR - Recovery and Supply of Platinum, Iridium and Ruthenium",
+      "factsheet_url": null
+    },
+    {
+      "name": "REW-ITA green HUB: Recovery of Wolfram: Italian Technology Advanced green Hub",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "IT",
+      "country_name": "Italy",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "cobalt",
+        "tungsten"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "cobalt",
+        "tungsten"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "OMCD TEK HUB S.p.A.",
+      "source_ref": "Annex to C(2026)8051, item (33) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 33,
+      "name_on_commission_page": "REW-ITA green HUB: Recovery of Wolfram: Italian Technology Advanced green Hub",
+      "factsheet_url": null
+    },
+    {
+      "name": "Second TBRC Lünen",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Aurubis AG",
+      "source_ref": "Annex to C(2026)8051, item (34) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 34,
+      "name_on_commission_page": "Second TBRC Lünen",
+      "factsheet_url": null
+    },
+    {
+      "name": "Silmet 2.0",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "EE",
+      "country_name": "Estonia",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "NPM Silmet OÜ",
+      "source_ref": "Annex to C(2026)8051, item (35) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 35,
+      "name_on_commission_page": "Silmet 2.0",
+      "factsheet_url": null
+    },
+    {
+      "name": "Skouries Project",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "GR",
+      "country_name": "Greece",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Hellas Gold S.A.",
+      "source_ref": "Annex to C(2026)8051, item (36) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 36,
+      "name_on_commission_page": "Skouries Project",
+      "factsheet_url": null
+    },
+    {
+      "name": "Sokli",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "other:rare earth elements for magnets"
+      ],
+      "materials_as_stated": [
+        "rare earth elements for magnets"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Sokli Oy",
+      "source_ref": "Annex to C(2026)8051, item (37) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 37,
+      "name_on_commission_page": "Sokli",
+      "factsheet_url": null
+    },
+    {
+      "name": "Enabling CRM production in Europe by recovering CRM from end-of-life batteries: A scalable battery black mass refining process that extracts critical raw materials from all types of Li-ion batteries in an environmental friendly way",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "NL",
+      "country_name": "Netherlands",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "cobalt",
+        "lithium",
+        "nickel",
+        "manganese",
+        "other:graphite (battery grade)"
+      ],
+      "materials_as_stated": [
+        "cobalt",
+        "lithium (battery grade)",
+        "nickel (battery grade)",
+        "manganese (battery grade)",
+        "graphite (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "Back to Battery B.V.",
+      "source_ref": "Annex to C(2026)8051, item (38) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 38,
+      "name_on_commission_page": "Enabling CRM production in Europe by recovering CRM from end-of-life batteries: A scalable battery black mass refining process that extracts critical raw materials from all types of Li-ion batteries in an environmental friendly way",
+      "factsheet_url": null
+    },
+    {
+      "name": "Suhanko project",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "FI",
+      "country_name": "Finland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "nickel",
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "nickel (battery grade)",
+        "platinum group metals"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Suhanko Arctic Platinum Oy",
+      "source_ref": "Annex to C(2026)8051, item (39) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 39,
+      "name_on_commission_page": "Suhanko project",
+      "factsheet_url": null
+    },
+    {
+      "name": "Tankhouse Expansion Pirdop",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "BG",
+      "country_name": "Bulgaria",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Aurubis Bulgaria AD",
+      "source_ref": "Annex to C(2026)8051, item (40) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 40,
+      "name_on_commission_page": "Tankhouse Expansion Pirdop",
+      "factsheet_url": null
+    },
+    {
+      "name": "Titanium alloys made in Europe",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "titanium-metal"
+      ],
+      "materials_as_stated": [
+        "titanium-metal"
+      ],
+      "stages": [
+        "processing",
+        "recycling"
+      ],
+      "promoter": "Isabellenhütte Heusler GmbH & Co. KG",
+      "source_ref": "Annex to C(2026)8051, item (41) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 41,
+      "name_on_commission_page": "Titanium alloys made in Europe",
+      "factsheet_url": null
+    },
+    {
+      "name": "Urban mining",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "PL",
+      "country_name": "Poland",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper",
+        "germanium",
+        "aluminium-bauxite",
+        "platinum-group-metals"
+      ],
+      "materials_as_stated": [
+        "copper",
+        "germanium",
+        "bauxite/alumina/aluminium",
+        "platinum group metals"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "TDM Electronics Inc.",
+      "source_ref": "Annex to C(2026)8051, item (42) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 42,
+      "name_on_commission_page": "Urban mining",
+      "factsheet_url": null
+    },
+    {
+      "name": "Urban Mining Factory - Printed Circuit Boards",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "NL",
+      "country_name": "Netherlands",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "aluminium-bauxite",
+        "copper",
+        "nickel"
+      ],
+      "materials_as_stated": [
+        "bauxite/alumina/aluminium",
+        "copper",
+        "nickel (battery grade)"
+      ],
+      "stages": [
+        "recycling"
+      ],
+      "promoter": "CRITICAL. (owner of Circular Industries)",
+      "source_ref": "Annex to C(2026)8051, item (43) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 43,
+      "name_on_commission_page": "Urban Mining Factory - Printed Circuit Boards",
+      "factsheet_url": null
+    },
+    {
+      "name": "Verde Magnesium Industries",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "RO",
+      "country_name": "Romania",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "magnesium"
+      ],
+      "materials_as_stated": [
+        "magnesium"
+      ],
+      "stages": [
+        "processing"
+      ],
+      "promoter": "Verde Magnesium Industries SRL",
+      "source_ref": "Annex to C(2026)8051, item (44) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 44,
+      "name_on_commission_page": "Verde Magnesium Industries",
+      "factsheet_url": null
+    },
+    {
+      "name": "Viscaria Copper Project",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "SE",
+      "country_name": "Sweden",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "copper"
+      ],
+      "materials_as_stated": [
+        "copper"
+      ],
+      "stages": [
+        "extraction"
+      ],
+      "promoter": "Gruvaktiebolaget Viscaria",
+      "source_ref": "Annex to C(2026)8051, item (45) 'LIST OF STRATEGIC PROJECTS'",
+      "annex_item": 45,
+      "name_on_commission_page": "Viscaria Copper Project",
+      "factsheet_url": null
+    },
+    {
+      "name": "Zinnwald Lithium Project",
+      "decision": "C(2026)8051",
+      "scope": "eu",
+      "country_iso2": "DE",
+      "country_name": "Germany",
+      "other_countries_iso2": [],
+      "location": null,
+      "materials": [
+        "lithium"
+      ],
+      "materials_as_stated": [
+        "lithium (battery grade)"
+      ],
+      "stages": [
+        "extraction",
+        "processing"
+      ],
+      "promoter": "Zinnwald Lithium Plc",
+      "source_ref": "Annex to C(2026)8051, item (46) 'LIST OF STRATEGIC PROJECTS'; stages from commission page / 2026 overview (annex only says 'integrated')",
+      "annex_item": 46,
+      "name_on_commission_page": "Zinnwald Lithium Project",
+      "factsheet_url": null
+    }
+  ],
+  "counts": {
+    "per_decision": {
+      "C(2025)1904": {
+        "rows": 47,
+        "declared": 47,
+        "match": true
+      },
+      "C(2025)3491": {
+        "rows": 13,
+        "declared": 13,
+        "match": true
+      },
+      "C(2026)8051": {
+        "rows": 46,
+        "declared": 46,
+        "match": true
+      }
+    },
+    "total": 106,
+    "declared_total": 106,
+    "rows_with_location": 1,
+    "rows_with_materials": 106,
+    "rows_with_stages": 106,
+    "rows_with_promoter": 106,
+    "rows_multi_country": 3
+  },
+  "issues": [
+    "LOCATION: none of the sources states a municipality/region/coordinates for a project. The three annexes (Annex to C(2025)1904, C(2025)3491, C(2026)8051) give only the country; the Commission page table (embedded frames table-eu-fs-2026.html / table-noneu-fs.html, data files data-eu-fs-2026-10-08.json and data-noneu-fs-2025-10-17.json) has the columns Year, Name, Type, Promoter, Country, Strategic raw material, Factsheet; the 3-page '46 new EU strategic projects' overview PDF has Name, Main country, Type, Promoter, Raw material. Hence location=null for 105 of 106 rows. Only exception: C(2026)8051 item (14), whose official title itself reads '..., Racari city, Dambovita county' (location copied from the title). Note that the promoter's registered address in Article 2 of each decision is NOT a project location (e.g. Pure Battery Technologies Ltd. = Brisbane, Australia; Zinnwald Lithium Plc = London; Euro Manganese Inc = Vancouver) and was not used.",
+    "LOCATION (factsheets): the Commission page links one factsheet PDF per project for 59 projects (46 of the 47 projects of 2025 - none for NorthCYCLE - and all 13 non-EU projects; none for the 46 projects of 2026). Only one (GePETO) was opened: its text layer is not extractable with pdftotext (rendered image read by eye); its structured fields are Project Name, Type, Strategic Raw Material, Promoter, Country, Estimated Starting Date of Production, UNFC Classification, Website - no region/coordinates. The other 58 were not read; factsheet_url is provided per row so they can be inspected if more detail is wanted. Several project titles embed a place name (e.g. Lithium Hydroxide Converter Guben, European Lithium Refining and Recycling Hub Bitterfeld, ALE - Altmark Lithium Extraction, Second TBRC Lunen, Tankhouse Expansion Pirdop, CoNiKo ... in Kokkola, Myne Circular Metals Harderwijk, SALROM Baia de Fier, Pulawy Rare Earths Separation Plant, ReeMAP Project: Malmberget, Per Geijer and Lulea Industrial Park, Development and extraction of the Retkow-Grodziszcze Deposit...) but these are not stated as locations by the lists and were not copied into 'location'.",
+    "MATERIAL SLUGS: the lists say 'graphite (battery grade)' (not 'natural graphite') - kept as 'other:graphite (battery grade)' (19 rows) because natural vs synthetic is not stated in any of the lists. Likewise 'rare earth elements for magnets' is kept as 'other:rare earth elements for magnets' (light vs heavy not stated). Mapped to slugs: lithium/nickel/manganese '(battery grade)' -> lithium/nickel/manganese; 'boron (metallurgy grade)' -> boron; 'magnesium' and 'magnesium metal' -> magnesium; 'bauxite/alumina/aluminium' -> aluminium-bauxite; 'titanium-metal' (written with a hyphen in the 2026 annex) -> titanium-metal; 'silicon metal' -> silicon-metal. The verbatim wording is preserved in 'materials_as_stated'. Remap in one step if you prefer natural-graphite / light-rare-earths.",
+    "STAGES: the 2026 annex describes 8 projects only as 'integrated' (ALE - Altmark Lithium Extraction, EMME, European Lithium Refining and Recycling Hub Bitterfeld, Lithium de France, Pure Battery Technologies pCAM plant Europe, ReSuPLIR, Titanium alloys made in Europe, Zinnwald Lithium Project) without components. Their stages come from the Commission page table ('Integrated: Extraction and processing' / 'Integrated: Processing and recycling'), which the 2026 overview PDF confirms ('Integrated (Processing and Recycling)' etc.); noted in each row's source_ref. For 2025 integrated projects the annex gives the components itself. For C(2025)1904 items (6), (29), (38) the annex says 'integrated project consisting of ... extraction and ... processing components' -> [extraction, processing]. Substitution projects (ProHiPerSi, ReGAIN) have stages ['substitution'] and the material is the one being substituted (graphite, germanium).",
+    "MULTI-COUNTRY C(2025)1904 item (13) 'European Initiative for Strategic and Sustainable Graphite Production': annex says 'processing project in France, Namibia and Germany' without naming a main country; the Commission page table writes 'France (main location), Namibia, Germany'. Row: FR, other_countries_iso2 [NA, DE]. Namibia is a third country although the decision has scope 'eu'.",
+    "MULTI-COUNTRY C(2026)8051 item (8) 'CRM4Defence': annex says 'Italy, Poland, United Kingdom and France' (page/overview order: Italy, Poland, France, UK; the overview column is headed 'MAIN COUNTRY' but lists all four). No main country is stated; IT (first named in the annex; promoter Leonardo S.p.A. is Italian) was used, others [PL, GB, FR]. The UK part is outside the EU although the press release ip_26_2113 says all 46 projects are in 16 Member States.",
+    "MULTI-COUNTRY C(2025)3491 item (3) 'Norgraph a/s and Greenland Graphite a/s': annex says 'Norway (Norgraph a/s) and Greenland (Greenland Graphite a/s)'; the Commission page names the project 'Greenland Graphite a/s and Norgraph a/s' with Country 'Greenland and Norway' (reverse order). No main country stated; NO used (annex order), other_countries_iso2 [GL]. Greenland (overseas territory of Denmark) is the OCT in the decision.",
+    "ANNEX vs COMMISSION PAGE TABLE - materials: C(2025)1904 item (33) Portovesme CRM Hub: annex = lithium (battery grade) and manganese (battery grade); page table = lithium, nickel, cobalt, copper (completely different). Item (35) Project Fortum Hydromet: annex includes graphite (battery grade), page table omits it. Rows use the annex (legal act). All other 104 rows have identical material sets in both sources (wording differences only, e.g. 'rare earth elements for magnets' vs '... for permanent magnets').",
+    "ANNEX vs COMMISSION PAGE TABLE - promoters: C(2025)1904 item (12) EMILI: annex names 'IMERYS Ceramics France and IMERYS Lithium France' (Article 2 of the decision lists them separately as 12a processing / 12b extraction); page table names only IMERYS Ceramics France. Item (40) Romano Mine: page table promoter field is corrupted ('Lusorecursos Portugal Lithium S.A.Lithium (battery grade)'). C(2026)8051 item (29): annex spells 'Pure Batterry Technologies Ltd.' (typo; row keeps the annex spelling), page/overview 'Pure Battery Technologies Ltd.'. C(2026)8051 item (31): annex project name 'Refinis' and promoter 'Refinis recycling plant (UAB Refinis)', page/overview name 'Refinis recycling plant (UAB Refinis)' and promoter 'Refinis' (swapped). C(2025)3491 item (5) Jadar promoter is 'Rio Tinto via the local entity Rio Sava Exploration doo' (annex wording kept). Other differences are spelling/case only (OU, srl, ABENOJAR, LKAB order).",
+    "PROJECT NAMES: rows use the name as it appears in the annex sentence ('X is an ongoing ... project'); 'name_on_commission_page' holds the page-table name. Differences: item (6) annex heading 'BAUX-EU, GALLANT and LEADER project' (description in the same item spells 'GALLENT'), page 'Metlen BAUX-EU, GALLANT, LEADER'; item (29) annex 'Lombador North Phase 2, Semblana and 3rd SILO project', Article 2 of the decision 'Sembiana, 3RD SILO, LOMBADOR North Phase 2', page 'Neves Corvo - 3RD SILO, LOMBADOR, Semblana'; item (32) annex 'Polymetallic primary sulphide project' but Article 2 of the decision and page 'sulphite' (+ 'PMR project'); item (38) component order differs. For C(2025)1904 items (6), (29), (38) the trailing word 'project' belongs to the annex sentence and may not be part of the name; it is kept as written. C(2026)8051 items (2), (17), (38) end with a full stop in the annex sentence before 'is an ongoing'; the stop was removed. C(2026)8051 item (38) has a 250-character descriptive title.",
+    "DATES: decision dates taken from the decisions/annexes (25.3.2025, 4.6.2025, 9.10.2026). The press-release page headers show different days: ip_25_864 'Mar 24, 2025' (page metadata 2025-03-25), ip_25_1419 'Jun 3, 2025' (metadata 2025-06-04), ip_26_2113 'Oct 8, 2026' (metadata 2026-10-09; the overview PDF was created 8 Oct 2026). The Commission page says 'On 9 October 2026, the Commission approved...'.",
+    "PRESS RELEASE TALLIES: ip_26_2113 (46 projects) agrees fully with the annex/page: 8 extraction, 11 processing, 19 recycling, 8 integrated (3 extraction+processing, 5 processing+recycling); 7 lithium, 12 nickel, 10 cobalt, 5 manganese, 4 graphite, 2 magnesium, 3 tungsten, 4 rare earth; 15 materials; 16 Member States. ip_25_864 (47 projects) agrees on 13 Member States, 14 materials, 10 recycling, 2 substitution, 11 graphite, 1 magnesium but NOT on: lithium 22 (annex: 18), nickel 12 (10), cobalt 10 (9), manganese 7 (6), tungsten 3 (2), extraction 25 (23 incl. integrated), processing 24 (23 incl. integrated). The annex was treated as authoritative. ip_25_1419 (13 projects) agrees with the annex (10 battery-material projects, 2 rare earth, copper, tungsten, boron).",
+    "OTHER INCONSISTENCY (not affecting rows): decision C(2026)8051 recital (4) speaks of 101 applications received (98 complete); ip_26_2113 says 102 applications received and 92 assessed.",
+    "C(2025)3491: only the annex and the decision's publication page were read (the decision's own PDF link was not retrievable from the page text); the decision url field is the Commission publication page for that decision.",
+    "PROJECT-LEVEL CHECKS DONE: every annex item parsed by regex (no unparsed items); item numbers complete 1..47, 1..13, 1..46; no duplicate project names; every annex row matched 1:1 to a Commission page table row (47+13+46 = 106, bijection) and cross-checked for materials, stage and promoter; 2026 materials/stages cross-checked with ip_26_2113 tallies."
+  ]
+}

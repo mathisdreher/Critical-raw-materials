@@ -17,6 +17,10 @@ export type Audience = 'company' | 'commission' | 'memberstate';
 
 export const crmaEn = {
   nav: 'CRMA toolkit',
+  regulationName: 'Regulation (EU) 2024/1252',
+  regulationOnEurLex: 'Regulation (EU) 2024/1252 on EUR-Lex',
+  badges: { art24: 'Article 24', art2829: 'Articles 28 and 29' },
+  exemptionsLegend: 'Exemptions and other rules',
   disclaimer:
     'These tools are a reading aid based on the text of Regulation (EU) 2024/1252. They do not replace legal advice, and national authorities may add procedures of their own. Nothing you enter leaves your browser.',
   basis: 'Based on the regulation as published in the Official Journal on 3 May 2024.',
@@ -424,6 +428,14 @@ export const crmaEn = {
       none: 'None recorded',
     },
     saved: 'Saved in this browser',
+    importError: 'This file could not be read as an assessment.',
+    datasets: {
+      world: 'World: {what}, {year} (USGS)',
+      euGlobal: 'World: main suppliers, {stage} stage (EU 2023 study)',
+      euSourcing: 'EU supply: main sources, {stage} stage (EU 2023 study)',
+      imports: 'Extra-EU imports: {product}, {from} to {to} (Eurostat)',
+      stages: { extraction: 'extraction', processing: 'processing' } as Record<string, string>,
+    },
   },
 
   // ------------------------------------------------------------------ magnets

@@ -2,9 +2,10 @@
 import Base from '../layouts/Base.astro';
 import BarList from '../components/BarList.astro';
 import Scatter from '../components/Scatter.astro';
-import { ui } from '../i18n';
+import { ui, materialName, dataLabel, seriesLabel } from '../i18n';
+import { countryName } from '../lib/countries';
 import { materials, criticality, importConcentration, topProducer } from '../lib/data';
-import { href, fmtDate, fmtNumber } from '../lib/format';
+import { href, formatters } from '../lib/format';
 
 interface Props {
   locale: string;
@@ -12,11 +13,18 @@ interface Props {
 const { locale } = Astro.props;
 const t = ui(locale);
 const r = t.risk;
+const F = formatters(locale);
+const H = (p: string, _l?: string) => href(p, locale);
+const mn = (slug: string) => materialName(locale, slug);
+const dl = (s: string) => dataLabel(locale, s);
+const sl = (s: Parameters<typeof seriesLabel>[1]) => seriesLabel(locale, s);
+const cn = (n: string) => countryName(n, locale);
+
 
 const rows = materials.map((m) => ({ m, c: criticality(m.slug), imp: importConcentration(m.slug), top: topProducer(m.slug) }));
 const points = rows
   .filter((x) => x.c?.supply_risk != null && x.c?.economic_importance != null)
-  .map((x) => ({ slug: x.m.slug, name: x.m.name, short: x.m.short, x: x.c!.economic_importance as number, y: x.c!.supply_risk as number, strategic: x.m.strategic }));
+  .map((x) => ({ slug: x.m.slug, name: mn(x.m.slug), short: x.m.short, x: x.c!.economic_importance as number, y: x.c!.supply_risk as number, strategic: x.m.strategic }));
 const imports = rows.filter((x) => x.imp).sort((a, b) => b.imp!.share - a.imp!.share);
 const producers = rows.filter((x) => x.top).sort((a, b) => b.top!.share - a.top!.share);
 const window = imports[0]?.imp;
@@ -34,7 +42,7 @@ const over = imports.filter((x) => x.imp!.share > 65).length;
     <p class="fig-sub">{r.scatterSub}</p>
     {
       points.length > 0 ? (
-        <Scatter points={points} xLabel={r.xLabel} yLabel={r.yLabel} xThreshold={2.8} yThreshold={1.0} legend={r.legend} thresholdNote={r.thresholdNote} />
+        <Scatter locale={locale} points={points} xLabel={r.xLabel} yLabel={r.yLabel} xThreshold={2.8} yThreshold={1.0} legend={r.legend} thresholdNote={r.thresholdNote} />
       ) : (
         <p class="muted">{r.scatterMissing}</p>
       )
@@ -66,20 +74,20 @@ const over = imports.filter((x) => x.imp!.share > 65).length;
       <div class="card">
         <p class="fig-title">{r.importTitle}</p>
         <p class="fig-sub">
-          {window && r.importSub(fmtDate(window.from), fmtDate(window.to))} {over} of {imports.length} {r.over}.
+          {window && r.importSub(F.date(window.from), F.date(window.to))} {over} of {imports.length} {r.over}.
         </p>
         <BarList
           rows={imports.map((x) => ({
-            label: x.m.name,
-            href: href(`/materials/${x.m.slug}/#trade`),
+            label: mn(x.m.slug),
+            href: H(`/materials/${x.m.slug}/#trade`),
             value: x.imp!.share,
             display: `${Math.round(x.imp!.share)}%`,
-            detail: x.imp!.country,
-            tip: `${x.imp!.share}% from ${x.imp!.country}|${x.m.name}|${x.imp!.product} (CN ${x.imp!.code})|HHI ${x.imp!.hhi}`,
+            detail: cn(x.imp!.country),
+            tip: `${F.number(x.imp!.share, 1)}%|${cn(x.imp!.country)}|${mn(x.m.slug)}|${dl(x.imp!.product)} (CN ${x.imp!.code})|HHI ${F.number(x.imp!.hhi)}`,
           }))}
           max={100}
           threshold={65}
-          thresholdLabel="65% benchmark"
+          thresholdLabel={r.benchmark}
         />
         <p class="fig-note">{r.importNote}</p>
       </div>
@@ -88,12 +96,12 @@ const over = imports.filter((x) => x.imp!.share > 65).length;
         <p class="fig-sub">{r.prodSub}</p>
         <BarList
           rows={producers.map((x) => ({
-            label: x.m.name,
-            href: href(`/materials/${x.m.slug}/#supply`),
+            label: mn(x.m.slug),
+            href: H(`/materials/${x.m.slug}/#supply`),
             value: x.top!.share,
             display: `${Math.round(x.top!.share)}%`,
-            detail: x.top!.country,
-            tip: `${x.top!.share}% ${x.top!.country}|${x.m.name}|${x.top!.stage}, ${x.top!.year}`,
+            detail: cn(x.top!.country),
+            tip: `${F.number(x.top!.share, 1)}%|${cn(x.top!.country)}|${mn(x.m.slug)}|${dl(x.top!.stage)}, ${x.top!.year}`,
           }))}
           max={100}
         />
@@ -121,16 +129,16 @@ const over = imports.filter((x) => x.imp!.share > 65).length;
           {
             rows.map(({ m, c, imp, top }) => (
               <tr>
-                <td class="name" data-v={m.name}>
-                  <a href={href(`/materials/${m.slug}/`)}>{m.name}</a> {m.strategic && <span class="badge strategic">{t.common.strategic}</span>}
+                <td class="name" data-v={mn(m.slug)}>
+                  <a href={H(`/materials/${m.slug}/`)}>{mn(m.slug)}</a> {m.strategic && <span class="badge strategic">{t.common.strategic}</span>}
                 </td>
-                <td class="r" data-v={c?.supply_risk ?? ''}>{c?.supply_risk != null ? c.supply_risk.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
-                <td class="r" data-v={c?.economic_importance ?? ''}>{c?.economic_importance != null ? c.economic_importance.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
+                <td class="r" data-v={c?.supply_risk ?? ''}>{c?.supply_risk != null ? F.fixed(c.supply_risk, 1) : <span class="muted">{t.common.na}</span>}</td>
+                <td class="r" data-v={c?.economic_importance ?? ''}>{c?.economic_importance != null ? F.fixed(c.economic_importance, 1) : <span class="muted">{t.common.na}</span>}</td>
                 <td class="r" data-v={c?.import_reliance_pct ?? ''}>{c?.import_reliance_pct != null ? `${Math.round(c.import_reliance_pct)}%` : <span class="muted">{t.common.na}</span>}</td>
                 <td data-v={top?.share ?? ''}>
                   {top ? (
                     <>
-                      {top.country} <span class="muted num">{Math.round(top.share)}%</span>
+                      {cn(top.country)} <span class="muted num">{Math.round(top.share)}%</span>
                     </>
                   ) : (
                     <span class="muted">{t.common.na}</span>
@@ -139,13 +147,13 @@ const over = imports.filter((x) => x.imp!.share > 65).length;
                 <td data-v={imp?.share ?? ''}>
                   {imp ? (
                     <>
-                      {imp.country} <span class="muted num">{Math.round(imp.share)}%</span> {imp.share > 65 && <span class="badge warn">⚠ {r.over}</span>}
+                      {cn(imp.country)} <span class="muted num">{Math.round(imp.share)}%</span> {imp.share > 65 && <span class="badge warn">⚠ {r.over}</span>}
                     </>
                   ) : (
                     <span class="muted">{t.common.na}</span>
                   )}
                 </td>
-                <td class="r" data-v={imp?.hhi ?? ''}>{imp?.hhi != null ? fmtNumber(imp.hhi) : <span class="muted">{t.common.na}</span>}</td>
+                <td class="r" data-v={imp?.hhi ?? ''}>{imp?.hhi != null ? F.number(imp.hhi) : <span class="muted">{t.common.na}</span>}</td>
               </tr>
             ))
           }

@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { crma } from '../i18n';
 import { REG_URL, acts } from '../i18n/crma.en';
-import { href } from '../lib/format';
+import { href, localeTag } from '../lib/format';
 
 interface Props {
   locale: string;
@@ -11,13 +11,13 @@ const { locale } = Astro.props;
 const c = crma(locale);
 const m = c.magnets;
 const types = c.checker.magnetTypes;
-const payload = JSON.stringify({ t: m, types, acts }).replace(/</g, '\\u003c');
+const payload = JSON.stringify({ t: m, types, acts, tag: localeTag(locale) }).replace(/</g, '\\u003c');
 ---
 
 <Base locale={locale} current="crma" title={m.title} description={m.lede}>
-  <p class="small"><a href={href('/crma/')}>← {c.hub.title}</a></p>
+  <p class="small"><a href={href('/crma/', locale)}>← {c.hub.title}</a></p>
   <div class="page-head">
-    <span class="badge">Articles 28 and 29</span>
+    <span class="badge">{c.badges.art2829}</span>
     <h1 style="margin-top:10px">{m.title}</h1>
     <p class="lede">{m.lede}</p>
   </div>
@@ -51,7 +51,7 @@ const payload = JSON.stringify({ t: m, types, acts }).replace(/</g, '\\u003c');
         <label class="choice" style="margin-top:12px"><input type="checkbox" name="motorsOnly" /> {m.form.motorsOnly}</label>
       </fieldset>
       <fieldset>
-        <legend>Exemptions and other rules</legend>
+        <legend>{c.exemptionsLegend}</legend>
         <div class="choices">
           <label class="choice"><input type="checkbox" name="defence" /> {m.form.defence}</label>
           <label class="choice"><input type="checkbox" name="vehicleExempt" /> {m.form.vehicleExempt}</label>
@@ -65,7 +65,7 @@ const payload = JSON.stringify({ t: m, types, acts }).replace(/</g, '\\u003c');
       <h2>{m.resultTitle}</h2>
       <div id="crma-magnets-result"><p class="muted">{m.empty}</p></div>
       <p class="fig-note">
-        {c.disclaimer} <a href={REG_URL}>Regulation (EU) 2024/1252</a>.
+        {c.disclaimer} <a href={REG_URL}>{c.regulationName}</a>.
       </p>
     </aside>
   </div>

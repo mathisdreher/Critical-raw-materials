@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import WorldMap from '../components/WorldMap.astro';
+import { ui } from '../i18n';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+---
+
+<Base locale={locale} current="map" title={t.map.title} description={t.map.lede}>
+  <div class="page-head">
+    <h1>{t.map.title}</h1>
+    <p class="lede">{t.map.lede}</p>
+  </div>
+  <div class="card">
+    <WorldMap locale={locale} />
+  </div>
+  <p class="fig-note">{t.map.projectsNote}</p>
+</Base>

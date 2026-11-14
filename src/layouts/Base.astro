@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import { site } from '../site.config';
-import { ui, crma } from '../i18n';
-import { href, fmtTimestamp } from '../lib/format';
+import { ui, crma, LOCALES, LOCALE_NAMES } from '../i18n';
+import { href, formatters } from '../lib/format';
 import { pipelineStatus } from '../lib/data';
 
 interface Props {
@@ -13,15 +13,27 @@ interface Props {
 }
 const { title, description, locale = site.defaultLocale, current = '' } = Astro.props;
 const t = ui(locale);
+const F = formatters(locale);
+const H = (p: string) => href(p, locale);
 const fullTitle = title ? `${title} · ${site.shortName}` : `${site.name}`;
 const desc = description ?? t.meta.description;
 const nav = [
   { key: 'materials', path: '/materials/', label: t.nav.materials },
   { key: 'prices', path: '/prices/', label: t.nav.prices },
   { key: 'supply-risk', path: '/supply-risk/', label: t.nav.supplyRisk },
+  { key: 'map', path: '/map/', label: t.nav.map },
   { key: 'crma', path: '/crma/', label: crma(locale).nav },
   { key: 'methodology', path: '/methodology/', label: t.nav.methodology },
 ];
+
+// the same page in every language: strip the base and the language segment from the current path
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+let rest = Astro.url.pathname.startsWith(base) ? Astro.url.pathname.slice(base.length) : Astro.url.pathname;
+const seg = rest.split('/')[1];
+if ((LOCALES as readonly string[]).includes(seg) && seg !== 'en') rest = rest.slice(seg.length + 1);
+if (!rest.startsWith('/')) rest = `/${rest}`;
+const alternates = LOCALES.map((l) => ({ l, url: href(rest, l) }));
+const origin = Astro.site ? Astro.site.origin : '';
 ---
 
 <!doctype html>
@@ -34,7 +46,11 @@ const nav = [
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content={F.tag.replace('-', '_')} />
     <link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
+    <link rel="canonical" href={`${origin}${href(rest, locale)}`} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.l} href={`${origin}${a.url}`} />)}
+    <link rel="alternate" hreflang="x-default" href={`${origin}${href(rest, 'en')}`} />
     <script is:inline>
       try {
         const saved = localStorage.getItem('theme');
@@ -46,7 +62,7 @@ const nav = [
     <a class="skip" href="#main">{t.nav.skip}</a>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href={href('/')}>
+        <a class="brand" href={H('/')}>
           <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
             <rect x="1" y="1" width="24" height="24" rx="6" fill="var(--ink)"></rect>
             <path d="M7 17.5 11 11l3.5 4 4.5-7" fill="none" stroke="var(--surface)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -54,9 +70,21 @@ const nav = [
           <span>{site.shortName}</span>
         </a>
         <nav class="nav" aria-label={t.nav.main}>
-          {nav.map((n) => <a href={href(n.path)} aria-current={current === n.key ? 'page' : undefined}>{n.label}</a>)}
-          <a class="cta" href={href('/join/')} aria-current={current === 'join' ? 'page' : undefined}>{t.nav.join}</a>
+          {nav.map((n) => <a href={H(n.path)} aria-current={current === n.key ? 'page' : undefined}>{n.label}</a>)}
+          <a class="cta" href={H('/join/')} aria-current={current === 'join' ? 'page' : undefined}>{t.nav.join}</a>
         </nav>
+        <details class="lang-menu">
+          <summary aria-label={t.common.languages} title={t.common.languages}>{locale.toUpperCase()}</summary>
+          <ul>
+            {
+              alternates.map((a) => (
+                <li>
+                  <a href={a.url} hreflang={a.l} lang={a.l} aria-current={a.l === locale ? 'true' : undefined}>{LOCALE_NAMES[a.l]}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
         <button class="icon-btn" id="theme-toggle" type="button" aria-label={t.nav.theme} title={t.nav.theme}>
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm0 12.5v-11a5.5 5.5 0 0 1 0 11Z" fill="currentColor"></path></svg>
         </button>
@@ -73,10 +101,10 @@ const nav = [
         </div>
         <div>
           <p>{t.footer.data}</p>
-          <p>{t.footer.updated}: {fmtTimestamp(pipelineStatus.updated)}</p>
+          <p>{t.footer.updated}: {F.timestamp(pipelineStatus.updated, t.common.na)}</p>
         </div>
         <div>
-          <p><a href={href('/methodology/')}>{t.footer.methodology}</a> · <a href={site.repo}>{t.footer.source}</a></p>
+          <p><a href={H('/methodology/')}>{t.footer.methodology}</a> · <a href={site.repo}>{t.footer.source}</a></p>
           <p>{t.footer.disclaimer}</p>
         </div>
       </div>

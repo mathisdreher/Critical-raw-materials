@@ -1,9 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import Delta from '../components/Delta.astro';
-import { ui } from '../i18n';
+import { ui, materialName, dataLabel, seriesLabel } from '../i18n';
+import { countryName } from '../lib/countries';
 import { materials, groups, criticality, headline, topProducer } from '../lib/data';
-import { href, fmtNumber, fmtDate } from '../lib/format';
+import { href, formatters } from '../lib/format';
 
 interface Props {
   locale: string;
@@ -11,6 +12,13 @@ interface Props {
 const { locale } = Astro.props;
 const t = ui(locale);
 const m = t.materials;
+const F = formatters(locale);
+const H = (p: string, _l?: string) => href(p, locale);
+const mn = (slug: string) => materialName(locale, slug);
+const dl = (s: string) => dataLabel(locale, s);
+const sl = (s: Parameters<typeof seriesLabel>[1]) => seriesLabel(locale, s);
+const cn = (n: string) => countryName(n, locale);
+
 const rows = materials.map((mat) => ({ mat, c: criticality(mat.slug), p: headline(mat.slug), top: topProducer(mat.slug) }));
 ---
 
@@ -18,6 +26,7 @@ const rows = materials.map((mat) => ({ mat, c: criticality(mat.slug), p: headlin
   <div class="page-head">
     <h1>{m.title}</h1>
     <p class="lede">{m.lede}</p>
+    <p><a href={H('/rare-earths/', locale)}>{t.rare.link.title} →</a></p>
   </div>
 
   <div class="filters" data-filter-for="materials-table">
@@ -50,18 +59,18 @@ const rows = materials.map((mat) => ({ mat, c: criticality(mat.slug), p: headlin
       <tbody>
         {
           rows.map(({ mat, c, p, top }) => (
-            <tr data-strategic={mat.strategic ? 'yes' : 'no'} data-group={mat.group} data-search={`${mat.name} ${mat.short} ${mat.group}`}>
-              <td class="name" data-v={mat.name}>
-                <a href={href(`/materials/${mat.slug}/`)}>{mat.name}</a> {mat.strategic && <span class="badge strategic">{t.common.strategic}</span>}
+            <tr data-strategic={mat.strategic ? 'yes' : 'no'} data-group={mat.group} data-search={`${mn(mat.slug)} ${mat.short} ${t.groups[mat.group] ?? mat.group}`}>
+              <td class="name" data-v={mn(mat.slug)}>
+                <a href={H(`/materials/${mat.slug}/`)}>{mn(mat.slug)}</a> {mat.strategic && <span class="badge strategic">{t.common.strategic}</span>}
               </td>
               <td>{t.groups[mat.group] ?? mat.group}</td>
-              <td class="r" data-v={c?.supply_risk ?? ''}>{c?.supply_risk != null ? c.supply_risk.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
-              <td class="r" data-v={c?.economic_importance ?? ''}>{c?.economic_importance != null ? c.economic_importance.toFixed(1) : <span class="muted">{t.common.na}</span>}</td>
+              <td class="r" data-v={c?.supply_risk ?? ''}>{c?.supply_risk != null ? F.fixed(c.supply_risk, 1) : <span class="muted">{t.common.na}</span>}</td>
+              <td class="r" data-v={c?.economic_importance ?? ''}>{c?.economic_importance != null ? F.fixed(c.economic_importance, 1) : <span class="muted">{t.common.na}</span>}</td>
               <td class="r" data-v={c?.import_reliance_pct ?? ''}>{c?.import_reliance_pct != null ? `${Math.round(c.import_reliance_pct)}%` : <span class="muted">{t.common.na}</span>}</td>
               <td data-v={top?.share ?? ''}>
                 {top ? (
                   <>
-                    {top.country} <span class="muted num">{Math.round(top.share)}%</span>
+                    {cn(top.country)} <span class="muted num">{Math.round(top.share)}%</span>
                   </>
                 ) : (
                   <span class="muted">{t.common.na}</span>
@@ -70,9 +79,9 @@ const rows = materials.map((mat) => ({ mat, c: criticality(mat.slug), p: headlin
               <td class="r">
                 {p ? (
                   <>
-                    {fmtNumber(p.latest)} <span class="muted">{p.unit}</span>
+                    {F.number(p.latest)} <span class="muted">{p.unit}</span>
                     <span class="sub">
-                      {t.freq[p.frequency]} · {fmtDate(p.latest_date)}
+                      {t.freq[p.frequency]} · {F.date(p.latest_date)}
                     </span>
                   </>
                 ) : (
@@ -80,7 +89,7 @@ const rows = materials.map((mat) => ({ mat, c: criticality(mat.slug), p: headlin
                 )}
               </td>
               <td class="r" data-v={p?.change_1y_pct ?? ''}>
-                <Delta value={p?.change_1y_pct} />
+                <Delta value={p?.change_1y_pct} locale={locale} />
               </td>
             </tr>
           ))

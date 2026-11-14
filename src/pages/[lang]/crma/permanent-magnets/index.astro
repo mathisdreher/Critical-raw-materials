@@ -1,0 +1,11 @@
+---
+import View from '../../../../views/CrmaMagnetsView.astro';
+import { langPaths } from '../../../../lib/locales';
+
+export function getStaticPaths() {
+  return langPaths();
+}
+const { lang } = Astro.params;
+---
+
+<View locale={lang as string} />

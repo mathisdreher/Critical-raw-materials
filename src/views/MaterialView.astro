@@ -2,11 +2,15 @@
 import Base from '../layouts/Base.astro';
 import BarList, { type BarRow } from '../components/BarList.astro';
 import PriceChart, { type ChartSeries } from '../components/PriceChart.astro';
+import WorldMap from '../components/WorldMap.astro';
 import Delta from '../components/Delta.astro';
-import { ui } from '../i18n';
+import { ui, materialName, dataLabel, seriesLabel, noteText } from '../i18n';
+import { countryName } from '../lib/countries';
 import { material, criticality, seriesFor, indexFor, supply, trade, isStale, euStudy } from '../lib/data';
 import { profile } from '../lib/content';
-import { href, fmtNumber, fmtCompact, fmtDate } from '../lib/format';
+import { RARE_PAGE_SLUGS } from '../lib/rareEarths';
+import { demand, demandSource, growth } from '../lib/demand';
+import { href, formatters } from '../lib/format';
 
 interface Props {
   locale: string;
@@ -15,6 +19,13 @@ interface Props {
 const { locale, slug } = Astro.props;
 const t = ui(locale);
 const x = t.material;
+const F = formatters(locale);
+const H = (p: string, _l?: string) => href(p, locale);
+const mn = (s: string) => materialName(locale, s);
+const dl = (s: string) => dataLabel(locale, s);
+const sl = (s: Parameters<typeof seriesLabel>[1]) => seriesLabel(locale, s);
+const cn = (n: string) => countryName(n, locale);
+const pct = (v: number) => `${F.number(v, v < 10 ? 1 : 0)}%`;
 const mat = material(slug);
 const crit = criticality(slug);
 const prof = profile(locale, slug);
@@ -22,16 +33,18 @@ const series = seriesFor(slug);
 const index = indexFor(slug);
 const sup = supply(slug);
 const trd = trade(slug);
+const dem = demand(slug);
+const demSrc = demandSource();
 
 const priceSeries: ChartSeries[] = series.map((s) => ({
   id: s.id,
-  label: s.label,
+  label: sl(s),
   unit: s.unit,
   frequency: s.frequency,
-  group: `${t.freq[s.frequency]} · ${s.source_name}`,
-  source: s.source_name,
+  group: `${t.freq[s.frequency]} · ${dl(s.source_name)}`,
+  source: dl(s.source_name),
   sourceUrl: s.source_url,
-  note: s.note,
+  note: noteText(locale, s),
   points: s.points,
 }));
 const initial = index.find((e) => !isStale(e))?.id ?? index[0]?.id;
@@ -39,14 +52,14 @@ const initial = index.find((e) => !isStale(e))?.id ?? index[0]?.id;
 const tradeSeries: ChartSeries[] = (trd?.products ?? []).flatMap((p) => {
   const mk = (col: 1 | 3, kind: string): ChartSeries => ({
     id: `${p.code}-${col}`,
-    label: `${kind}: ${p.label}`,
+    label: `${kind}: ${dl(p.label)}`,
     unit: 't',
     frequency: 'monthly',
     kind: 'column',
     group: kind,
-    source: `${trd!.source_name}, CN ${p.code}`,
+    source: `${dl(trd!.source_name)}, CN ${p.code}`,
     sourceUrl: trd!.source_url,
-    note: 'Extra-EU trade, net mass. Recent months are revised.',
+    note: x.tradeSeriesNote,
     points: p.monthly.filter((r) => r[col] !== null).map((r) => [r[0], r[col] as number]),
   });
   return [mk(1, x.tradeImports), mk(3, x.tradeExports)];
@@ -56,23 +69,23 @@ tradeSeries.sort((a, b) => (a.group === b.group ? 0 : a.group === x.tradeImports
 function supplyRows(tb: NonNullable<typeof sup>['tables'][number]): BarRow[] {
   const y = tb.estimated_year;
   const named = tb.rows.filter((r) => r.values[y] != null);
-  const head = named.filter((r) => r.country !== 'Other countries').slice(0, 8);
+  const head = named.filter((r) => !/^other countries/i.test(r.country)).slice(0, 8);
   const rest = named.filter((r) => !head.includes(r));
   const rows: BarRow[] = head.map((r) => ({
-    label: r.country,
+    label: cn(r.country),
     value: r.values[y] as number,
-    display: r.share_pct != null ? `${r.share_pct.toFixed(r.share_pct < 10 ? 1 : 0)}%` : fmtCompact(r.values[y]),
-    detail: r.share_pct != null ? `${fmtCompact(r.values[y])} ${tb.unit}` : tb.unit,
-    tip: `${fmtNumber(r.values[y])} ${tb.unit}|${r.country}, ${y}${r.share_pct != null ? `|${r.share_pct}% of world total` : ''}${r.reserves != null ? `|${x.reserves}: ${fmtNumber(r.reserves)} ${tb.reserves_unit ?? ''}` : ''}`,
+    display: r.share_pct != null ? pct(r.share_pct) : F.compact(r.values[y]),
+    detail: r.share_pct != null ? `${F.compact(r.values[y])} ${tb.unit}` : tb.unit,
+    tip: `${F.number(r.values[y])} ${tb.unit}|${cn(r.country)}, ${y}${r.share_pct != null ? `|${F.number(r.share_pct, 1)}% ${x.ofWorldTotal}` : ''}${r.reserves != null ? `|${x.reserves}: ${F.number(r.reserves)} ${tb.reserves_unit ?? ''}` : ''}`,
   }));
   if (rest.length && tb.comparable) {
     const v = rest.reduce((n, r) => n + (r.values[y] ?? 0), 0);
     const share = tb.world[y] ? (100 * v) / tb.world[y] : null;
     rows.push({
-      label: 'Other countries',
+      label: t.common.otherCountries,
       value: v,
-      display: share != null ? `${share.toFixed(share < 10 ? 1 : 0)}%` : fmtCompact(v),
-      detail: share != null ? `${fmtCompact(v)} ${tb.unit}` : tb.unit,
+      display: share != null ? pct(share) : F.compact(v),
+      detail: share != null ? `${F.compact(v)} ${tb.unit}` : tb.unit,
       other: true,
     });
   }
@@ -82,14 +95,31 @@ function supplyRows(tb: NonNullable<typeof sup>['tables'][number]): BarRow[] {
 function shareRows(list: { country: string; share_pct: number | null; stage?: string | null }[]): BarRow[] {
   return list
     .filter((r) => r.share_pct != null)
-    .map((r) => ({ label: r.country, value: r.share_pct as number, display: `${Math.round(r.share_pct as number)}%`, detail: r.stage ?? undefined }));
+    .map((r) => ({ label: cn(r.country), value: r.share_pct as number, display: `${F.number(Math.round(r.share_pct as number), 0)}%`, detail: r.stage ? (x.stageNames[r.stage] ?? r.stage) : undefined }));
 }
 
+const demandBars: BarRow[] = dem
+  ? (() => {
+      const r = dem.rows[0];
+      const tpl = (k: 'barLow' | 'barHigh' | 'barBase', y: string) => t.demand[k].replace('{year}', y);
+      const items: [string, number | null | undefined][] = [
+        [tpl('barBase', '2020'), r.baseline],
+        [tpl('barLow', '2030'), r.lds['2030']],
+        [tpl('barHigh', '2030'), r.hds['2030']],
+        [tpl('barLow', '2050'), r.lds['2050']],
+        [tpl('barHigh', '2050'), r.hds['2050']],
+      ];
+      return items
+        .filter(([, v]) => v != null)
+        .map(([label, v]) => ({ label, value: v as number, display: F.compact(v as number), detail: 't', tip: `${F.number(v as number)} t/yr|${label}|${F.number((v as number) / r.baseline, 1)}× 2020` }));
+    })()
+  : [];
+const demandName = (key: string | null) => (key ? (t.demand.components[key] ?? key) : '');
 const primary = trd?.products.find((p) => p.primary);
 const facts = crit
   ? [
-      { label: x.facts.sr, sub: x.facts.srSub, value: crit.supply_risk?.toFixed(1), pct: crit.supply_risk != null ? Math.min(100, (crit.supply_risk / 6) * 100) : null },
-      { label: x.facts.ei, sub: x.facts.eiSub, value: crit.economic_importance?.toFixed(1), pct: crit.economic_importance != null ? Math.min(100, (crit.economic_importance / 10) * 100) : null },
+      { label: x.facts.sr, sub: x.facts.srSub, value: crit.supply_risk != null ? F.fixed(crit.supply_risk, 1) : undefined, pct: crit.supply_risk != null ? Math.min(100, (crit.supply_risk / 6) * 100) : null },
+      { label: x.facts.ei, sub: x.facts.eiSub, value: crit.economic_importance != null ? F.fixed(crit.economic_importance, 1) : undefined, pct: crit.economic_importance != null ? Math.min(100, (crit.economic_importance / 10) * 100) : null },
       { label: x.facts.ir, sub: x.facts.irSub, value: crit.import_reliance_pct != null ? `${Math.round(crit.import_reliance_pct)}%` : undefined, pct: crit.import_reliance_pct != null ? Math.max(0, Math.min(100, crit.import_reliance_pct)) : null },
       { label: x.facts.rir, sub: x.facts.rirSub, value: crit.eol_rir_pct != null ? `${Math.round(crit.eol_rir_pct)}%` : undefined, pct: crit.eol_rir_pct != null ? Math.max(0, Math.min(100, crit.eol_rir_pct)) : null },
     ]
@@ -99,27 +129,28 @@ const uses = prof ? themeOrder.flatMap((th) => prof.frontmatter.uses.filter((u) 
 const pageSources = [
   ...(prof?.frontmatter.sources ?? []),
   ...(crit ? (euStudy.sources ?? []).slice(0, 1).map((s) => ({ title: s.title, url: s.url })) : []),
-  { title: 'European Commission JRC, Raw Materials Information System: raw material profiles', url: 'https://rmis.jrc.ec.europa.eu/rmp/' },
-  ...(sup ? [{ title: sup.source_name, url: sup.source_url }] : []),
-  ...(trd ? [{ title: `${trd.source_name}: EU trade since 1988 by HS2-4-6 and CN8`, url: trd.source_url }] : []),
-  ...[...new Map(series.map((s) => [s.source_name, s.source_url])).entries()].filter(([n]) => !n.startsWith('Eurostat') && !n.startsWith('USGS')).map(([title, url]) => ({ title, url })),
+  { title: x.rmisTitle, url: 'https://rmis.jrc.ec.europa.eu/rmp/' },
+  ...(sup ? [{ title: dl(sup.source_name), url: sup.source_url }] : []),
+  ...(trd ? [{ title: `${dl(trd.source_name)}: ${x.comextTitle}`, url: trd.source_url }] : []),
+  ...[...new Map(series.map((s) => [s.source_name, s.source_url])).entries()].filter(([n]) => !n.startsWith('Eurostat') && !n.startsWith('USGS')).map(([title, url]) => ({ title: dl(title), url })),
 ];
 ---
 
-<Base locale={locale} current="materials" title={mat.name} description={prof?.frontmatter.summary}>
-  <p class="small"><a href={href('/materials/')}>← {x.back}</a></p>
+<Base locale={locale} current="materials" title={mn(slug)} description={prof?.frontmatter.summary}>
+  <p class="small"><a href={H('/materials/')}>← {x.back}</a></p>
   <div class="page-head">
     <div class="tags" style="margin-bottom:12px">
       <span class:list={['badge', { strategic: mat.strategic }]}>{mat.strategic ? t.common.strategic : t.common.critical}</span>
       <span class="badge">{t.groups[mat.group] ?? mat.group}</span>
       {mat.themes.map((th) => <span class="badge">{t.themes[th]}</span>)}
     </div>
-    <h1>{mat.name}</h1>
+    <h1>{mn(slug)}</h1>
     {prof && <p class="lede">{prof.frontmatter.summary}</p>}
     <ul class="toc">
       <li><a href="#overview">{x.toc.overview}</a></li>
       <li><a href="#prices">{x.toc.prices}</a></li>
       <li><a href="#supply">{x.toc.supply}</a></li>
+      {dem && <li><a href="#demand">{x.toc.demand}</a></li>}
       <li><a href="#trade">{x.toc.trade}</a></li>
       {uses.length > 0 && <li><a href="#uses">{x.toc.uses}</a></li>}
       <li><a href="#sources">{x.toc.sources}</a></li>
@@ -127,8 +158,19 @@ const pageSources = [
   </div>
 
   {
+    RARE_PAGE_SLUGS.includes(slug) && (
+      <section style="margin-bottom:20px">
+        <a class="card tool-link" href={H('/rare-earths/', locale)} style="display:block">
+          <h3 style="margin:0 0 4px">{t.rare.link.title} →</h3>
+          <p class="muted" style="margin:0">{t.rare.link.text}</p>
+        </a>
+      </section>
+    )
+  }
+
+  {
     facts.length > 0 && (
-      <section aria-label="Criticality indicators">
+      <section aria-label={x.criticalityAria}>
         <div class="grid cols-4">
           {facts.map((f) => (
             <div class="tile">
@@ -167,7 +209,7 @@ const pageSources = [
       <p>{x.pricesSub}</p>
     </div>
     <div class="card">
-      <PriceChart series={priceSeries} initial={initial} selectLabel={x.selectSeries} />
+      <PriceChart series={priceSeries} initial={initial} selectLabel={x.selectSeries} locale={locale} />
     </div>
     <h3 style="margin:22px 0 10px">{x.pricesTable}</h3>
     <div class="table-scroll">
@@ -187,24 +229,24 @@ const pageSources = [
           {
             index.map((e) => (
               <tr>
-                <td>{e.label}</td>
+                <td>{sl(e)}</td>
                 <td>
                   <span class="badge freq">{t.freq[e.frequency]}</span>
                 </td>
                 <td class="r">
-                  {fmtNumber(e.latest)} <span class="muted">{e.unit}</span>
+                  {F.number(e.latest)} <span class="muted">{e.unit}</span>
                 </td>
                 <td>
-                  {fmtDate(e.latest_date)}
+                  {F.date(e.latest_date)}
                   {isStale(e) && <span class="sub">{t.prices.stale}</span>}
                 </td>
                 <td class="r">
-                  <Delta value={e.change_pct} />
+                  <Delta value={e.change_pct} locale={locale} />
                 </td>
                 <td class="r">
-                  <Delta value={e.change_1y_pct} />
+                  <Delta value={e.change_1y_pct} locale={locale} />
                 </td>
-                <td class="small">{e.source_name}</td>
+                <td class="small">{dl(e.source_name)}</td>
               </tr>
             ))
           }
@@ -223,23 +265,23 @@ const pageSources = [
       {
         sup?.tables.map((tb) => (
           <div class="card">
-            <p class="fig-title">{tb.label}</p>
+            <p class="fig-title">{dl(tb.label)}</p>
             <p class="fig-sub">
               {tb.world[tb.estimated_year] != null && (
                 <>
-                  {x.worldTotal}: {fmtNumber(tb.world[tb.estimated_year])} {tb.unit}.{' '}
+                  {x.worldTotal}: {F.number(tb.world[tb.estimated_year])} {tb.unit}.{' '}
                 </>
               )}
               {tb.reserves_world != null && (
                 <>
-                  {x.reserves}: {fmtNumber(tb.reserves_world)} {tb.reserves_unit}.{' '}
+                  {x.reserves}: {F.number(tb.reserves_world)} {tb.reserves_unit}.{' '}
                 </>
               )}
               {!tb.comparable && x.notComparable}
             </p>
             <BarList rows={supplyRows(tb)} />
             <p class="fig-note">
-              <a href={sup.source_url}>{sup.source_name}</a>
+              <a href={sup.source_url}>{dl(sup.source_name)}</a>
             </p>
           </div>
         ))
@@ -265,47 +307,118 @@ const pageSources = [
     </div>
   </section>
 
+  <section class="section" id="demand">
+    <div class="section-head">
+      <h2>{t.demand.title}</h2>
+      <p>{t.demand.sub}</p>
+    </div>
+    {
+      dem && demSrc ? (
+        <div class="grid cols-2">
+          <div class="card">
+            <p class="fig-title">{t.demand.barsTitle}</p>
+            {dem.rows.length > 1 && <p class="fig-sub">{demandName(dem.rows[0].key)}</p>}
+            <BarList rows={demandBars} />
+            {
+              dem.rows[0].tech.length > 0 && (
+                <p class="fig-note">{t.demand.largestUse.replace('{tech}', t.demand.tech[dem.rows[0].tech[0].name] ?? dem.rows[0].tech[0].name).replace('{pct}', F.number(dem.rows[0].tech[0].share_pct, 0))}</p>
+              )
+            }
+          </div>
+          <div class="card">
+            <div class="table-scroll" style="border:0">
+              <table class="data">
+                <thead>
+                  <tr>
+                    <th>{dem.rows.length > 1 ? t.demand.cols.component : ''}</th>
+                    <th class="r">{t.demand.cols.base}</th>
+                    <th class="r">{t.demand.cols.high2030}</th>
+                    <th class="r">{t.demand.cols.growth}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    dem.rows.slice(0, 8).map((r) => {
+                      const g = growth(r, '2030');
+                      return (
+                        <tr>
+                          <td>{r.key ? demandName(r.key) : mn(slug)}</td>
+                          <td class="r">{F.number(r.baseline, r.baseline < 10 ? 2 : 0)} t</td>
+                          <td class="r">{r.hds['2030'] != null ? `${F.number(r.hds['2030'], (r.hds['2030'] as number) < 10 ? 2 : 0)} t` : t.common.na}</td>
+                          <td class="r">{g.low != null && g.high != null ? `${F.number(g.low, 1)}–${F.number(g.high, 1)}×` : t.common.na}</td>
+                        </tr>
+                      );
+                    })
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <ul class="small" style="padding-left:1.2em;margin:14px 0 0;max-width:90ch">
+          {t.demand.caveats.map((c) => <li>{c}</li>)}
+        </ul>
+        <p class="fig-note">
+          {t.demand.sourceLead}: <a href={demSrc.report_url}>{demSrc.publisher} ({demSrc.year}), {demSrc.title}</a>, doi {demSrc.doi}. <a href={demSrc.data_url}>Zenodo</a>, {demSrc.licence}.
+        </p>
+      ) : (
+        <p class="callout">{t.demand.none}</p>
+      )
+    }
+    <p class="callout" style="margin-top:12px">{t.demand.article44}</p>
+  </section>
+
+  <section class="section" id="map">
+    <div class="section-head">
+      <h2>{t.map.blockTitle}</h2>
+      <a href={H(`/map/#${slug}`, locale)}>{t.map.onMapLink} →</a>
+    </div>
+    <div class="card">
+      <WorldMap locale={locale} fixed={slug} />
+    </div>
+  </section>
+
   {
     trd && (
       <section class="section" id="trade">
         <div class="section-head">
           <h2>{x.tradeTitle}</h2>
-          <p>{x.tradeSub(fmtDate(trd.latest_period))}</p>
+          <p>{x.tradeSub(F.date(trd.latest_period))}</p>
         </div>
         {primary && primary.origins.rows[0]?.share_pct != null && primary.origins.rows[0].share_pct > 65 && (
           <p class="callout warn" style="margin-bottom:16px">
-            <strong>⚠ {x.concentrationOver(primary.origins.rows[0].country, `${Math.round(primary.origins.rows[0].share_pct)}%`)}</strong> {x.concentrationNote}
+            <strong>⚠ {x.concentrationOver(cn(primary.origins.rows[0].country), `${F.number(Math.round(primary.origins.rows[0].share_pct), 0)}%`)}</strong> {x.concentrationNote}
           </p>
         )}
         <div class="grid cols-2">
           <div class="card">
             <p class="fig-title">{x.tradeVolumes}</p>
             <p class="fig-sub">{x.tradeProduct}: CN {trd.products.map((p) => p.code).join(', ')}</p>
-            <PriceChart series={tradeSeries} selectLabel={x.tradeProduct} />
+            <PriceChart series={tradeSeries} selectLabel={x.tradeProduct} locale={locale} />
           </div>
           <div class="grid" style="align-content:start">
             {trd.products
               .filter((p) => p.origins.rows.length > 0)
               .map((p) => (
                 <div class="card">
-                  <p class="fig-title">{p.label}</p>
+                  <p class="fig-title">{dl(p.label)}</p>
                   <p class="fig-sub">
-                    {x.tradeOrigins(fmtDate(p.origins.from), fmtDate(p.origins.to))}. {x.tradeOriginsBasis[p.origins.basis]} {x.tradeTotals(fmtNumber(p.origins.total_t), fmtCompact(p.origins.total_eur))}
+                    {x.tradeOrigins(F.date(p.origins.from), F.date(p.origins.to))}. {x.tradeOriginsBasis[p.origins.basis]} {x.tradeTotals(F.number(p.origins.total_t), F.compact(p.origins.total_eur))}
                   </p>
                   <BarList
                     rows={p.origins.rows.slice(0, 6).map((r) => ({
-                      label: r.country,
+                      label: cn(r.country),
                       value: r.share_pct ?? 0,
-                      display: `${(r.share_pct ?? 0).toFixed((r.share_pct ?? 0) < 10 ? 1 : 0)}%`,
-                      detail: `${fmtCompact(r.tonnes)} t`,
-                      tip: `${r.share_pct}%|${r.country}|${fmtNumber(r.tonnes)} t, EUR ${fmtCompact(r.eur)}`,
+                      display: pct(r.share_pct ?? 0),
+                      detail: `${F.compact(r.tonnes)} t`,
+                      tip: `${F.number(r.share_pct ?? 0, 1)}%|${cn(r.country)}|${F.number(r.tonnes)} t, EUR ${F.compact(r.eur)}`,
                     }))}
                     max={100}
                     threshold={65}
-                    thresholdLabel="65% benchmark"
+                    thresholdLabel={t.risk.benchmark}
                   />
                   <p class="fig-note">
-                    CN {p.code}. HHI {p.origins.hhi != null ? fmtNumber(p.origins.hhi) : t.common.na}. <a href={trd.source_url}>{trd.source_name}</a>
+                    CN {p.code}. HHI {p.origins.hhi != null ? F.number(p.origins.hhi) : t.common.na}. <a href={trd.source_url}>{dl(trd.source_name)}</a>
                   </p>
                 </div>
               ))}

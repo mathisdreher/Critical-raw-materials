@@ -655,15 +655,74 @@
         {
           "chapter": "RARE EARTHS (Heavy)",
           "detail": "Price, average, dollars per kilogram: Dysprosium oxide",
-          "label": "Dysprosium oxide, 99.5% min"
+          "label": "Dysprosium oxide, 99.5% min",
+          "element": "dy"
         },
         {
           "chapter": "RARE EARTHS (Heavy)",
           "detail": "Price, average, dollars per kilogram: Terbium oxide",
-          "label": "Terbium oxide, 99.99% min"
+          "label": "Terbium oxide, 99.99% min",
+          "element": "tb"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Europium oxide",
+          "label": "Europium oxide, 99.99% min",
+          "element": "eu"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Gadolinium oxide",
+          "label": "Gadolinium oxide, 99.99% min",
+          "element": "gd"
+        },
+        {
+          "chapter": "RARE EARTHS (Heavy)",
+          "detail": "Price, average, dollars per kilogram: Holmium oxide",
+          "label": "Holmium oxide, 99.5% min",
+          "element": "ho"
+        },
+        {
+          "chapter": "RARE EARTHS (Heavy)",
+          "detail": "Price, average, dollars per kilogram: Erbium oxide",
+          "label": "Erbium oxide, 99.5% min",
+          "element": "er"
+        },
+        {
+          "chapter": "RARE EARTHS (Heavy)",
+          "detail": "Price, average, dollars per kilogram: Ytterbium oxide",
+          "label": "Ytterbium oxide, 99.99% min",
+          "element": "yb"
+        },
+        {
+          "chapter": "RARE EARTHS (Heavy)",
+          "detail": "Price, average, dollars per kilogram: Lutetium oxide",
+          "label": "Lutetium oxide, 99.99% min",
+          "element": "lu"
+        },
+        {
+          "chapter": "YTTRIUM",
+          "detail": "Price, average, dollars per kilogram: Y2O3",
+          "label": "Yttrium oxide, 99.999% min",
+          "element": "y"
+        },
+        {
+          "chapter": "YTTRIUM",
+          "detail": "Price, average, dollars per kilogram: Yttrium metal",
+          "label": "Yttrium metal, 99.9% min",
+          "element": "y"
         }
       ],
-      "production": [],
+      "production": [
+        {
+          "chapter": "RARE EARTHS",
+          "commodity": null,
+          "detail": "Mine production",
+          "label": "Mine production, all rare earths (rare-earth-oxide equivalent)",
+          "reserves_detail": "Reserves",
+          "comparable": true
+        }
+      ],
       "trade": [
         {
           "code": "28053031",
@@ -671,11 +730,15 @@
         },
         {
           "code": "28053039",
-          "label": "Other heavy rare-earth metals and yttrium, 95% purity or more"
+          "label": "Europium, holmium, erbium, thulium, ytterbium, lutetium and yttrium metals, 95% purity or more"
         },
         {
-          "code": "284690",
-          "label": "Rare-earth compounds excluding cerium (light and heavy combined)"
+          "code": "28469060",
+          "label": "Compounds of gadolinium, terbium or dysprosium"
+        },
+        {
+          "code": "28469070",
+          "label": "Compounds of europium, holmium, erbium, thulium, ytterbium, lutetium or yttrium"
         }
       ]
     },
@@ -701,13 +764,45 @@
       "usgs_prices": [
         {
           "chapter": "RARE EARTHS",
-          "detail": "Price, average, dollars per kilogram: Neodymium-praseodymium",
-          "label": "NdPr oxide, 99% min"
+          "detail": "Price, average, dollars per kilogram: Neodymium-praseodymium (NdPr) oxide",
+          "label": "NdPr oxide, 99% min",
+          "element": "ndpr"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Neodymium oxide",
+          "label": "Neodymium oxide, 99.5% min",
+          "element": "nd"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Praseodymium oxide",
+          "label": "Praseodymium oxide, 99.99% min",
+          "element": "pr"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Samarium oxide",
+          "label": "Samarium oxide, 99.5% min",
+          "element": "sm"
         },
         {
           "chapter": "RARE EARTHS",
           "detail": "Price, average, dollars per kilogram: Cerium oxide",
-          "label": "Cerium oxide, 99.5% min"
+          "label": "Cerium oxide, 99.5% min",
+          "element": "ce"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Lanthanum oxide",
+          "label": "Lanthanum oxide, 99.5% min",
+          "element": "la"
+        },
+        {
+          "chapter": "RARE EARTHS",
+          "detail": "Price, average, dollars per kilogram: Mischmetal",
+          "label": "Mischmetal, 65% cerium and 35% lanthanum",
+          "element": "mischmetal"
         }
       ],
       "production": [
@@ -730,8 +825,21 @@
           "label": "Cerium and lanthanum metals, 95% purity or more"
         },
         {
-          "code": "284610",
+          "code": "28469050",
+          "label": "Compounds of praseodymium, neodymium or samarium"
+        },
+        {
+          "code": "28461000",
           "label": "Cerium compounds"
+        },
+        {
+          "code": "28469040",
+          "label": "Lanthanum compounds"
+        },
+        {
+          "code": "85051110",
+          "label": "Permanent magnets containing neodymium, praseodymium, dysprosium or samarium",
+          "focus": true
         }
       ]
     },

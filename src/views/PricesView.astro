@@ -2,9 +2,10 @@
 import Base from '../layouts/Base.astro';
 import Spark from '../components/Spark.astro';
 import Delta from '../components/Delta.astro';
-import { ui } from '../i18n';
-import { priceIndex, material, isStale } from '../lib/data';
-import { href, fmtNumber, fmtDate } from '../lib/format';
+import { ui, materialName, dataLabel, seriesLabel } from '../i18n';
+import { countryName } from '../lib/countries';
+import { priceIndex, isStale } from '../lib/data';
+import { href, formatters } from '../lib/format';
 
 interface Props {
   locale: string;
@@ -12,6 +13,13 @@ interface Props {
 const { locale } = Astro.props;
 const t = ui(locale);
 const p = t.prices;
+const F = formatters(locale);
+const H = (p: string, _l?: string) => href(p, locale);
+const mn = (slug: string) => materialName(locale, slug);
+const dl = (s: string) => dataLabel(locale, s);
+const sl = (s: Parameters<typeof seriesLabel>[1]) => seriesLabel(locale, s);
+const cn = (n: string) => countryName(n, locale);
+
 const rank = { daily: 0, monthly: 1, annual: 2 } as const;
 const rows = [...priceIndex.series].sort((a, b) => rank[a.frequency] - rank[b.frequency] || a.source.localeCompare(b.source) || a.material.localeCompare(b.material));
 const sources = [...new Set(rows.map((r) => r.source_name))];
@@ -48,7 +56,7 @@ const sources = [...new Set(rows.map((r) => r.source_name))];
       </div>
       <select data-attr="source" aria-label={t.common.source}>
         <option value="">{p.filterSource}</option>
-        {sources.map((s) => <option value={s}>{s}</option>)}
+        {sources.map((s) => <option value={s}>{dl(s)}</option>)}
       </select>
       <span class="small"><span data-count>{rows.length}</span> {p.count} {t.common.shown}</span>
     </div>
@@ -69,29 +77,29 @@ const sources = [...new Set(rows.map((r) => r.source_name))];
         <tbody>
           {
             rows.map((s) => (
-              <tr data-freq={s.frequency} data-source={s.source_name} data-search={`${material(s.material).name} ${s.label} ${s.source_name}`}>
-                <td class="name" data-v={material(s.material).name}>
-                  <a href={href(`/materials/${s.material}/#prices`)}>{material(s.material).name}</a>
+              <tr data-freq={s.frequency} data-source={s.source_name} data-search={`${mn(s.material)} ${sl(s)} ${dl(s.source_name)}`}>
+                <td class="name" data-v={mn(s.material)}>
+                  <a href={H(`/materials/${s.material}/#prices`)}>{mn(s.material)}</a>
                 </td>
                 <td>
-                  {s.label}
-                  <span class="sub">{s.source_name}</span>
+                  {sl(s)}
+                  <span class="sub">{dl(s.source_name)}</span>
                 </td>
                 <td>
                   <span class="badge freq">{t.freq[s.frequency]}</span>
                 </td>
                 <td class="r">
-                  {fmtNumber(s.latest)} <span class="muted">{s.unit}</span>
+                  {F.number(s.latest)} <span class="muted">{s.unit}</span>
                 </td>
                 <td data-v={s.latest_date}>
-                  {fmtDate(s.latest_date)}
+                  {F.date(s.latest_date)}
                   {isStale(s) && <span class="sub">{p.stale}</span>}
                 </td>
                 <td class="r" data-v={s.change_pct ?? ''}>
-                  <Delta value={s.change_pct} />
+                  <Delta value={s.change_pct} locale={locale} />
                 </td>
                 <td class="r" data-v={s.change_1y_pct ?? ''}>
-                  <Delta value={s.change_1y_pct} />
+                  <Delta value={s.change_1y_pct} locale={locale} />
                 </td>
                 <td>
                   <Spark values={s.spark} />
@@ -103,7 +111,7 @@ const sources = [...new Set(rows.map((r) => r.source_name))];
       </table>
     </div>
     <p class="fig-note">
-      {t.common.change}: against the previous observation of the same series (day, month or year). <a href={href('/methodology/')}>{t.footer.methodology}</a>
+      {p.changeNote} <a href={H('/methodology/')}>{t.footer.methodology}</a>
     </p>
   </section>
 </Base>

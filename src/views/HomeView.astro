@@ -2,9 +2,11 @@
 import Base from '../layouts/Base.astro';
 import Spark from '../components/Spark.astro';
 import Delta from '../components/Delta.astro';
-import { ui, crma } from '../i18n';
-import { materials, groups, priceIndex, material, trade } from '../lib/data';
-import { href, fmtNumber, fmtDate } from '../lib/format';
+import { ui, crma, materialName, dataLabel, seriesLabel } from '../i18n';
+import { countryName } from '../lib/countries';
+import { materials, groups, priceIndex, trade } from '../lib/data';
+import { loadProjects } from '../lib/mapData';
+import { href, formatters } from '../lib/format';
 
 interface Props {
   locale: string;
@@ -13,6 +15,13 @@ const { locale } = Astro.props;
 const t = ui(locale);
 const h = t.home;
 const k = crma(locale).hub;
+const F = formatters(locale);
+const H = (p: string, _l?: string) => href(p, locale);
+const mn = (slug: string) => materialName(locale, slug);
+const dl = (s: string) => dataLabel(locale, s);
+const sl = (s: Parameters<typeof seriesLabel>[1]) => seriesLabel(locale, s);
+const cn = (n: string) => countryName(n, locale);
+
 
 const series = priceIndex.series;
 const count = (f: string) => series.filter((s) => s.frequency === f).length;
@@ -21,6 +30,7 @@ const strategicSlugs = materials.filter((m) => m.strategic).map((m) => m.slug);
 const strategicCount = strategicSlugs.length - (strategicSlugs.includes('heavy-rare-earths') && strategicSlugs.includes('light-rare-earths') ? 1 : 0);
 const market = series.filter((s) => ['yahoo', 'imf', 'worldbank'].includes(s.source));
 const latestTrade = trade('copper')?.latest_period ?? '';
+const projectCount = loadProjects()?.projects.length ?? 0;
 ---
 
 <Base locale={locale} current="home">
@@ -29,12 +39,12 @@ const latestTrade = trade('copper')?.latest_period ?? '';
     <h1>{h.title}</h1>
     <p class="lede">{h.lede}</p>
     <div class="actions">
-      <a class="btn" href={href('/materials/')}>{h.ctaMaterials}</a>
-      <a class="btn ghost" href={href('/supply-risk/')}>{h.ctaRisk}</a>
+      <a class="btn" href={H('/materials/')}>{h.ctaMaterials}</a>
+      <a class="btn ghost" href={H('/supply-risk/')}>{h.ctaRisk}</a>
     </div>
   </section>
 
-  <section class="section" aria-label="Key figures">
+  <section class="section" aria-label={h.keyFigures}>
     <div class="grid cols-4">
       <div class="tile">
         <div class="label">{h.tiles.materials}</div>
@@ -54,7 +64,7 @@ const latestTrade = trade('copper')?.latest_period ?? '';
       <div class="tile">
         <div class="label">{h.tiles.trade}</div>
         <div class="value">{materials.reduce((n, m) => n + m.trade.length, 0)}</div>
-        <div class="sub">{latestTrade && h.tiles.tradeSub(fmtDate(latestTrade))}</div>
+        <div class="sub">{latestTrade && h.tiles.tradeSub(F.date(latestTrade))}</div>
       </div>
     </div>
   </section>
@@ -62,7 +72,7 @@ const latestTrade = trade('copper')?.latest_period ?? '';
   <section class="section">
     <div class="section-head">
       <h2>{h.pricesTitle}</h2>
-      <a href={href('/prices/')}>{h.pricesAll} →</a>
+      <a href={H('/prices/')}>{h.pricesAll} →</a>
     </div>
     <p class="muted" style="max-width:72ch">{h.pricesSub}</p>
     <div class="table-scroll">
@@ -83,23 +93,23 @@ const latestTrade = trade('copper')?.latest_period ?? '';
             market.map((s) => (
               <tr>
                 <td class="name">
-                  <a href={href(`/materials/${s.material}/`)}>{material(s.material).name}</a>
+                  <a href={H(`/materials/${s.material}/`)}>{mn(s.material)}</a>
                 </td>
                 <td>
-                  {s.label}
-                  <span class="sub">{s.source_name}</span>
+                  {sl(s)}
+                  <span class="sub">{dl(s.source_name)}</span>
                 </td>
                 <td class="r">
-                  {fmtNumber(s.latest)} <span class="muted">{s.unit}</span>
+                  {F.number(s.latest)} <span class="muted">{s.unit}</span>
                 </td>
                 <td style="white-space:nowrap">
-                  <span class="badge freq">{t.freq[s.frequency]}</span> <span class="small">{fmtDate(s.latest_date)}</span>
+                  <span class="badge freq">{t.freq[s.frequency]}</span> <span class="small">{F.date(s.latest_date)}</span>
                 </td>
                 <td class="r">
-                  <Delta value={s.change_pct} />
+                  <Delta value={s.change_pct} locale={locale} />
                 </td>
                 <td class="r">
-                  <Delta value={s.change_1y_pct} />
+                  <Delta value={s.change_1y_pct} locale={locale} />
                 </td>
                 <td>
                   <Spark values={s.spark} />
@@ -146,15 +156,29 @@ const latestTrade = trade('copper')?.latest_period ?? '';
   </section>
 
   <section class="section">
+    <div class="grid cols-2">
+      {
+        h.features.map((f) => (
+          <a class="card tool-link" href={H(f.path)}>
+            <h3>{f.title} →</h3>
+            <p class="muted" style="margin:0 0 10px">{f.text.replace('{n}', String(projectCount))}</p>
+            <span class="small"><strong>{f.cta}</strong></span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
     <div class="section-head">
       <h2>{k.title}</h2>
-      <a href={href('/crma/')}>{t.common.viewAll} →</a>
+      <a href={H('/crma/')}>{t.common.viewAll} →</a>
     </div>
     <p class="muted" style="max-width:72ch">{k.lede}</p>
     <div class="grid cols-3">
       {
         k.tools.map((tool) => (
-          <a class="card tool-link" href={href(tool.path)}>
+          <a class="card tool-link" href={H(tool.path)}>
             <span class="badge">{tool.ref}</span>
             <h3 style="margin-top:10px">{tool.title}</h3>
             <p class="muted" style="margin:0">{tool.text}</p>
@@ -177,9 +201,9 @@ const latestTrade = trade('copper')?.latest_period ?? '';
             {materials
               .filter((m) => m.group === g)
               .map((m) => (
-                <a class:list={['mat-chip', { strategic: m.strategic }]} href={href(`/materials/${m.slug}/`)}>
+                <a class:list={['mat-chip', { strategic: m.strategic }]} href={H(`/materials/${m.slug}/`)}>
                   <span class="sym">{m.short}</span>
-                  <span>{m.name}</span>
+                  <span>{mn(m.slug)}</span>
                 </a>
               ))}
           </div>
@@ -194,7 +218,7 @@ const latestTrade = trade('copper')?.latest_period ?? '';
         <h2 style="font-size:1.2rem">{h.joinTitle}</h2>
         <p class="muted" style="margin:0">{h.joinText}</p>
       </div>
-      <a class="btn" href={href('/join/')}>{h.joinCta}</a>
+      <a class="btn" href={H('/join/')}>{h.joinCta}</a>
     </div>
   </section>
 </Base>

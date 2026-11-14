@@ -1,0 +1,466 @@
+{
+ "dataset": "EU 2023 criticality assessment, rare earth elements assessed individually",
+ "reference_period": "Five-year average 2016-2020, as stated in the study",
+ "elements": [
+  {
+   "slug": "lanthanum",
+   "symbol": "La",
+   "name": "Lanthanum",
+   "group": "light",
+   "assessed_stage": "processing",
+   "supply_risk": 3.5,
+   "economic_importance": 2.9,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.0 (GS+EU), processing SR 3.5 (GS+EU); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the LREE group as a whole (import reliance 80% extraction, 100% processing; EoL-RIR 1% in Annex 11, 3% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. Annex 8 lists lanthanum EU sourcing at both stages."
+  },
+  {
+   "slug": "cerium",
+   "symbol": "Ce",
+   "name": "Cerium",
+   "group": "light",
+   "assessed_stage": "processing",
+   "supply_risk": 4.0,
+   "economic_importance": 4.9,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 3.9 (GS only), processing SR 4.0 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the LREE group as a whole (import reliance 80% extraction, 100% processing; EoL-RIR 1% in Annex 11, 3% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. Annex 2 marks cerium's supply as 'GS only' at both stages, so the EU sourcing rows in Annex 8 were not used in its SR."
+  },
+  {
+   "slug": "praseodymium",
+   "symbol": "Pr",
+   "name": "Praseodymium",
+   "group": "light",
+   "assessed_stage": "processing",
+   "supply_risk": 3.2,
+   "economic_importance": 7.0,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 1.8 (GS+EU), processing SR 3.2 (GS+EU); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the LREE group as a whole (import reliance 80% extraction, 100% processing; EoL-RIR 1% in Annex 11, 3% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. Annex 7 prints the name 'Praseodymium' split over two lines in the processing column (p. 89); values were read from the table cells."
+  },
+  {
+   "slug": "neodymium",
+   "symbol": "Nd",
+   "name": "Neodymium",
+   "group": "light",
+   "assessed_stage": "extraction",
+   "supply_risk": 4.5,
+   "economic_importance": 7.2,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 4.5 (GS+EU), processing SR 3.7 (GS+EU); the headline SR is the higher of the two, at the extraction stage. Import reliance and EoL-RIR are null: the study reports them only for the LREE group as a whole (import reliance 80% extraction, 100% processing; EoL-RIR 1% in Annex 11, 3% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (extraction), then the other stage; only the top 3 per stage are shown. Neodymium is the only rare earth assessed at the extraction stage (SR 4.5 extraction vs 3.7 processing); Table 5/6 and Tables A/B nevertheless label it 'P' (see conflicts)."
+  },
+  {
+   "slug": "samarium",
+   "symbol": "Sm",
+   "name": "Samarium",
+   "group": "light",
+   "assessed_stage": "processing",
+   "supply_risk": 3.5,
+   "economic_importance": 7.7,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.0 (GS+EU), processing SR 3.5 (GS+EU); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the LREE group as a whole (import reliance 80% extraction, 100% processing; EoL-RIR 1% in Annex 11, 3% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown."
+  },
+  {
+   "slug": "europium",
+   "symbol": "Eu",
+   "name": "Europium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 5.6,
+   "economic_importance": 3.3,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.2 (GS+EU), processing SR 5.6 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing). Table 12 (p. 38) says europium's SR rose from 3.7 to 5.6 'due to updated EoL RIR', which implies a per-element EoL-RIR exists, but no per-element value is published."
+  },
+  {
+   "slug": "gadolinium",
+   "symbol": "Gd",
+   "name": "Gadolinium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 3.3,
+   "economic_importance": 3.3,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 1.1 (GS+EU), processing SR 3.3 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing). Table 12 (p. 38): SR fell from 6.1 to 3.3 and EI from 4.6 to 3.3 mainly because of lower substitution indexes."
+  },
+  {
+   "slug": "terbium",
+   "symbol": "Tb",
+   "name": "Terbium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 4.9,
+   "economic_importance": 6.4,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.5 (GS+EU), processing SR 4.9 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing)."
+  },
+  {
+   "slug": "dysprosium",
+   "symbol": "Dy",
+   "name": "Dysprosium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 5.6,
+   "economic_importance": 7.8,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 5.3 (GS+EU), processing SR 5.6 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing)."
+  },
+  {
+   "slug": "holmium",
+   "symbol": "Ho",
+   "name": "Holmium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 5.6,
+   "economic_importance": 3.2,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.2 (GS+EU), processing SR 5.6 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing)."
+  },
+  {
+   "slug": "erbium",
+   "symbol": "Er",
+   "name": "Erbium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 5.6,
+   "economic_importance": 3.5,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.2 (GS+EU), processing SR 5.6 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing)."
+  },
+  {
+   "slug": "thulium",
+   "symbol": "Tm",
+   "name": "Thulium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 5.6,
+   "economic_importance": 3.2,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.2 (GS+EU), processing SR 5.6 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing)."
+  },
+  {
+   "slug": "ytterbium",
+   "symbol": "Yb",
+   "name": "Ytterbium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 5.6,
+   "economic_importance": 3.2,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.2 (GS+EU), processing SR 5.6 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty: Annex 8 (p. 114) lists China 61%, Russia 31%, United States 4% for the processing stage, but Table 6 (p. 26) prints China 0% and the report text (p. 27) says HREEs are excluded from the EU sourcing analysis at the processing stage (see conflicts)."
+  },
+  {
+   "slug": "lutetium",
+   "symbol": "Lu",
+   "name": "Lutetium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 5.6,
+   "economic_importance": 5.0,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 2.2 (GS+EU), processing SR 5.6 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty (see conflicts: HREE EU sourcing)."
+  },
+  {
+   "slug": "yttrium",
+   "symbol": "Y",
+   "name": "Yttrium",
+   "group": "heavy",
+   "assessed_stage": "processing",
+   "supply_risk": 3.5,
+   "economic_importance": 2.9,
+   "import_reliance_pct": null,
+   "eol_rir_pct": null,
+   "notes": "Annex 2 stage scores: extraction SR 1.4 (GS+EU), processing SR 3.5 (GS only); the headline SR is the higher of the two, at the processing stage. Import reliance and EoL-RIR are null: the study reports them only for the HREE group as a whole (import reliance 100% extraction, 100% processing; EoL-RIR 1% in Annex 11, 4% in the Annex 1 overview), not per element. Global producers: first entries are the stage used in SR (processing), then the other stage; only the top 3 per stage are shown. EU sourcing left empty: Annex 8 (p. 114) lists China 61%, Russia 31%, United States 4% for the processing stage, but Table 6 (p. 26) prints China 100% and the report text (p. 27) says HREEs are excluded from the EU sourcing analysis at the processing stage (see conflicts). The study treats yttrium as a rare earth element (glossary, p. 44) and places it in the HREE group."
+  }
+ ],
+ "conflicts": [
+  {
+   "slug": "neodymium",
+   "field": "assessed_stage / stage label",
+   "status": "resolved",
+   "value_in_dataset": "extraction",
+   "candidates": [
+    {
+     "value": "Extraction (SR 4.5; processing SR 3.7)",
+     "source": "Annex 2 (printed p. 52) and Annex 3 (printed p. 57)"
+    },
+    {
+     "value": "P (China 85%)",
+     "source": "Table 5 (p. 23), Table 6 (p. 26) and executive-summary Tables A/B (PDF pp. 10, 13)"
+    }
+   ],
+   "comment": "Annex 2 gives the stage actually used for the SR score; the summary tables label every rare earth 'P'. Both stages' shares are listed in the element entry with their own stage labels."
+  },
+  {
+   "slug": "heavy-rare-earths (all 10 HREEs)",
+   "field": "eu_sourcing",
+   "status": "unresolved",
+   "value_in_dataset": [],
+   "candidates": [
+    {
+     "value": "China 100% (processing) for Dy, Er, Eu, Gd, Ho, Lu, Tb, Tm, Y; Yb China 0%",
+     "source": "Table 6 (p. 26) and Table B (PDF p. 13)"
+    },
+    {
+     "value": "HREEs excluded from the EU sourcing analysis at the processing stage",
+     "source": "Report text, section 3.2.2 (printed p. 27)"
+    },
+    {
+     "value": "Group 'Heavy Rare earths Elements', extraction stage: Japan 55%, China 43%, United States 2%, United Kingdom 1%",
+     "source": "Annex 8 (printed p. 109)"
+    },
+    {
+     "value": "Processing-stage supply basis 'GS only' for every HREE (EU sourcing not used)",
+     "source": "Annex 2 (printed p. 51)"
+    }
+   ],
+   "comment": "The EU sourcing view of the heavy rare earths is contradictory; no per-element value is recorded. The group-level extraction row of Annex 8 is not attributed to individual elements."
+  },
+  {
+   "slug": "ytterbium",
+   "field": "eu_sourcing",
+   "status": "unresolved",
+   "value_in_dataset": [],
+   "candidates": [
+    {
+     "value": [
+      [
+       "China",
+       "61%"
+      ],
+      [
+       "Russia",
+       "31%"
+      ],
+      [
+       "United States",
+       "4%"
+      ],
+      [
+       "Korea, South",
+       "1%"
+      ],
+      [
+       "Singapore",
+       "1%"
+      ]
+     ],
+     "source": "Annex 8 (printed p. 114), processing stage"
+    },
+    {
+     "value": "China 0%",
+     "source": "Table 6 (p. 26) / Table B (PDF p. 13)"
+    },
+    {
+     "value": "China 100% global processing share",
+     "source": "Table 5 (p. 23) / Annex 7 (p. 89)"
+    }
+   ],
+   "comment": "Table 6 prints a 0% share for China as ytterbium's main EU supplier, which cannot be a main-supplier share and disagrees with Annex 8. Identical rows are printed for yttrium in Annex 8."
+  },
+  {
+   "slug": "yttrium",
+   "field": "eu_sourcing",
+   "status": "unresolved",
+   "value_in_dataset": [],
+   "candidates": [
+    {
+     "value": [
+      [
+       "China",
+       "61%"
+      ],
+      [
+       "Russia",
+       "31%"
+      ],
+      [
+       "United States",
+       "4%"
+      ],
+      [
+       "Singapore",
+       "1%"
+      ],
+      [
+       "Korea, South",
+       "1%"
+      ]
+     ],
+     "source": "Annex 8 (printed p. 114), processing stage"
+    },
+    {
+     "value": "China 100%",
+     "source": "Table 6 (p. 26) / Table B (PDF p. 13)"
+    }
+   ],
+   "comment": "Annex 8 and Table 6 disagree on China's share (61% vs 100%)."
+  },
+  {
+   "slug": "light-rare-earths (group, context)",
+   "field": "supply risk, extraction stage",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": "'281%' in the extraction supply-risk column and '3.58' (two decimals) in the processing column",
+     "source": "Annex 2 (printed p. 52), LREE group row"
+    }
+   ],
+   "comment": "Misprint in the group row; not used for any per-element value."
+  },
+  {
+   "slug": "heavy-rare-earths / light-rare-earths (group, context)",
+   "field": "eol_rir_pct",
+   "status": "unresolved",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": "HREE 1%, LREE 1%",
+     "source": "Annex 11 (p. 118)"
+    },
+    {
+     "value": "HREE 4%, LREE 3%",
+     "source": "Annex 1 overview (p. 50)"
+    }
+   ],
+   "comment": "Group-level conflict listed because it is one reason why no EoL-RIR is recorded per element; no per-element EoL-RIR is printed anywhere in the study."
+  },
+  {
+   "slug": "all",
+   "field": "import_reliance_pct / eol_rir_pct (per element)",
+   "status": "not reported",
+   "value_in_dataset": null,
+   "candidates": [
+    {
+     "value": "HREE 100% / 100%; LREE 80% / 100% (extraction / processing)",
+     "source": "Annex 10 (p. 117)"
+    }
+   ],
+   "comment": "Annex 10 and Annex 11 contain rows for 'HREE' and 'LREE' only; the per-element tables of Annexes 1, 10 and 11 do not exist. Per-element fields are therefore null."
+  }
+ ],
+ "caveats": [
+  "All Task 1 values were read programmatically from the PDF of the 2023 Final Report and cross-checked between two extraction paths (pdfplumber and pdftotext -layout); nothing was filled from memory.",
+  "Per-element results exist in the study only for: supply risk and economic importance (Annex 2), global supply shares (Annex 7, both stages), and EU sourcing shares for the five light rare earths (Annex 8, plus ytterbium and yttrium, left empty because of contradictions). Import reliance (Annex 10) and EoL-RIR (Annex 11) are given only for the HREE and LREE groups, so import_reliance_pct, import_reliance_stage and eol_rir_pct are null for every element.",
+  "'assessed_stage' is an added field: the stage used for the headline supply-risk score (Annex 2). global_producers lists that stage first, then the other stage, top 3 per stage, each entry carrying its own stage.",
+  "Annex 7 extraction-stage shares are identical across elements: Ce, La, Nd, Pr, Sm, Eu, Gd, Ho, Er, Tm, Yb, Lu and Y all show China 68.3% / Australia 9.9% / United States 9.2%; Dy and Tb share a different set (China 84.4% / Myanmar 9.3% / Russia 1.9%). Because they are identical, they should not be read as element-specific mining shares; Annex 1 footnote 37 (p. 50) says global production refers to rare earth oxide concentrates for both light and heavy rare earths.",
+  "Data reflect 2016-2020 supply patterns (five-year average) as stated in the study; label them as the 2023 assessment, not as current market shares.",
+  "Scandium is not included: the study lists it as a separate individual material (Table 1, p. 16), not in the HREE or LREE group; it is in the main dataset.",
+  "Task 2 figures are quoted per source and never combined, averaged or recomputed across sources. Where a source prints only tonnage (USGS) no percentage is given.",
+  "No open source found gives a complete, same-year, per-country split for all four stages. The closest is the JRC 2025 wind-turbine deep dive, Table 3 (mining, oxides, metals and alloys, NdFeB alloys and powders, NdFeB magnets, six country rows), but its data year is not stated and the underlying data are Adamas Intelligence (2024), a commercial source: JRC's CC BY 4.0 covers JRC-owned content, so confirm rights before republishing the table.",
+  "Most recent year with explicit country figures: IEA 2026 (2024 data) - China 60% mining, 91% refining, 94% sintered magnets - but only China (and Japan 5% for magnets, Myanmar >40% of Dy/Tb mining) is stated in prose; the IEA's country-by-country charts (mining, refining, magnets, 2024) are images and were not read, so no other country shares are recorded from them.",
+  "No source found gives a separate metal/alloy share in prose by country except JRC (S3) Table 3, whose columns are 'Metals and Alloys' and 'NdFeB Alloys and Powders'. The IEA treats metallisation as a bottleneck stage but prints no share for it in the text.",
+  "Scopes differ and must be labelled when shown: IEA = magnet rare earths (Nd, Pr, Dy, Tb) only; RMIS 'REE for magnets' = a JRC-defined group; RMIS 'Rare Earth Elements' and USGS = all rare earths; JRC wind report = the NdFeB magnet chain. Shares from different scopes or years are not comparable.",
+  "The RESourceEU factsheet numbers (95% / 100% / 90%) are the EU's dependency on a single third country in 2025, not global production shares; the document does not name the country.",
+  "RMIS data (reference year 2021, updated August 2023) are older than the IEA 2024 figures; they are recorded as JSON records because the profile page shows them only as charts. The profile API URL is an unlisted endpoint of the RMIS site.",
+  "USGS MCS 2026: 'mine production' is in tonnes of rare-earth oxide equivalent; 2025 figures are estimates. The USGS also prints US import sources (e.g. China 71% of 2021-24 US imports of compounds and metals), which are trade shares for one importer and are not recorded as stage shares.",
+  "Not read or not usable: IEA Global Critical Minerals Outlook 2025 (licence CC BY 4.0 confirmed on its page; not mined for stage shares because the dedicated 2026 rare earth report supersedes its rare earth content); GCMO 2026 market-overview charts (country shares for 2025 appear only in images; the p. 39 table layout was ambiguous); the JRC RMIS profile pages for individual elements (mining only, 2021)."
+ ],
+ "stage_figures_iea": [
+  {
+   "quote": "In 2024, the People’s Republic of China (hereafter, “China”) accounted for 60% of global mined production of magnet rare earths.",
+   "stage": "mining",
+   "country": "China",
+   "share_pct": 60,
+   "share_text": null,
+   "year": 2024,
+   "scope": "magnet rare earths (Nd, Pr, Dy, Tb) only",
+   "page": "8",
+   "url": "https://www.iea.org/reports/rare-earth-elements"
+  },
+  {
+   "quote": "Myanmar accounted for over 40% of total mined dysprosium and terbium production in 2024",
+   "stage": "mining",
+   "country": "Myanmar",
+   "share_pct": null,
+   "share_text": ">40%",
+   "year": 2024,
+   "scope": "dysprosium and terbium only",
+   "page": "31",
+   "url": "https://www.iea.org/reports/rare-earth-elements"
+  },
+  {
+   "quote": "Together, Myanmar and China are responsible for around 83% of the global mined heavy magnet rare earth supply today, notably higher than 76% of the light magnet rare earth supply.",
+   "stage": "mining",
+   "country": "China and Myanmar combined (as printed by the IEA)",
+   "share_pct": 83,
+   "share_text": null,
+   "year": null,
+   "scope": "heavy magnet rare earths (Dy, Tb); the same sentence gives 76% for light magnet rare earths",
+   "page": "31",
+   "url": "https://www.iea.org/reports/rare-earth-elements"
+  },
+  {
+   "quote": "For refining, the top three countries controlled the lion’s share (97%) of the refined output in 2024, with China’s dominance even more pronounced than in mining as it single-handedly represented 91% of the refined output.",
+   "stage": "separation",
+   "country": "China",
+   "share_pct": 91,
+   "share_text": null,
+   "year": 2024,
+   "scope": "magnet rare earths only; the IEA reports one 'refining' stage (separation into oxides and metal refining) and gives no separate metal/alloy share",
+   "page": "30",
+   "url": "https://www.iea.org/reports/rare-earth-elements"
+  },
+  {
+   "quote": "In 2005, China accounted for around 50% of the production of sintered permanent magnets, but its share expanded significantly to reach 94% in 2024.",
+   "stage": "magnets",
+   "country": "China",
+   "share_pct": 94,
+   "share_text": null,
+   "year": 2024,
+   "scope": "sintered permanent magnets (the type used in EVs and wind turbines)",
+   "page": "8",
+   "url": "https://www.iea.org/reports/rare-earth-elements"
+  },
+  {
+   "quote": "Japan, which accounted for nearly half the global production of sintered permanent magnets in 2005, remained the second-largest producer as of 2024 even though its share had fallen to around 5% of global production.",
+   "stage": "magnets",
+   "country": "Japan",
+   "share_pct": 5,
+   "share_text": null,
+   "year": 2024,
+   "scope": "sintered permanent magnets",
+   "page": "30",
+   "url": "https://www.iea.org/reports/rare-earth-elements"
+  },
+  {
+   "quote": "For magnets that use rare earths placed under export controls, i.e. dysprosium and terbium (NdFeB magnets), China’s share of global production in 2024 stood at around 94%.",
+   "stage": "magnets",
+   "country": "China",
+   "share_pct": 94,
+   "share_text": null,
+   "year": 2024,
+   "scope": "NdFeB magnets using dysprosium and terbium",
+   "page": "31",
+   "url": "https://www.iea.org/reports/rare-earth-elements"
+  }
+ ],
+ "sources": [
+  {
+   "title": "European Commission (DG GROW), Study on the Critical Raw Materials for the EU 2023 - Final Report, doi:10.2873/725585",
+   "url": "https://single-market-economy.ec.europa.eu/publications/study-critical-raw-materials-eu-2023-final-report_en",
+   "note": "PDF used: study2023.pdf (158 pages). Page numbers in this file are the report's printed page numbers (PDF page = printed + 4) except the executive-summary Tables A/B, cited by PDF page.",
+   "used_for": "Task 1 (per-element results)"
+  },
+  {
+   "id": "S1",
+   "title": "IEA (2026), Rare Earth Elements: Pathways to secure and diversified supply chains, IEA, Paris (published 8 April 2026; PDF 'Revised version, May 2026')",
+   "url": "https://www.iea.org/reports/rare-earth-elements",
+   "pdf_url": "https://iea.blob.core.windows.net/assets/88d2b060-4c5b-46cc-8727-c60576cb937d/RareearthelementsPathwaystosecureanddiversifiedsupplychains.pdf",
+   "licence": "CC BY 4.0 (stated on the report page and on every PDF page: 'IEA. CC BY 4.0.'), subject to IEA's additional terms for CC-licensed content (https://www.iea.org/terms/creative-commons-cc-licenses): credit the IEA in the form 'IEA 2026; Rare Earth Elements, https://www.iea.org/reports/rare-earth-elements, License: CC BY 4.0'; do not use IEA logos, visual identity or cover images or imply IEA endorsement; third-party components and photos within the report are not licensed by the IEA; derived works must carry the disclaimer 'This is a work derived by [name] from IEA material and [name] is solely liable and responsible for this derived work. The derived work is not endorsed by the IEA or its Member countries in any manner.'",
+   "accessed": "2026-11-14",
+   "used_for": "Task 2 (stage shares)"
+  }
+ ]
+}

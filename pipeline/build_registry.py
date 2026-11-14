@@ -21,8 +21,11 @@ def wb(column, label, unit):
     return {"source": "worldbank", "column": column, "label": label, "unit": unit}
 
 
-def usgs_price(chapter, detail, label):
-    return {"chapter": chapter, "detail": detail, "label": label}
+def usgs_price(chapter, detail, label, element=None):
+    d = {"chapter": chapter, "detail": detail, "label": label}
+    if element:
+        d["element"] = element
+    return d
 
 
 def prod(chapter, detail, label, commodity=None, reserves=None, comparable=True):
@@ -36,8 +39,11 @@ def prod(chapter, detail, label, commodity=None, reserves=None, comparable=True)
     }
 
 
-def cn(code, label):
-    return {"code": code, "label": label}
+def cn(code, label, focus=False):
+    d = {"code": code, "label": label}
+    if focus:
+        d["focus"] = True
+    return d
 
 
 MATERIALS = [
@@ -148,21 +154,38 @@ MATERIALS = [
     dict(slug="heavy-rare-earths", name="Heavy rare earth elements", short="HREE", group="Rare earths", strategic=True,
          themes=["green", "digital", "defence"],
          prices=[],
-         usgs_prices=[usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Dysprosium oxide", "Dysprosium oxide, 99.5% min"),
-                      usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Terbium oxide", "Terbium oxide, 99.99% min")],
-         production=[],
+         usgs_prices=[usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Dysprosium oxide", "Dysprosium oxide, 99.5% min", "dy"),
+                      usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Terbium oxide", "Terbium oxide, 99.99% min", "tb"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Europium oxide", "Europium oxide, 99.99% min", "eu"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Gadolinium oxide", "Gadolinium oxide, 99.99% min", "gd"),
+                      usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Holmium oxide", "Holmium oxide, 99.5% min", "ho"),
+                      usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Erbium oxide", "Erbium oxide, 99.5% min", "er"),
+                      usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Ytterbium oxide", "Ytterbium oxide, 99.99% min", "yb"),
+                      usgs_price("RARE EARTHS (Heavy)", "Price, average, dollars per kilogram: Lutetium oxide", "Lutetium oxide, 99.99% min", "lu"),
+                      usgs_price("YTTRIUM", "Price, average, dollars per kilogram: Y2O3", "Yttrium oxide, 99.999% min", "y"),
+                      usgs_price("YTTRIUM", "Price, average, dollars per kilogram: Yttrium metal", "Yttrium metal, 99.9% min", "y")],
+         production=[prod("RARE EARTHS", "Mine production", "Mine production, all rare earths (rare-earth-oxide equivalent)", reserves="Reserves")],
          trade=[cn("28053031", "Gadolinium, terbium and dysprosium metals, 95% purity or more"),
-                cn("28053039", "Other heavy rare-earth metals and yttrium, 95% purity or more"),
-                cn("284690", "Rare-earth compounds excluding cerium (light and heavy combined)")]),
+                cn("28053039", "Europium, holmium, erbium, thulium, ytterbium, lutetium and yttrium metals, 95% purity or more"),
+                cn("28469060", "Compounds of gadolinium, terbium or dysprosium"),
+                cn("28469070", "Compounds of europium, holmium, erbium, thulium, ytterbium, lutetium or yttrium")]),
     dict(slug="light-rare-earths", name="Light rare earth elements", short="LREE", group="Rare earths", strategic=True,
          themes=["green", "digital", "defence"],
          prices=[imf("PREODOM", "Rare earth carbonate, 42-45% REO, China domestic")],
-         usgs_prices=[usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Neodymium-praseodymium", "NdPr oxide, 99% min"),
-                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Cerium oxide", "Cerium oxide, 99.5% min")],
+         usgs_prices=[usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Neodymium-praseodymium (NdPr) oxide", "NdPr oxide, 99% min", "ndpr"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Neodymium oxide", "Neodymium oxide, 99.5% min", "nd"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Praseodymium oxide", "Praseodymium oxide, 99.99% min", "pr"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Samarium oxide", "Samarium oxide, 99.5% min", "sm"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Cerium oxide", "Cerium oxide, 99.5% min", "ce"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Lanthanum oxide", "Lanthanum oxide, 99.5% min", "la"),
+                      usgs_price("RARE EARTHS", "Price, average, dollars per kilogram: Mischmetal", "Mischmetal, 65% cerium and 35% lanthanum", "mischmetal")],
          production=[prod("RARE EARTHS", "Mine production", "Mine production, all rare earths (rare-earth-oxide equivalent)", reserves="Reserves")],
          trade=[cn("28053029", "Praseodymium, neodymium and samarium metals, 95% purity or more"),
                 cn("28053021", "Cerium and lanthanum metals, 95% purity or more"),
-                cn("284610", "Cerium compounds")]),
+                cn("28469050", "Compounds of praseodymium, neodymium or samarium"),
+                cn("28461000", "Cerium compounds"),
+                cn("28469040", "Lanthanum compounds"),
+                cn("85051110", "Permanent magnets containing neodymium, praseodymium, dysprosium or samarium", focus=True)]),
     dict(slug="lithium", name="Lithium", short="Li", group="Battery materials", strategic=True,
          themes=["green", "digital"],
          prices=[imf("PLITH", "Lithium metal, 99% min, battery grade")],

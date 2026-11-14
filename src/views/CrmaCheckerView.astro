@@ -19,7 +19,7 @@ const order = ['art24', 'art24check', 'art24supplier', 'art28label', 'art28carri
 ---
 
 <Base locale={locale} current="crma" title={k.title} description={k.lede}>
-  <p class="small"><a href={href('/crma/')}>← {c.hub.title}</a></p>
+  <p class="small"><a href={href('/crma/', locale)}>← {c.hub.title}</a></p>
   <div class="page-head">
     <h1>{k.title}</h1>
     <p class="lede">{k.lede}</p>
@@ -130,7 +130,7 @@ const order = ['art24', 'art24check', 'art24supplier', 'art28label', 'art28carri
                 </dl>
                 {o.pending && <p class="small pending">{o.pending}</p>}
                 {o.link && (
-                  <a class="btn ghost" href={href(o.link)}>
+                  <a class="btn ghost" href={href(o.link, locale)}>
                     {o.next} →
                   </a>
                 )}
@@ -140,7 +140,7 @@ const order = ['art24', 'art24check', 'art24supplier', 'art28label', 'art28carri
         }
       </div>
       <p class="fig-note">
-        {c.disclaimer} <a href={REG_URL}>Regulation (EU) 2024/1252</a>.
+        {c.disclaimer} <a href={REG_URL}>{c.regulationName}</a>.
       </p>
     </aside>
   </div>

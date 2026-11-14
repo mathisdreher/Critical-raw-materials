@@ -5,8 +5,8 @@ const raw = document.getElementById('crma-magnets-data')?.textContent;
 
 if (form && out && raw) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { t, types, acts } = JSON.parse(raw) as { t: any; types: Record<string, string>; acts: Record<string, { due: string; entryIntoForce: string | null }> };
-  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const { t, types, acts, tag } = JSON.parse(raw) as { t: any; types: Record<string, string>; acts: Record<string, { due: string; entryIntoForce: string | null }>; tag: string };
+  const dateFmt = new Intl.DateTimeFormat(tag, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
   const el = (tag: string, cls?: string, text?: string) => {
     const e = document.createElement(tag);
@@ -24,7 +24,7 @@ if (form && out && raw) {
     d.setUTCFullYear(d.getUTCFullYear() + n);
     return d;
   };
-  const fmt = (d: Date) => `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+  const fmt = (d: Date) => dateFmt.format(d);
   const later = (a: Date, b: Date) => (a > b ? a : b);
 
   const card = (title: string, ref: string, status: 'required' | 'notRequired' | 'verify' | null, ...body: (Node | string)[]) => {
@@ -67,7 +67,7 @@ if (form && out && raw) {
     const counted = present.filter((id) => id !== 'ferrite');
     const weights = counted.map((id) => String(data.get(`w-${id}`) ?? '').trim());
     const total = weights.reduce((n, w) => n + (Number(w) || 0), 0);
-    const kg = total.toLocaleString('en-GB', { maximumFractionDigits: 3 });
+    const kg = total.toLocaleString(tag, { maximumFractionDigits: 3 });
 
     if (on('otherLaw')) out.append(el('p', 'callout warn', t.otherLawNote));
 

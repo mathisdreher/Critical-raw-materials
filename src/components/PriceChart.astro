@@ -1,5 +1,7 @@
 ---
-// Wraps the <ts-chart> custom element: serialises the series for the client.
+// Wraps the <ts-chart> custom element: serialises the series and the interface labels for the client.
+import { ui } from '../i18n';
+import { localeTag } from '../lib/format';
 export interface ChartSeries {
   id: string;
   label: string;
@@ -16,10 +18,11 @@ interface Props {
   series: ChartSeries[];
   initial?: string;
   selectLabel?: string;
+  locale?: string;
 }
-const { series, initial, selectLabel } = Astro.props;
+const { series, initial, selectLabel, locale = 'en' } = Astro.props;
 // "</script" inside a label would end the JSON block early
-const payload = JSON.stringify(series).replace(/</g, '\\u003c');
+const payload = JSON.stringify({ locale, tag: localeTag(locale), labels: ui(locale).chart, series }).replace(/</g, '\\u003c');
 ---
 
 <ts-chart series={initial} select-label={selectLabel}>

@@ -1,0 +1,285 @@
+---
+import Base from '../layouts/Base.astro';
+import Spark from '../components/Spark.astro';
+import Delta from '../components/Delta.astro';
+import BarList from '../components/BarList.astro';
+import PriceChart, { type ChartSeries } from '../components/PriceChart.astro';
+import IndexedLines from '../components/IndexedLines.astro';
+import { ui, materialName, dataLabel } from '../i18n';
+import { supply, trade } from '../lib/data';
+import { href, formatters } from '../lib/format';
+import { countryName } from '../lib/countries';
+import { ELEMENTS, elementEntry, elementSeries, scandiumEntry, rareTrade, magnetProduct, miningShare, processingShare, elementAssessments, ieaFigures } from '../lib/rareEarths';
+import { IEA_CREDIT, IEA_URL, IEA_DISCLAIMER } from '../i18n/legal';
+import { demand, growth } from '../lib/demand';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const t = ui(locale);
+const r = t.rare;
+const F = formatters(locale);
+
+const mining = miningShare();
+const sepLight = processingShare('light-rare-earths');
+const sepHeavy = processingShare('heavy-rare-earths');
+const { rows: tradeRows, period } = rareTrade();
+const metalsCompounds = tradeRows.filter((x) => x.group !== 'magnets' && x.china !== null).map((x) => x.china as number);
+const magnet = tradeRows.find((x) => x.group === 'magnets');
+const assess = elementAssessments();
+const iea = ieaFigures();
+const demandRows = [...(demand('light-rare-earths')?.rows ?? []), ...(demand('heavy-rare-earths')?.rows ?? [])];
+const demandOf = (key: string) => {
+  const row = demandRows.find((x) => x.key === key);
+  return row ? growth(row, '2030') : null;
+};
+const byKey = new Map(assess.map((a) => [a.slug, a]));
+
+const indexKeys = ['ndpr', 'dy', 'tb', 'ce'];
+const indexed = indexKeys
+  .map((k) => elementSeries(k))
+  .filter((s) => s !== null)
+  .map((s) => ({ id: s!.id, label: dataLabel(locale, s!.label), unit: s!.unit, points: s!.points.filter((p) => Number(p[0]) >= 2021) as [string, number][] }));
+
+const mp = magnetProduct();
+const magnetSeries: ChartSeries[] = mp
+  ? [1, 3].map((col) => ({
+      id: `85051110-${col}`,
+      label: `${col === 1 ? t.material.tradeImports : t.material.tradeExports}: ${r.tradeShort['85051110']}`,
+      unit: 't',
+      frequency: 'monthly' as const,
+      kind: 'column' as const,
+      group: col === 1 ? t.material.tradeImports : t.material.tradeExports,
+      source: trade('light-rare-earths')!.source_name,
+      sourceUrl: trade('light-rare-earths')!.source_url,
+      note: null,
+      points: mp.monthly.filter((m) => m[col] !== null).map((m) => [m[0], m[col] as number] as [string, number]),
+    }))
+  : [];
+
+const groupsOrder = ['metals', 'compounds', 'magnets'] as const;
+const sup = supply('light-rare-earths');
+const sources = [
+  { title: sup?.source_name ?? 'USGS', url: sup?.source_url ?? '' },
+  { title: trade('light-rare-earths')?.source_name ?? 'Eurostat Comext', url: trade('light-rare-earths')?.source_url ?? '' },
+  { title: 'European Commission, Study on the Critical Raw Materials for the EU 2023', url: 'https://single-market-economy.ec.europa.eu/publications/study-critical-raw-materials-eu-2023-final-report_en' },
+  { title: 'Regulation (EU) 2024/1252, Annexes I and II', url: 'https://eur-lex.europa.eu/eli/reg/2024/1252/oj' },
+  { title: 'JRC Raw Materials Information System', url: 'https://rmis.jrc.ec.europa.eu/' },
+];
+---
+
+<Base locale={locale} current="materials" title={r.title} description={r.lede}>
+  <p class="small"><a href={href('/materials/', locale)}>← {t.material.back}</a></p>
+  <div class="page-head">
+    <div class="tags" style="margin-bottom:12px">
+      <span class="badge strategic">{t.common.strategic}</span>
+      <span class="badge">{t.groups['Rare earths'] ?? 'Rare earths'}</span>
+    </div>
+    <h1>{r.title}</h1>
+    <p class="lede">{r.lede}</p>
+  </div>
+
+  <section>
+    <div class="prose">
+      {r.why.map((p) => <p>{p}</p>)}
+    </div>
+    <p class="callout">{r.actNote}</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{r.chainTitle}</h2><p>{r.chainSub}</p></div>
+    <div class="chain">
+      {
+        mining && (
+          <div class="tile">
+            <div class="label">1. {r.chain.mining.title}</div>
+            <div class="value">{F.number(mining.share, 0)}%</div>
+            <div class="sub">{r.chain.mining.note.replace('{year}', mining.year)}</div>
+            {iea && <div class="sub" style="margin-top:8px">{r.chain.mining.alt.replace('{pct}', String(iea.mining.share_pct)).replace('{year}', String(iea.mining.year))}</div>}
+          </div>
+        )
+      }
+      <div class="tile">
+        <div class="label">2. {r.chain.separation.title}</div>
+        {
+          iea ? (
+            <>
+              <div class="value">{F.number(iea.refining.share_pct, 0)}%</div>
+              <div class="sub">{r.chain.separation.note.replace('{year}', String(iea.refining.year))}</div>
+              <div class="sub" style="margin-top:8px">
+                {r.chain.separation.alt.replace('{light}', sepLight ? F.number(sepLight.share, 0) : '–').replace('{heavy}', sepHeavy ? F.number(sepHeavy.share, 0) : '–')}
+              </div>
+            </>
+          ) : (
+            <>
+              <div class="value">
+                {sepLight ? `${F.number(sepLight.share, 0)}%` : '–'} <small>/ {sepHeavy ? `${F.number(sepHeavy.share, 0)}%` : '–'}</small>
+              </div>
+              <div class="sub">{r.chain.separation.alt.replace('{light}', sepLight ? F.number(sepLight.share, 0) : '–').replace('{heavy}', sepHeavy ? F.number(sepHeavy.share, 0) : '–')}</div>
+            </>
+          )
+        }
+      </div>
+      {
+        metalsCompounds.length > 0 && (
+          <div class="tile">
+            <div class="label">3. {r.chain.metals.title}</div>
+            <div class="value">
+              {F.number(Math.min(...metalsCompounds), 0)}–{F.number(Math.max(...metalsCompounds), 0)}%
+            </div>
+            <div class="sub">{r.chain.metals.note.replace('{period}', F.date(period))}</div>
+          </div>
+        )
+      }
+      {
+        magnet && (
+          <div class="tile">
+            <div class="label">4. {r.chain.magnets.title}</div>
+            {
+              iea ? (
+                <>
+                  <div class="value">{F.number(iea.magnets.share_pct, 0)}%</div>
+                  <div class="sub">{r.chain.magnets.note.replace('{year}', String(iea.magnets.year)).replace('{japan}', String(iea.japan.share_pct))}</div>
+                  <div class="sub" style="margin-top:8px">{r.chain.magnets.alt.replace('{pct}', F.number(magnet.china, 0)).replace('{t}', F.number(magnet.tonnes, 0)).replace('{period}', F.date(period))}</div>
+                </>
+              ) : (
+                <>
+                  <div class="value">{F.number(magnet.china, 0)}%</div>
+                  <div class="sub">{r.chain.magnets.alt.replace('{pct}', F.number(magnet.china, 0)).replace('{t}', F.number(magnet.tonnes, 0)).replace('{period}', F.date(period))}</div>
+                </>
+              )
+            }
+          </div>
+        )
+      }
+    </div>
+    {
+      iea && (
+        <p class="fig-note" style="max-width:90ch">
+          {r.ieaLead} {IEA_CREDIT}. <a href={IEA_URL}>{IEA_URL}</a>. {IEA_DISCLAIMER}
+        </p>
+      )
+    }
+  </section>
+
+  <section class="section" id="elements">
+    <div class="section-head"><h2>{r.elementsTitle}</h2><p>{r.elementsSub}</p></div>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th>{r.cols.element}</th>
+            <th>{r.cols.group}</th>
+            <th>{r.cols.uses}</th>
+            <th class="r">{r.cols.price}</th>
+            <th class="r">{r.cols.change}</th>
+            <th>{r.cols.trend}</th>
+            {demandRows.length > 0 && <th class="r">{r.cols.demand}</th>}
+            {assess.length > 0 && <th class="r">{r.cols.scores}</th>}
+          </tr>
+        </thead>
+        <tbody>
+          {
+            ELEMENTS.map((e) => {
+              const entry = e.key === 'scandium' ? scandiumEntry() : elementEntry(e.price);
+              const a = byKey.get(e.key);
+              const page = e.slug ? href(`/materials/${e.slug}/#prices`, locale) : null;
+              return (
+                <tr>
+                  <td class="name">
+                    <span class:list={['element-sym', { magnet: e.magnet }]} title={e.magnet ? r.strategicTag : undefined}>{e.symbol}</span>
+                    {page ? <a href={page}>{r.elementNames[e.key]}</a> : r.elementNames[e.key]}
+                  </td>
+                  <td>{r.groups[e.group]}</td>
+                  <td class="small">{r.uses[e.key]}</td>
+                  <td class="r">
+                    {entry && e.key !== 'scandium' ? <>{F.number(entry.latest)} <span class="muted">{entry.unit}</span></> : <span class="muted">{t.common.na}</span>}
+                  </td>
+                  <td class="r">{entry && e.key !== 'scandium' ? <Delta value={entry.change_1y_pct} locale={locale} /> : <span class="muted">{t.common.na}</span>}</td>
+                  <td>{entry && e.key !== 'scandium' ? <Spark values={entry.spark} /> : null}</td>
+                  {demandRows.length > 0 && (
+                    <td class="r">
+                      {(() => {
+                        const g = demandOf(e.key);
+                        return g && g.low != null && g.high != null ? `${F.number(g.low, 1)}–${F.number(g.high, 1)}×` : <span class="muted">{t.common.na}</span>;
+                      })()}
+                    </td>
+                  )}
+                  {assess.length > 0 && (
+                    <td class="r">{a?.supply_risk != null && a?.economic_importance != null ? `${F.fixed(a.supply_risk, 1)} / ${F.fixed(a.economic_importance, 1)}` : <span class="muted">{t.common.na}</span>}</td>
+                  )}
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+    {assess.length > 0 && <p class="fig-note">{r.criticalitySub} {t.material.factsSource}</p>}
+    {demandRows.length > 0 && <p class="fig-note">{r.demandNote}</p>}
+  </section>
+
+  {
+    indexed.length > 1 && (
+      <section class="section">
+        <div class="section-head"><h2>{r.indexTitle}</h2><p>{r.indexSub}</p></div>
+        <div class="card">
+          <IndexedLines series={indexed} locale={locale} tableLabel={t.common.viewTable} periodLabel={t.common.period} indexLabel={t.common.index} ariaLabel={r.indexTitle} />
+          <p class="fig-note">{r.indexNote} <a href={sup?.source_url}>{sup?.source_name}</a>.</p>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section" id="imports">
+    <div class="section-head"><h2>{r.tradeTitle}</h2><p>{r.tradeSub.replace('{period}', F.date(period))}</p></div>
+    <div class="grid cols-2">
+      <div class="card">
+        {
+          groupsOrder.map((g) => {
+            const rows = tradeRows.filter((x) => x.group === g);
+            return (
+              rows.length > 0 && (
+                <>
+                  <p class="eyebrow" style="margin:14px 0 8px">{r.tradeGroups[g]}</p>
+                  <BarList
+                    rows={rows.map((x) => ({
+                      label: r.tradeShort[x.product.code] ?? dataLabel(locale, x.product.label),
+                      value: x.china ?? 0,
+                      display: `${F.number(x.china ?? 0, 0)}%`,
+                      detail: `${F.number(x.tonnes, 0)} t`,
+                      tip: `${F.number(x.china ?? 0, 1)}%|${r.chinaShare}|${dataLabel(locale, x.product.label)}|CN ${x.product.code}`,
+                    }))}
+                    max={100}
+                    threshold={65}
+                    thresholdLabel="65%"
+                  />
+                </>
+              )
+            );
+          })
+        }
+        <p class="fig-note">{r.tradeNote}</p>
+      </div>
+      {
+        magnetSeries.length > 0 && (
+          <div class="card">
+            <p class="fig-title">{r.magnetsTitle}</p>
+            <p class="fig-sub">{r.magnetsSub}</p>
+            <PriceChart series={magnetSeries} locale={locale} />
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>{r.limitsTitle}</h2></div>
+    <ul class="prose">{r.limits.map((l) => <li>{l}</li>)}</ul>
+    <h3 style="margin-top:20px">{r.sourcesTitle}</h3>
+    <ul class="small" style="padding-left:1.2em;margin:0">
+      {sources.map((s) => <li><a href={s.url}>{s.title}</a></li>)}
+    </ul>
+  </section>
+</Base>

@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import { ui } from '../i18n';
+import { ui, dataLabel } from '../i18n';
 import { pipelineStatus, euStudy } from '../lib/data';
-import { fmtTimestamp } from '../lib/format';
+import { formatters } from '../lib/format';
 import { site } from '../site.config';
 
 interface Props {
@@ -11,6 +11,8 @@ interface Props {
 const { locale } = Astro.props;
 const t = ui(locale);
 const m = t.method;
+const F = formatters(locale);
+const dl = (s: string) => dataLabel(locale, s);
 const order = ['yahoo', 'imf', 'worldbank', 'eurostat', 'usgs'];
 const euSource = euStudy.sources?.[0];
 ---
@@ -48,26 +50,37 @@ const euSource = euStudy.sources?.[0];
                 return (
                   <tr>
                     <td class="name">
-                      <a href={s.url}>{s.name}</a>
+                      <a href={s.url}>{dl(s.name)}</a>
                     </td>
                     <td>{m.layers[k]}</td>
                     <td>{m.refresh[k]}</td>
                     <td>
-                      {fmtTimestamp(s.last_success ?? '')}
-                      <span class="sub">{s.ok ? `${m.ok}: ${s.detail}` : `⚠ ${m.failed}`}</span>
+                      {F.timestamp(s.last_success ?? '', t.common.na)}
+                      <span class="sub">{s.ok ? (locale === 'en' ? `${m.ok}: ${s.detail}` : m.ok) : `⚠ ${m.failed}`}</span>
                     </td>
-                    <td class="small">{s.licence}</td>
+                    <td class="small">{dl(s.licence)}</td>
                   </tr>
                 );
               })
           }
           <tr>
-            <td class="name">{euSource ? <a href={euSource.url}>{euSource.title}</a> : 'European Commission, Study on the Critical Raw Materials for the EU 2023'}</td>
+            <td class="name"><a href={euSource?.url ?? 'https://single-market-economy.ec.europa.eu/publications/study-critical-raw-materials-eu-2023-final-report_en'}>{euSource?.title ?? 'Study on the Critical Raw Materials for the EU 2023'}</a></td>
             <td>{m.layers.eu}</td>
             <td>{m.refresh.eu}</td>
             <td>2023</td>
-            <td class="small">© European Union, reuse authorised with attribution (CC BY 4.0).</td>
+            <td class="small">{dl('© European Union, reuse authorised with attribution (CC BY 4.0).')}</td>
           </tr>
+          {
+            m.staticSources.map((x) => (
+              <tr>
+                <td class="name"><a href={x.url}>{x.name}</a></td>
+                <td>{x.layer}</td>
+                <td>{x.refresh}</td>
+                <td>{F.date(x.refresh.match(/\d{4}/)?.[0] ?? '')}</td>
+                <td class="small">{x.licence}</td>
+              </tr>
+            ))
+          }
         </tbody>
       </table>
     </div>

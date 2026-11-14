@@ -1,0 +1,95 @@
+---
+// Several annual series indexed to their first year (= 100) on one axis.
+// A legend is always shown, end labels only where they do not collide, every
+// point has a tooltip, and the values are repeated in a table.
+import { formatters } from '../lib/format';
+
+export interface IndexedSeries {
+  id: string;
+  label: string;
+  unit: string;
+  points: [string, number][];
+}
+interface Props {
+  series: IndexedSeries[];
+  locale: string;
+  tableLabel: string;
+  periodLabel: string;
+  indexLabel: string;
+  ariaLabel: string;
+}
+const { series, locale, tableLabel, periodLabel, indexLabel, ariaLabel } = Astro.props;
+const F = formatters(locale);
+const W = 760;
+const H = 320;
+const m = { l: 44, r: 118, t: 14, b: 30 };
+const years = [...new Set(series.flatMap((s) => s.points.map((p) => p[0])))].sort();
+const indexed = series.map((s, i) => {
+  const base = s.points[0][1];
+  return { ...s, n: i + 1, pts: s.points.map(([y, v]) => ({ y, v, idx: (v / base) * 100 })) };
+});
+const top = Math.max(100, ...indexed.flatMap((s) => s.pts.map((p) => p.idx)));
+const yMax = Math.ceil(top / 50) * 50;
+const x = (y: string) => m.l + (years.indexOf(y) / Math.max(1, years.length - 1)) * (W - m.l - m.r);
+const y = (v: number) => m.t + (1 - v / yMax) * (H - m.t - m.b);
+const ticks = Array.from({ length: yMax / 50 + 1 }, (_, i) => i * 50);
+// end labels, skipped when two ends are closer than 16px
+const ends = indexed.map((s) => ({ id: s.id, py: y(s.pts[s.pts.length - 1].idx) })).sort((a, b) => a.py - b.py);
+const labelled = new Set(ends.filter((e, i) => (i === 0 || e.py - ends[i - 1].py >= 16) && (i === ends.length - 1 || ends[i + 1].py - e.py >= 16)).map((e) => e.id));
+---
+
+<figure class="il">
+  <div class="legend">
+    {indexed.map((s) => <span><i style={`background:var(--series-${s.n})`}></i>{s.label}</span>)}
+  </div>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={ariaLabel}>
+    {ticks.map((t) => <line class={t === 0 ? 'baseline' : 'gridline'} x1={m.l} x2={W - m.r} y1={y(t)} y2={y(t)} />)}
+    {ticks.map((t) => <text x={m.l - 8} y={y(t) + 3.5} text-anchor="end">{t}</text>)}
+    {years.map((yr) => <text x={x(yr)} y={H - 8} text-anchor="middle">{yr}</text>)}
+    <line class="refline" x1={m.l} x2={W - m.r} y1={y(100)} y2={y(100)}></line>
+    {
+      indexed.map((s) => (
+        <g>
+          <path class={`il-line il-${s.n}`} d={s.pts.map((p, i) => `${i ? 'L' : 'M'}${x(p.y).toFixed(1)},${y(p.idx).toFixed(1)}`).join('')} />
+          {s.pts.map((p) => (
+            <g data-tip={`${F.number(p.v)} ${s.unit}|${s.label}, ${p.y}|${indexLabel} ${F.number(p.idx, 0)}`} tabindex="0" aria-label={`${s.label}, ${p.y}: ${F.number(p.v)} ${s.unit}`}>
+              <circle cx={x(p.y)} cy={y(p.idx)} r="14" fill="transparent" />
+              <circle class={`il-dot il-${s.n}`} cx={x(p.y)} cy={y(p.idx)} r="4.5" />
+            </g>
+          ))}
+          {labelled.has(s.id) && (
+            <text class="il-end" x={W - m.r + 10} y={y(s.pts[s.pts.length - 1].idx) + 4}>
+              {s.label.split(',')[0]}
+            </text>
+          )}
+        </g>
+      ))
+    }
+  </svg>
+  <details class="table-view">
+    <summary>{tableLabel}</summary>
+    <div class="table-scroll">
+      <table class="data">
+        <thead>
+          <tr>
+            <th>{periodLabel}</th>
+            {indexed.map((s) => <th class="r">{s.label}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {
+            years.map((yr) => (
+              <tr>
+                <td>{yr}</td>
+                {indexed.map((s) => {
+                  const p = s.pts.find((q) => q.y === yr);
+                  return <td class="r">{p ? `${F.number(p.v)} (${F.number(p.idx, 0)})` : ''}</td>;
+                })}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
+</figure>

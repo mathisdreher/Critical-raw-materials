@@ -35,6 +35,11 @@ export interface Series {
   source_url: string;
   licence: string;
   note: string | null;
+  note_key?: string;
+  note_params?: Record<string, string | number>;
+  kind?: string;
+  product?: string;
+  element?: string;
   updated: string;
   points: Point[];
 }
@@ -53,6 +58,9 @@ export interface IndexEntry {
   change_1y_pct: number | null;
   spark: number[];
   n: number;
+  kind?: string;
+  product?: string;
+  element?: string;
 }
 
 export interface CountryShare {
@@ -99,6 +107,7 @@ export interface TradeProduct {
   code: string;
   label: string;
   primary: boolean;
+  focus?: boolean;
   monthly: [string, number | null, number | null, number | null, number | null][];
   origins: {
     from: string;
@@ -196,7 +205,7 @@ export function parseDate(d: string): number {
 /** Share of the largest single origin in extra-EU imports of the primary product, trailing 12 months. */
 export function importConcentration(slug: string) {
   const t = trade(slug);
-  const p = t?.products.find((x) => x.primary);
+  const p = t?.products.find((x) => x.focus) ?? t?.products.find((x) => x.primary);
   const top = p?.origins.rows[0];
   if (!p || !top || top.share_pct === null) return null;
   return { product: p.label, code: p.code, country: top.country, share: top.share_pct, hhi: p.origins.hhi, from: p.origins.from, to: p.origins.to, totalT: p.origins.total_t };

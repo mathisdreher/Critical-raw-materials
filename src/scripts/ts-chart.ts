@@ -19,7 +19,19 @@ interface ChartSeries {
 }
 
 const NS = 'http://www.w3.org/2000/svg';
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+let TAG = 'en-GB';
+const monthShort = (m: number) => new Intl.DateTimeFormat(TAG, { month: 'short', timeZone: 'UTC' }).format(new Date(Date.UTC(2000, m, 1)));
+interface Labels {
+  ranges: Record<string, string>;
+  sinceDate: string;
+  noData: string;
+  tableToggle: string;
+  period: string;
+  rangeLabel: string;
+  source: string;
+  latestOf: string;
+  ariaSummary: string;
+}
 const DAY = 86400000;
 
 const RANGES: Record<Freq, [string, number][]> = {
@@ -50,14 +62,15 @@ function parseDate(d: string): number {
 function fmtDate(d: string): string {
   const [y, m, day] = d.split('-');
   if (!m) return y;
-  if (!day) return `${MONTHS[Number(m) - 1]} ${y}`;
-  return `${Number(day)} ${MONTHS[Number(m) - 1]} ${y}`;
+  const when = new Date(Date.UTC(Number(y), Number(m) - 1, Number(day ?? '1')));
+  const opts: Intl.DateTimeFormatOptions = day ? { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' } : { month: 'short', year: 'numeric', timeZone: 'UTC' };
+  return new Intl.DateTimeFormat(TAG, opts).format(when);
 }
 
 function fmtValue(v: number): string {
   const a = Math.abs(v);
   const d = a >= 1000 ? 0 : a >= 100 ? 1 : a >= 1 ? 2 : 3;
-  return v.toLocaleString('en-GB', { maximumFractionDigits: d });
+  return v.toLocaleString(TAG, { maximumFractionDigits: d });
 }
 
 function niceTicks(min: number, max: number, count = 5): number[] {
@@ -77,7 +90,7 @@ function niceTicks(min: number, max: number, count = 5): number[] {
 function tickLabel(v: number, top: number): string {
   if (top >= 1e6) return `${Number((v / 1e6).toPrecision(3))}M`;
   if (top >= 1e4) return `${Number((v / 1e3).toPrecision(3))}K`;
-  return v.toLocaleString('en-GB', { maximumFractionDigits: top < 10 ? 2 : top < 100 ? 1 : 0 });
+  return v.toLocaleString(TAG, { maximumFractionDigits: top < 10 ? 2 : top < 100 ? 1 : 0 });
 }
 
 function timeTicks(t0: number, t1: number, width: number): { t: number; label: string }[] {
@@ -105,20 +118,21 @@ function timeTicks(t0: number, t1: number, width: number): { t: number; label: s
       }
       const t = Date.UTC(y, m, 1);
       if (t > t1) break;
-      if (t >= t0) out.push({ t, label: m === 0 ? String(y) : MONTHS[m] });
+      if (t >= t0) out.push({ t, label: m === 0 ? String(y) : monthShort(m) });
       m += step;
     }
   } else {
     const step = Math.max(1, Math.ceil(span / DAY / maxTicks));
     for (let t = Math.ceil(t0 / DAY) * DAY; t <= t1; t += step * DAY) {
       const d = new Date(t);
-      out.push({ t, label: `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}` });
+      out.push({ t, label: `${d.getUTCDate()} ${monthShort(d.getUTCMonth())}` });
     }
   }
   return out;
 }
 
 class TsChart extends HTMLElement {
+  private labels!: Labels;
   private all: ChartSeries[] = [];
   private current!: ChartSeries;
   private range = '';
@@ -135,9 +149,12 @@ class TsChart extends HTMLElement {
   connectedCallback() {
     const payload = this.querySelector('script[type="application/json"]');
     if (!payload?.textContent) return;
-    this.all = (JSON.parse(payload.textContent) as ChartSeries[]).filter((s) => s.points.length > 1);
+    const cfg = JSON.parse(payload.textContent) as { tag: string; labels: Labels; series: ChartSeries[] };
+    TAG = cfg.tag;
+    this.labels = cfg.labels;
+    this.all = cfg.series.filter((s) => s.points.length > 1);
     if (!this.all.length) {
-      this.append(html('p', 'small', 'No data available yet.'));
+      this.append(html('p', 'small', this.labels.noData));
       return;
     }
     const wanted = this.getAttribute('series');
@@ -151,7 +168,7 @@ class TsChart extends HTMLElement {
     const controls = html('div', 'chart-controls');
     if (this.all.length > 1) {
       const sel = html('select');
-      sel.setAttribute('aria-label', this.getAttribute('select-label') ?? 'Series');
+      sel.setAttribute('aria-label', this.getAttribute('select-label') ?? this.labels.rangeLabel);
       const groups = new Map<string, HTMLOptGroupElement>();
       for (const s of this.all) {
         const opt = html('option', undefined, s.label);
@@ -173,7 +190,7 @@ class TsChart extends HTMLElement {
     } else controls.append(html('span'));
     this.rangeBox = html('div', 'seg');
     this.rangeBox.setAttribute('role', 'group');
-    this.rangeBox.setAttribute('aria-label', 'Time range');
+    this.rangeBox.setAttribute('aria-label', this.labels.rangeLabel);
     controls.append(this.rangeBox);
 
     this.head = html('div', 'chart-head');
@@ -182,7 +199,7 @@ class TsChart extends HTMLElement {
     this.tip.hidden = true;
     this.foot = html('div', 'chart-foot');
     this.tableBox = html('details', 'table-view');
-    this.tableBox.append(html('summary', undefined, 'View data as table'));
+    this.tableBox.append(html('summary', undefined, this.labels.tableToggle));
     this.tableBox.addEventListener('toggle', () => this.renderTable());
     this.append(controls, this.head, this.plot, this.foot, this.tableBox);
     this.plot.append(this.tip);
@@ -195,7 +212,7 @@ class TsChart extends HTMLElement {
     this.rangeBox.replaceChildren();
     this.rangeBox.hidden = ranges.length < 2;
     for (const [key] of ranges) {
-      const b = html('button', undefined, key);
+      const b = html('button', undefined, this.labels.ranges[key] ?? key);
       b.type = 'button';
       b.setAttribute('aria-pressed', String(key === this.range));
       b.addEventListener('click', () => {
@@ -225,14 +242,14 @@ class TsChart extends HTMLElement {
     const cu = html('span', 'cu', `${s.unit} · ${fmtDate(d1)}`);
     const cd = html('span', 'cd');
     if (change !== null && s.kind !== 'column') {
-      const delta = html('span', 'delta', `${change > 0 ? '+' : ''}${change.toFixed(1)}%`);
+      const delta = html('span', 'delta', `${change > 0 ? '+' : ''}${change.toLocaleString(TAG, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}${TAG.startsWith('en') ? '' : '\u00a0'}%`);
       delta.dataset.dir = change > 0.005 ? 'up' : change < -0.005 ? 'down' : 'flat';
-      cd.append(delta, document.createTextNode(` since ${fmtDate(this.visible[0][0])}`));
+      cd.append(delta, document.createTextNode(` ${this.labels.sinceDate.replace('{date}', fmtDate(this.visible[0][0]))}`));
     }
     this.head.replaceChildren(cv, cu, cd);
 
     const src = html('span');
-    src.append('Source: ');
+    src.append(`${this.labels.source}: `);
     if (s.sourceUrl) {
       const a = html('a', undefined, s.source ?? 'source');
       a.href = s.sourceUrl;
@@ -272,7 +289,16 @@ class TsChart extends HTMLElement {
     const y = (v: number) => m.t + (1 - (v - y0) / (y1 - y0 || 1)) * (h - m.t - m.b);
 
     const root = svg('svg', { viewBox: `0 0 ${w} ${h}`, width: w, height: h, role: 'img', tabindex: 0 });
-    root.setAttribute('aria-label', `${this.current.label}, ${this.current.unit}. ${pts.length} observations from ${fmtDate(pts[0][0])} to ${fmtDate(pts[pts.length - 1][0])}. Latest ${fmtValue(values[values.length - 1])}.`);
+    root.setAttribute(
+      'aria-label',
+      this.labels.ariaSummary
+        .replace('{label}', this.current.label)
+        .replace('{unit}', this.current.unit)
+        .replace('{n}', String(pts.length))
+        .replace('{from}', fmtDate(pts[0][0]))
+        .replace('{to}', fmtDate(pts[pts.length - 1][0]))
+        .replace('{latest}', fmtValue(values[values.length - 1])),
+    );
 
     for (const tv of ticks) {
       const gy = Math.round(y(tv)) + 0.5;
@@ -384,7 +410,7 @@ class TsChart extends HTMLElement {
     const table = html('table', 'data');
     const thead = html('thead');
     const hr = html('tr');
-    hr.append(html('th', undefined, 'Period'), html('th', 'r', this.current.unit));
+    hr.append(html('th', undefined, this.labels.period), html('th', 'r', this.current.unit));
     thead.append(hr);
     const tbody = html('tbody');
     for (const [d, v] of rows.slice(0, cap)) {
@@ -395,7 +421,7 @@ class TsChart extends HTMLElement {
     table.append(thead, tbody);
     wrap.append(table);
     this.tableBox.append(wrap);
-    if (rows.length > cap) this.tableBox.append(html('p', 'small', `Showing the latest ${cap} of ${rows.length} observations.`));
+    if (rows.length > cap) this.tableBox.append(html('p', 'small', this.labels.latestOf.replace('{n}', String(cap)).replace('{total}', String(rows.length))));
   }
 }
 

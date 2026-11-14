@@ -1,0 +1,22 @@
+---
+import { mapPayload } from '../lib/mapPayload';
+import { ui } from '../i18n';
+
+interface Props {
+  locale: string;
+  fixed?: string;
+}
+const { locale, fixed } = Astro.props;
+const t = ui(locale);
+const payload = JSON.stringify(mapPayload(locale, fixed)).replace(/</g, '\\u003c');
+---
+
+<world-map>
+  <script type="application/json" set:html={payload} />
+  <noscript><p class="small">{t.map.noscript}</p></noscript>
+</world-map>
+<p class="fig-note">{t.map.boundaries}</p>
+
+<script>
+  import '../scripts/world-map.ts';
+</script>

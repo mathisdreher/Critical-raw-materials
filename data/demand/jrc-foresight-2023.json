@@ -1,0 +1,958 @@
+{
+ "source": {
+  "title": "Supply chain analysis and material demand forecast in strategic technologies and sectors in the EU, a foresight study",
+  "publisher": "European Commission, Joint Research Centre",
+  "year": 2023,
+  "report_url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC132889",
+  "data_url": "https://zenodo.org/records/7736782",
+  "doi": "10.2760/386650",
+  "licence": "CC BY 4.0",
+  "processing": "Rows are EU-scope values of the dataset 'Material demand - All sectors'. Growth multiples are computed by this site (projected value divided by the 2020 value). Group sums and rows flagged as dataset anomalies are left out."
+ },
+ "materials": {
+  "aluminium-bauxite": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 322900.283482,
+     "lds": {
+      "2030": 882370.0446110001,
+      "2050": 1336865.5243600002
+     },
+     "hds": {
+      "2030": 1374993.54804,
+      "2050": 2063801.39595
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 46.02
+      },
+      {
+       "name": "Solar PV",
+       "share_pct": 32.59
+      },
+      {
+       "name": "Traction motors",
+       "share_pct": 11.35
+      }
+     ],
+     "baseline_lds": 322900.283482
+    }
+   ]
+  },
+  "antimony": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 52.98680465,
+     "lds": {
+      "2030": 63.36344176,
+      "2050": null
+     },
+     "hds": {
+      "2030": 94.59351387000001,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Data storage and servers",
+       "share_pct": 74.12
+      },
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 25.88
+      }
+     ],
+     "baseline_lds": 52.98680465
+    }
+   ]
+  },
+  "arsenic": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 2.980752,
+     "lds": {
+      "2030": 2.56188087,
+      "2050": 19.14543592
+     },
+     "hds": {
+      "2030": 3.643152,
+      "2050": 43.34209072
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 2.980752
+    }
+   ]
+  },
+  "baryte": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 277.5180739,
+     "lds": {
+      "2030": 234.7556606,
+      "2050": null
+     },
+     "hds": {
+      "2030": 332.8290801,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 277.5180739
+    }
+   ]
+  },
+  "beryllium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 0.255264681,
+     "lds": {
+      "2030": 0.213716372,
+      "2050": null
+     },
+     "hds": {
+      "2030": 0.300080117,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 0.255264681
+    }
+   ]
+  },
+  "bismuth": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 2.585546024,
+     "lds": {
+      "2030": 2.224968085,
+      "2050": null
+     },
+     "hds": {
+      "2030": 3.149407745,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 2.585546024
+    }
+   ]
+  },
+  "boron": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 145.24546025,
+     "lds": {
+      "2030": 188.24273118000002,
+      "2050": 110.909018708
+     },
+     "hds": {
+      "2030": 300.81779148,
+      "2050": 217.24896263
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 48.64
+      },
+      {
+       "name": "Traction motors",
+       "share_pct": 29.92
+      },
+      {
+       "name": "Wind turbines",
+       "share_pct": 21.44
+      }
+     ],
+     "baseline_lds": 145.24546025
+    }
+   ]
+  },
+  "cobalt": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 8620.205570618,
+     "lds": {
+      "2030": 40732.485915255,
+      "2050": 36308
+     },
+     "hds": {
+      "2030": 54100.963591666005,
+      "2050": 40202
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 90.97
+      }
+     ],
+     "baseline_lds": 8620.205570618
+    }
+   ]
+  },
+  "copper": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 127519.203934,
+     "lds": {
+      "2030": 434315.945578,
+      "2050": 689815.51715
+     },
+     "hds": {
+      "2030": 802440.137765,
+      "2050": 1304971.14207
+     },
+     "tech": [
+      {
+       "name": "Heat pumps",
+       "share_pct": 46.0
+      },
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 28.75
+      }
+     ],
+     "baseline_lds": 127519.203934
+    }
+   ]
+  },
+  "fluorspar": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 97,
+     "lds": {
+      "2030": 1051,
+      "2050": 1940
+     },
+     "hds": {
+      "2030": 1503,
+      "2050": 2930
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 93.21
+      }
+     ],
+     "baseline_lds": 97
+    }
+   ]
+  },
+  "gallium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 5.520086379,
+     "lds": {
+      "2030": 4.778212281,
+      "2050": 40.39686978
+     },
+     "hds": {
+      "2030": 8.623079500000001,
+      "2050": 91.45181142
+     },
+     "tech": [
+      {
+       "name": "Solar PV",
+       "share_pct": 67.1
+      },
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 30.25
+      }
+     ],
+     "baseline_lds": 5.520086379
+    }
+   ]
+  },
+  "germanium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 0.190491046,
+     "lds": {
+      "2030": 0.23206138099999998,
+      "2050": 2503.633927
+     },
+     "hds": {
+      "2030": 0.349317525,
+      "2050": 5667.811864
+     },
+     "tech": [
+      {
+       "name": "Data storage and servers",
+       "share_pct": 80.29
+      },
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 19.71
+      }
+     ],
+     "baseline_lds": 0.190491046
+    }
+   ]
+  },
+  "hafnium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 0.1048704,
+     "lds": {
+      "2030": 0.087486044,
+      "2050": null
+     },
+     "hds": {
+      "2030": 0.1271712,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 0.1048704
+    }
+   ]
+  },
+  "heavy-rare-earths": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": "dysprosium",
+     "baseline_year": 2020,
+     "baseline": 125.514660468,
+     "lds": {
+      "2030": 202.663585896,
+      "2050": 170.30565348
+     },
+     "hds": {
+      "2030": 713.110713155,
+      "2050": 916.4928741
+     },
+     "tech": [
+      {
+       "name": "Traction motors",
+       "share_pct": 63.24
+      },
+      {
+       "name": "Wind turbines",
+       "share_pct": 35.03
+      }
+     ],
+     "baseline_lds": 124.514660468
+    },
+    {
+     "key": "terbium",
+     "baseline_year": 2020,
+     "baseline": 23.124608985000002,
+     "lds": {
+      "2030": 34.508503333,
+      "2050": 16.17692212
+     },
+     "hds": {
+      "2030": 92.848140285,
+      "2050": 104.7711334
+     },
+     "tech": [
+      {
+       "name": "Wind turbines",
+       "share_pct": 93.18
+      }
+     ],
+     "baseline_lds": 23.124608985000002
+    },
+    {
+     "key": "gadolinium",
+     "baseline_year": 2020,
+     "baseline": 1.459621044,
+     "lds": {
+      "2030": 1.212005346,
+      "2050": null
+     },
+     "hds": {
+      "2030": 1.758657293,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 1.459621044
+    },
+    {
+     "key": "yttrium",
+     "baseline_year": 2020,
+     "baseline": 0.139367971,
+     "lds": {
+      "2030": 0.616191359,
+      "2050": 11.7
+     },
+     "hds": {
+      "2030": 0.8629682129999999,
+      "2050": 46.3
+     },
+     "tech": [
+      {
+       "name": "Electrolysers",
+       "share_pct": 81.12
+      },
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 18.88
+      }
+     ],
+     "baseline_lds": 0.139367971
+    },
+    {
+     "key": "europium",
+     "baseline_year": 2020,
+     "baseline": 0.00981,
+     "lds": {
+      "2030": 0.006487461,
+      "2050": null
+     },
+     "hds": {
+      "2030": 0.00849,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 0.00981
+    }
+   ]
+  },
+  "light-rare-earths": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": "neodymium",
+     "baseline_year": 2020,
+     "baseline": 1102.6380509800001,
+     "lds": {
+      "2030": 2550.20460481,
+      "2050": 2583.0063877000002
+     },
+     "hds": {
+      "2030": 5448.695460999999,
+      "2050": 6895.991579
+     },
+     "tech": [
+      {
+       "name": "Traction motors",
+       "share_pct": 53.52
+      },
+      {
+       "name": "Wind turbines",
+       "share_pct": 42.22
+      }
+     ],
+     "baseline_lds": 1102.6380509800001
+    },
+    {
+     "key": "praseodymium",
+     "baseline_year": 2020,
+     "baseline": 123.65423184000001,
+     "lds": {
+      "2030": 162.54786866999999,
+      "2050": 62.52611695
+     },
+     "hds": {
+      "2030": 445.96565547,
+      "2050": 510.3282446
+     },
+     "tech": [
+      {
+       "name": "Wind turbines",
+       "share_pct": 86.85
+      }
+     ],
+     "baseline_lds": 123.65423184000001
+    },
+    {
+     "key": "cerium",
+     "baseline_year": 2020,
+     "baseline": 10.01250333,
+     "lds": {
+      "2030": 8.622275014,
+      "2050": null
+     },
+     "hds": {
+      "2030": 12.24298404,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 10.01250333
+    }
+   ]
+  },
+  "lithium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 4891.1398272,
+     "lds": {
+      "2030": 42313.116648058,
+      "2050": 70563
+     },
+     "hds": {
+      "2030": 58208.1695616,
+      "2050": 101873
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 93.28
+      }
+     ],
+     "baseline_lds": 4891.1398272
+    }
+   ]
+  },
+  "magnesium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 7488.631830187001,
+     "lds": {
+      "2030": 6162.187590955999,
+      "2050": null
+     },
+     "hds": {
+      "2030": 8666.559912746001,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 7488.631830187001
+    }
+   ]
+  },
+  "manganese": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 16823.1934907,
+     "lds": {
+      "2030": 46356.08369100001,
+      "2050": 44722.33058
+     },
+     "hds": {
+      "2030": 74938.1229008,
+      "2050": 74144.91283
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 48.03
+      },
+      {
+       "name": "Wind turbines",
+       "share_pct": 44.37
+      }
+     ],
+     "baseline_lds": 16823.1934907
+    }
+   ]
+  },
+  "natural-graphite": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 33726,
+     "lds": {
+      "2030": 342448,
+      "2050": 595405
+     },
+     "hds": {
+      "2030": 478740,
+      "2050": 886573
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 93.1
+      }
+     ],
+     "baseline_lds": 33726
+    }
+   ]
+  },
+  "nickel": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 28345.765366800002,
+     "lds": {
+      "2030": 224822.7384281,
+      "2050": 317120.474728
+     },
+     "hds": {
+      "2030": 285805.7163485,
+      "2050": 455269.05359
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 90.85
+      }
+     ],
+     "baseline_lds": 28270.1569038
+    }
+   ]
+  },
+  "niobium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 0.724819989,
+     "lds": {
+      "2030": 0.603672893,
+      "2050": null
+     },
+     "hds": {
+      "2030": 0.874631799,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 0.724819989
+    }
+   ]
+  },
+  "phosphorus": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 1065,
+     "lds": {
+      "2030": 76139,
+      "2050": 234058
+     },
+     "hds": {
+      "2030": 131991,
+      "2050": 385421
+     },
+     "tech": [
+      {
+       "name": "Li-ion batteries (e-mobility)",
+       "share_pct": 86.0
+      },
+      {
+       "name": "Li-ion batteries (ESS)",
+       "share_pct": 14.0
+      }
+     ],
+     "baseline_lds": 1065
+    }
+   ]
+  },
+  "platinum-group-metals": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": "palladium",
+     "baseline_year": 2020,
+     "baseline": 2.900725759,
+     "lds": {
+      "2030": 4.114398047,
+      "2050": 1.6
+     },
+     "hds": {
+      "2030": 6.149084467,
+      "2050": 6.1
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 40.56
+      },
+      {
+       "name": "Electrolysers",
+       "share_pct": 30.9
+      },
+      {
+       "name": "Data storage and servers",
+       "share_pct": 28.54
+      }
+     ],
+     "baseline_lds": 2.900725759
+    },
+    {
+     "key": "platinum",
+     "baseline_year": 2020,
+     "baseline": 0.098882168,
+     "lds": {
+      "2030": 1.881061392,
+      "2050": 9.938354004
+     },
+     "hds": {
+      "2030": 3.014028405,
+      "2050": 19.76976379
+     },
+     "tech": [
+      {
+       "name": "Electrolysers",
+       "share_pct": 96.22
+      }
+     ],
+     "baseline_lds": 0.09888217
+    },
+    {
+     "key": "ruthenium",
+     "baseline_year": 2020,
+     "baseline": 0.035541193,
+     "lds": {
+      "2030": 0.48078036700000004,
+      "2050": 0.5652
+     },
+     "hds": {
+      "2030": 0.75348357,
+      "2050": 2.2293
+     },
+     "tech": [
+      {
+       "name": "Electrolysers",
+       "share_pct": 91.34
+      }
+     ],
+     "baseline_lds": 0.035541193
+    },
+    {
+     "key": "rhodium",
+     "baseline_year": 2020,
+     "baseline": 0.0027,
+     "lds": {
+      "2030": 0.4388,
+      "2050": 0.5652
+     },
+     "hds": {
+      "2030": 0.6882,
+      "2050": 2.2293
+     },
+     "tech": [
+      {
+       "name": "Electrolysers",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 0.0027
+    }
+   ]
+  },
+  "silicon-metal": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 60922.0954142,
+     "lds": {
+      "2030": 52651.9527849,
+      "2050": 35787.2379
+     },
+     "hds": {
+      "2030": 106996.5340958,
+      "2050": 81016.36958
+     },
+     "tech": [
+      {
+       "name": "Solar PV",
+       "share_pct": 97.0
+      }
+     ],
+     "baseline_lds": 60922.0954142
+    }
+   ]
+  },
+  "strontium": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 168.956544,
+     "lds": {
+      "2030": 141.2905342,
+      "2050": null
+     },
+     "hds": {
+      "2030": 201.3422045,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 168.956544
+    }
+   ]
+  },
+  "tantalum": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 37.8742694,
+     "lds": {
+      "2030": 32.52884246,
+      "2050": null
+     },
+     "hds": {
+      "2030": 46.23591541,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 37.8742694
+    }
+   ]
+  },
+  "titanium-metal": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 165.74806005,
+     "lds": {
+      "2030": 155.81342729,
+      "2050": null
+     },
+     "hds": {
+      "2030": 224.7516759,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 76.42
+      },
+      {
+       "name": "Data storage and servers",
+       "share_pct": 23.58
+      }
+     ],
+     "baseline_lds": 165.74806005
+    }
+   ]
+  },
+  "tungsten": {
+   "unit": "t/yr",
+   "rows": [
+    {
+     "key": null,
+     "baseline_year": 2020,
+     "baseline": 42.8035255,
+     "lds": {
+      "2030": 35.64197078,
+      "2050": null
+     },
+     "hds": {
+      "2030": 51.72273711,
+      "2050": null
+     },
+     "tech": [
+      {
+       "name": "Smartphones, tablets and laptops",
+       "share_pct": 100.0
+      }
+     ],
+     "baseline_lds": 42.8035255
+    }
+   ]
+  }
+ }
+}

@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { ui, crma } from '../i18n';
 import { REG_URL, AMEND_URL } from '../i18n/crma.en';
-import { href, fmtDate } from '../lib/format';
+import { href, formatters } from '../lib/format';
 
 interface Props {
   locale: string;
@@ -11,6 +11,7 @@ const { locale } = Astro.props;
 const t = ui(locale);
 const c = crma(locale);
 const h = c.hub;
+const F = formatters(locale);
 const now = Date.now();
 const SIX_MONTHS = 183 * 86400000;
 const rows = c.deadlines.map((d) => {
@@ -21,7 +22,7 @@ const rows = c.deadlines.map((d) => {
 
 <Base locale={locale} current="crma" title={h.title} description={h.lede}>
   <div class="page-head">
-    <p class="eyebrow">Regulation (EU) 2024/1252</p>
+    <p class="eyebrow">{c.regulationName}</p>
     <h1>{h.title}</h1>
     <p class="lede">{h.lede}</p>
   </div>
@@ -34,7 +35,7 @@ const rows = c.deadlines.map((d) => {
             <span class="badge">{tool.ref}</span>
             <h2>{tool.title}</h2>
             <p class="muted">{tool.text}</p>
-            <a class="btn" href={href(tool.path)}>
+            <a class="btn" href={href(tool.path, locale)}>
               {tool.cta}
             </a>
           </div>
@@ -70,7 +71,7 @@ const rows = c.deadlines.map((d) => {
   <section class="section" id="deadlines">
     <div class="section-head">
       <h2>{h.calendarTitle}</h2>
-      <a class="btn ghost" href={href('/crma/deadlines.ics')} download>{h.calendarDownload}</a>
+      <a class="btn ghost" href={href('/crma/deadlines.ics', locale)} download>{h.calendarDownload}</a>
     </div>
     <p class="muted" style="max-width:76ch">{h.calendarSub}</p>
     <div class="filters" data-filter-for="deadlines-table">
@@ -94,7 +95,7 @@ const rows = c.deadlines.map((d) => {
           {
             rows.map((d) => (
               <tr data-who={d.who}>
-                <td class="num" style="white-space:nowrap">{fmtDate(d.date)}</td>
+                <td class="num" style="white-space:nowrap">{F.date(d.date)}</td>
                 <td>{d.what}</td>
                 <td>
                   <span class:list={['badge', { strategic: d.who === 'company' }]}>{h.audience[d.who]}</span>
@@ -117,7 +118,7 @@ const rows = c.deadlines.map((d) => {
       <p class="small" style="margin:0">{h.pendingNote}</p>
     </div>
     <p class="fig-note">
-      {c.basis} <a href={REG_URL}>Regulation (EU) 2024/1252 on EUR-Lex</a>. {t.footer.disclaimer}
+      {c.basis} <a href={REG_URL}>{c.regulationOnEurLex}</a>. {t.footer.disclaimer}
     </p>
   </section>
 </Base>
