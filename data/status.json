@@ -4,47 +4,47 @@
       "name": "Yahoo Finance",
       "url": "https://finance.yahoo.com/commodities/",
       "licence": "Unofficial endpoint, delayed exchange data. Indicative only, not for trading or redistribution.",
-      "last_attempt": "2026-11-24T05:22:15Z",
+      "last_attempt": "2026-11-25T05:22:41Z",
       "ok": true,
-      "last_success": "2026-11-24T05:22:21Z",
+      "last_success": "2026-11-25T05:22:47Z",
       "detail": "4 series"
     },
     "imf": {
       "name": "IMF Primary Commodity Price System",
       "url": "https://data.imf.org/en/datasets/IMF.RES:PCPS",
       "licence": "© International Monetary Fund, reused with attribution under the IMF data terms.",
-      "last_attempt": "2026-11-24T05:22:21Z",
+      "last_attempt": "2026-11-25T05:22:47Z",
       "ok": true,
-      "last_success": "2026-11-24T05:22:21Z",
+      "last_success": "2026-11-25T05:22:48Z",
       "detail": "11 series"
     },
     "worldbank": {
       "name": "World Bank Commodity Price Data (Pink Sheet)",
       "url": "https://www.worldbank.org/en/research/commodity-markets",
       "licence": "World Bank, CC BY 4.0.",
-      "last_attempt": "2026-11-24T05:22:21Z",
+      "last_attempt": "2026-11-25T05:22:48Z",
       "ok": true,
-      "last_success": "2026-11-24T05:22:22Z",
+      "last_success": "2026-11-25T05:22:48Z",
       "detail": "1 series"
     },
     "usgs": {
       "name": "USGS Mineral Commodity Summaries",
       "url": "https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries",
       "licence": "U.S. Geological Survey, public domain.",
-      "last_attempt": "2026-11-24T05:22:22Z",
+      "last_attempt": "2026-11-25T05:22:48Z",
       "ok": true,
-      "last_success": "2026-11-24T05:22:24Z",
+      "last_success": "2026-11-25T05:23:55Z",
       "detail": "MCS 2026: 54 price series, 29 supply tables"
     },
     "eurostat": {
       "name": "Eurostat Comext (DS-045409)",
       "url": "https://ec.europa.eu/eurostat/web/international-trade-in-goods/database",
       "licence": "© European Union, reuse authorised with attribution (CC BY 4.0).",
-      "last_attempt": "2026-11-24T05:22:24Z",
+      "last_attempt": "2026-11-25T05:23:55Z",
       "ok": true,
-      "last_success": "2026-11-24T05:22:36Z",
+      "last_success": "2026-11-25T05:24:06Z",
       "detail": "64 products through 2026-09, 0 material files changed"
     }
   },
-  "updated": "2026-11-24T05:22:36Z"
+  "updated": "2026-11-25T05:24:06Z"
 }
